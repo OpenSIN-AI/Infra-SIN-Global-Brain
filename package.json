@@ -1,0 +1,11 @@
+{
+  "name": "global-brain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Persistent code plan and memory engine for cross-project OpenCode agent work.",
+  "scripts": {
+    "brain": "node ./src/cli.js",
+    "test": "node --test test/*.test.js"
+  }
+}
