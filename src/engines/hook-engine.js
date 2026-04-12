@@ -114,7 +114,7 @@ function generateOpenCodeConfig({ brainRepoPath, projectId, goalId, goalDescript
 }
 
 async function mergeIntoProjectOpenCodeConfig(projectRoot, generatedConfig) {
-  const configPath = path.join(projectRoot, ".opencode", "opencode.json");
+  const configPath = path.join(projectRoot, ".opencode", "pcpm-config.json");
   const existingConfig = await readJsonFile(configPath, {});
   const mergedConfig = {
     ...existingConfig,
@@ -246,17 +246,12 @@ export async function setupProjectHooks({
 // Check if a project already has PCPM hooks set up.
 // Returns the current config if found, null otherwise.
 export async function detectExistingHooks(projectRoot) {
-  const projectConfigPath = path.join(projectRoot, ".opencode", "opencode.json");
+  const opencodeDir = path.join(projectRoot, ".opencode");
+  const pcpmConfigPath = path.join(opencodeDir, "pcpm-config.json");
 
-  if (await fileExists(projectConfigPath)) {
-    return readJsonFile(projectConfigPath, null);
-  }
-
-  const configPath = path.join(projectRoot, ".opencode", "pcpm-config.json");
-
-  if (!(await fileExists(configPath))) {
+  if (!(await fileExists(pcpmConfigPath))) {
     return null;
   }
 
-  return readJsonFile(configPath, null);
+  return readJsonFile(pcpmConfigPath, null);
 }
