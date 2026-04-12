@@ -23,6 +23,39 @@ AI coding agents (via OpenCode CLI) lose all context between sessions. They forg
 - **Meta-Learning & Strategy Scoring** (Scores strategies based on outcomes across sessions)
 - **Hybrid GraphRAG integration** (Scripts to import Microsoft GraphRAG outputs into the agent brain)
 
+## 🤖 Universal Agent Initialization (Copy & Paste)
+
+Whenever you start working with an AI Agent in a **new project**, you must connect the project to the Global-Brain first. Paste the following universal instruction directly into your prompt to force the agent to set up its memory correctly. 
+
+**Why it works:** It uses dynamic variables (`$PWD` and `basename`) so you don't even have to change the project name—it works instantly in any folder. The prompt explains the concept of "amnesia" to the LLM, ensuring it treats this task with the highest priority.
+
+```markdown
+🚨 OBERSTE PRIORITÄT: GLOBAL-BRAIN INITIALISIERUNG 🚨
+
+Bevor du mit der eigentlichen Aufgabe beginnst oder Code schreibst, MUSST du dieses Projekt an unser "Global-Brain" (DPMA v4) ankoppeln. 
+
+**WARUM DU DAS TUN MUSST:**
+Du bist Teil einer Agenten-Flotte. Ohne diese Ankopplung leidest du an Amnesie: Du wirst nach dieser Session alles vergessen, alte Bugs wiederholen und unsere globalen Architektur-Regeln ignorieren. Durch die Ankopplung erhältst du sofortigen Zugriff auf das "Hive Mind" – das globale Wissen aller anderen Agenten sowie das lokale Langzeitgedächtnis dieses spezifischen Projekts. 
+
+**DEINE AUFGABE (SOFORT AUSFÜHREN):**
+Führe den folgenden Befehl im Terminal (im Root-Verzeichnis dieses Projekts) aus. Der Befehl installiert die notwendigen OpenCode-Hooks und verbindet das Projekt mit dem Global-Brain.
+
+\`\`\`bash
+node /Users/jeremy/dev/global-brain/src/cli.js setup-hooks \
+  --project $(basename "$PWD") \
+  --project-root "$PWD" \
+  --agents-directive
+\`\`\`
+
+**ERWARTETES ERGEBNIS:**
+1. Der Befehl erstellt eine `.opencode/opencode.json` mit `beforeRun` und `afterRun` Hooks.
+2. Es wird eine initiales `.pcpm/` (Persistent Code Plan Memory) Setup erzeugt.
+3. Ab dem nächsten Run wird dein System-Prompt automatisch mit dem kollektiven Gedächtnis und den Projekt-Plänen angereichert.
+
+**REGEL:** 
+Führe diesen Terminal-Befehl aus. Bestätige mir kurz, dass die Hooks erfolgreich registriert wurden, und beginne ERST DANACH mit der eigentlichen Aufgabe, die ich dir gestellt habe.
+```
+
 ## Architecture
 
 ```
