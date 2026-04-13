@@ -1,0 +1,32 @@
+{
+  "projectId": "global-brain",
+  "goalId": "build-sin-brain-infrastructure",
+  "goalDescription": "Complete sin-brain CLI/MCP, Preview MCP, Auto-Sync hooks, Neural-Bus integration",
+  "plan": "v0.2.0 — 7/8 steps completed",
+  "knowledge": {
+    "rules": [
+      "Images MUST be opened in macOS Preview.app — never tell users to check /tmp (PRIORITY -4.5)",
+      "Auto-sync after every chat turn via sync-chat-turn hook (PRIORITY -4.0)",
+      "Neural-Bus is central message bus for all A2A agents"
+    ],
+    "solutions": [
+      "Preview MCP (src/mcp/preview-server.mjs)",
+      "sin-brain MCP (src/mcp/sin-brain-server.mjs) with add_rule, sync_brain, open_image_in_preview, list_global_rules",
+      "CLI: add-rule, sync-chat-turn, neural-bus-status"
+    ],
+    "forbidden": [
+      "Telling users to manually look for images in filesystem directories",
+      "Direct JSON edits to brain data files (use CLI or MCP)",
+      "Deleting knowledge entries (use invalidations instead)"
+    ],
+    "mistakes": [
+      "Agents telling users to look in /tmp instead of opening images in Preview"
+    ]
+  },
+  "neuralBus": {
+    "repo": "~/dev/OpenSIN-Neural-Bus",
+    "status": "documented",
+    "coreExports": ["OpenCodeJetStreamClient", "OpenSinAgentRuntime", "SUBJECTS", "createEventEnvelope"],
+    "subjects": ["workflow.request", "workflow.reply", "agent.observation", "agent.lesson", "agent.capability"]
+  }
+}

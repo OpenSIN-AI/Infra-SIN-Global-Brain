@@ -1,0 +1,18 @@
+{
+  "planId": "global-brain-v0.2.0",
+  "projectId": "global-brain",
+  "goalId": "build-sin-brain-infrastructure",
+  "goalDescription": "Build complete sin-brain CLI/MCP, Preview MCP, Auto-Sync hooks, and Neural-Bus integration",
+  "version": 1,
+  "createdAt": "2026-04-13T14:00:00Z",
+  "steps": [
+    { "id": "step-1", "title": "Create Preview MCP Server", "status": "completed", "file": "src/mcp/preview-server.mjs" },
+    { "id": "step-2", "title": "Create sin-brain MCP Server", "status": "completed", "file": "src/mcp/sin-brain-server.mjs" },
+    { "id": "step-3", "title": "Add CLI commands: add-rule, sync-chat-turn, neural-bus-status", "status": "completed", "file": "src/cli.js" },
+    { "id": "step-4", "title": "Integrate Auto-Sync into afterRun hook engine", "status": "completed", "file": "src/engines/hook-engine.js" },
+    { "id": "step-5", "title": "Document Neural-Bus integration in AGENTS.md", "status": "completed", "file": "AGENTS.md" },
+    { "id": "step-6", "title": "Commit, push, create GitHub Issues", "status": "completed" },
+    { "id": "step-7", "title": "Fill local brain (.pcpm) with knowledge", "status": "completed" },
+    { "id": "step-8", "title": "Integrate Neural-Bus with global-brain sync pipeline", "status": "pending" }
+  ]
+}

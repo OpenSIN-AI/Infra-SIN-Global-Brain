@@ -1,0 +1,68 @@
+{
+  "global": {
+    "rules": [
+      {
+        "id": "rule-preview-mandatory",
+        "text": "VISUAL ARTIFACT HANDLING: Agents MUST open images in macOS Preview.app via 'open -a Preview'. Never tell users to look in /tmp.",
+        "priority": -4.5,
+        "addedAt": "2026-04-13T14:00:00Z",
+        "source": "user-directive"
+      },
+      {
+        "id": "rule-sin-brain-auto-sync",
+        "text": "SIN-BRAIN AUTO-SYNC: After every chat turn, the global brain is automatically synchronized via sync-chat-turn hook. Agents must not forget to sync.",
+        "priority": -4.0,
+        "addedAt": "2026-04-13T14:00:00Z",
+        "source": "user-directive"
+      },
+      {
+        "id": "rule-neural-bus-required",
+        "text": "OpenSIN-Neural-Bus (JetStream) is the central message bus for all A2A agents. Core exports: OpenCodeJetStreamClient, OpenSinAgentRuntime, SUBJECTS, createEventEnvelope.",
+        "priority": 0,
+        "addedAt": "2026-04-13T14:00:00Z",
+        "source": "architecture"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-sin-brain-cli",
+        "text": "sin-brain CLI provides add-rule, sync-chat-turn, and neural-bus-status commands for automated brain management.",
+        "createdAt": "2026-04-13T14:00:00Z"
+      },
+      {
+        "id": "sol-preview-mcp",
+        "text": "Preview MCP server at src/mcp/preview-server.mjs opens images in macOS Preview.app. Also exposed via sin-brain MCP as open_image_in_preview.",
+        "createdAt": "2026-04-13T14:00:00Z"
+      },
+      {
+        "id": "sol-auto-sync-afterRun",
+        "text": "afterRun hook engine now includes sync-chat-turn call, ensuring automatic brain sync after every OpenCode run.",
+        "createdAt": "2026-04-13T14:00:00Z"
+      }
+    ]
+  },
+  "project": {
+    "decisions": [
+      {
+        "id": "dec-mcp-over-cli",
+        "text": "MCP servers are the preferred interface for agent-brain interaction. CLI commands remain for manual/diagnostic use.",
+        "rationale": "MCP allows real-time tool calls without subprocess overhead",
+        "createdAt": "2026-04-13T14:00:00Z"
+      }
+    ],
+    "mistakes": [
+      {
+        "id": "mist-telling-user-to-check-tmp",
+        "text": "Telling users to manually look for images in /tmp directories is considered a provocation. Always open images in Preview.app.",
+        "discoveredAt": "2026-04-13T14:00:00Z"
+      }
+    ],
+    "facts": [
+      {
+        "id": "fact-neural-bus-path",
+        "text": "OpenSIN-Neural-Bus is located at ~/dev/OpenSIN-Neural-Bus and uses NATS JetStream at nats://127.0.0.1:4222",
+        "discoveredAt": "2026-04-13T14:00:00Z"
+      }
+    ]
+  }
+}
