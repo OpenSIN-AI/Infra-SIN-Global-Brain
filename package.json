@@ -1,11 +1,13 @@
 {
   "name": "global-brain",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Persistent code plan and memory engine for cross-project OpenCode agent work.",
+  "description": "Persistent code plan and memory engine for cross-project OpenCode agent work. Includes sin-brain MCP and Preview MCP for agent integration.",
   "scripts": {
     "brain": "node ./src/cli.js",
+    "mcp:sin-brain": "node ./src/mcp/sin-brain-server.mjs",
+    "mcp:preview": "node ./src/mcp/preview-server.mjs",
     "test": "node --test test/*.test.js"
   }
 }

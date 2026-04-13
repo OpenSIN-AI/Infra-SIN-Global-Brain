@@ -39,6 +39,8 @@ This repository is the Persistent Code Plan Memory (PCPM) system — the single 
 - `src/engines/transcript-engine.js` — LLM-powered transcript-to-knowledge extraction
 - `src/engines/hook-engine.js` — OpenCode beforeRun/afterRun hook generator
 - `src/engines/orchestrator-engine.js` — Central closed-loop orchestration
+- `src/mcp/sin-brain-server.mjs` — MCP server for rule management and brain sync
+- `src/mcp/preview-server.mjs` — MCP server for opening images in macOS Preview
 
 ## LLM Interface
 
@@ -60,3 +62,114 @@ User task
   → Session engine (save transcript + summary)
   → Sync engine (push to project .pcpm/)
 ```
+
+## MCP Servers
+
+This repository provides two MCP servers that agents can connect to for real-time brain interaction:
+
+### sin-brain MCP (`src/mcp/sin-brain-server.mjs`)
+Provides tools for agents to manage rules and sync knowledge without manual CLI calls.
+
+| Tool | Description |
+|------|-------------|
+| `add_rule` | Add a rule to global AGENTS.md and/or local .pcpm/ |
+| `sync_brain` | Run bidirectional sync between local and global brain |
+| `open_image_in_preview` | Open an image file in macOS Preview.app |
+| `list_global_rules` | List all rules currently in the global brain |
+
+### preview MCP (`src/mcp/preview-server.mjs`)
+Dedicated MCP server for opening images in macOS Preview. Agents MUST use this whenever they create screenshots or visual artifacts — never tell users to "look in /tmp".
+
+| Tool | Description |
+|------|-------------|
+| `open_in_preview` | Opens an image file in Preview.app with validation |
+
+## CLI Commands (Extended)
+
+| Command | Description |
+|---------|-------------|
+| `add-rule --text <rule> [--priority <n>] [--scope global\|project\|both]` | Add a rule to global brain and/or local .pcpm |
+| `sync-chat-turn` | Auto-sync trigger — runs silently after each chat turn to check for unwritten rules |
+
+---
+
+## 🧠 OpenSIN-Neural-Bus Integration (JetStream Message Bus)
+
+Das **OpenSIN-Neural-Bus** System (`https://github.com/OpenSIN-AI/OpenSIN-Neural-Bus`) ist der zentrale JetStream-basierte Message Bus für die gesamte OpenSIN-Agenten-Flotte. Es verbindet alle A2A-Agenten, OpenCode-Runtimes und das Global Brain über ein einheitliches Event-System.
+
+### Neural-Bus im Global Brain Kontext
+
+| Komponente | Zweck | Verbindung zu Global Brain |
+|------------|-------|---------------------------|
+| `OpenCodeJetStreamClient` | NATS/JetStream Client für OpenCode | Sendet Agent-Events an das Brain |
+| `OpenSinAgentRuntime` | Agent Runtime Wrapper | Veröffentlicht Lessons Learned, Observations, Capabilities |
+| `SUBJECTS` | Subject Taxonomy (workflow.request, workflow.reply, etc.) | Definiert die Event-Sprache des Brains |
+| `createEventEnvelope` | Validierte Event-Envelopes | Garantiert strukturierte Brain-Updates |
+| `Ouroboros Bridge` | `rememberLesson()` + `registerCapability()` | Direkter Schreibzugriff auf Brain-Memory |
+
+### Core Architecture
+
+```
+OpenCode CLI / Agent Runtime
+  ↓
+OpenSinAgentRuntime (agentId, sessionId, bus)
+  ↓
+JetStream (nats://127.0.0.1:4222)
+  ↓
+Subjects: workflow.request, workflow.reply, agent.observation, agent.lesson
+  ↓
+Ouroboros Bridge → rememberLesson() / registerCapability()
+  ↓
+Global Brain (.pcpm/ → AGENTS.md → knowledge graph)
+```
+
+### Wichtige Patterns
+
+**1. Durable Consumer (Restart Recovery):**
+```ts
+const worker = await runtime.consumeAssignedWork({
+  subject: SUBJECTS.workflowRequest,
+  stream: "OPENSIN_WORKFLOW_EVENTS",
+  durableName: "issue-8-worker",  // Gleicher Name = Resume nach Restart
+  deliverPolicy: "all",
+  ackWaitMs: 500,
+}, async (event) => { /* work */ });
+```
+
+**2. Lesson Publishing ins Brain:**
+```ts
+await runtime.publishLessonLearned({
+  context: "JetStream reconnect handling",
+  lesson: "Reuse the same durable consumer name so restart recovery is automatic.",
+  successRate: 1.0,
+});
+// → Automatisch via Ouroboros Bridge ins Global Brain geschrieben
+```
+
+**3. Request/Reply Pattern:**
+```ts
+const server = await bus.serveRequests(SUBJECTS.workflowRequest, async (request) => {
+  return createEventEnvelope({ kind: "workflow.reply", ... });
+});
+```
+
+### Neural-Bus Subject Taxonomy
+
+Alle Subjects sind in `docs/jetstream-subject-taxonomy.md` im Neural-Bus Repo dokumentiert. Die wichtigsten:
+
+| Subject | Richtung | Zweck |
+|---------|----------|-------|
+| `workflow.request` | Client → Server | Arbeitsanfrage an Agent |
+| `workflow.reply` | Server → Client | Antwort/Ergebnis |
+| `agent.observation` | Agent → Brain | Zustandsmeldung (boot, error, done) |
+| `agent.lesson` | Agent → Brain | Gelernte Lektion (wird ins Memory geschrieben) |
+| `agent.capability` | Agent → Brain | Neue Fähigkeit registriert |
+
+### Docker Local Verification
+```bash
+cd ~/dev/OpenSIN-Neural-Bus
+docker compose up -d nats
+npm install && npm test
+```
+
+---

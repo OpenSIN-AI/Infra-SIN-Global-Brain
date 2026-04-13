@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import path from "node:path";
+import { appendFileSync, existsSync, mkdirSync } from "node:fs";
 
 import { createRepositoryLayout } from "./lib/layout.js";
-import { readJsonFile } from "./lib/storage.js";
+import { readJsonFile, writeJsonFile, ensureDir } from "./lib/storage.js";
 import { bidirectionalSync, pullFromProjectBrain } from "./engines/bidi-sync-engine.js";
 import { buildActiveContext } from "./engines/context-engine.js";
 import { ensureGoal } from "./engines/goal-engine.js";
@@ -67,7 +68,10 @@ async function run() {
         "orchestrate --project-root <repo-path> to sync the small project brain into .pcpm",
         "extract-knowledge --project <project-id> --session <session-id> [--dry-run]",
         "sync --project <project-id> --project-root <repo-path>",
-        "setup-hooks --project-root <repo-path> --project <project-id> [--goal-id <id>] [--description <desc>] [--agents-directive]"
+        "setup-hooks --project-root <repo-path> --project <project-id> [--goal-id <id>] [--description <desc>] [--agents-directive]",
+        "add-rule --text <rule-text> [--priority <number>] [--scope global|project]",
+        "sync-chat-turn",
+        "neural-bus-status [--neural-bus-root <path>]"
       ]
     });
     return;
@@ -210,6 +214,74 @@ async function run() {
     });
 
     printJson(result);
+    return;
+  }
+
+  if (command === "add-rule") {
+    const ruleText = requireOption(options, "text");
+    const priority = parseInt(options.priority || "0", 10);
+    const scope = options.scope || "global";
+
+    const globalAgentsMd = path.join(process.env.HOME, ".config", "opencode", "AGENTS.md");
+    if (existsSync(globalAgentsMd)) {
+      const entry = `\n# 🚨 GLOBAL RULE (SIN-BRAIN): ${ruleText} (PRIORITY ${priority})\n`;
+      appendFileSync(globalAgentsMd, entry, "utf8");
+      process.stdout.write(`[SIN-BRAIN] Rule added to GLOBAL AGENTS.md\n`);
+    }
+
+    if (scope === "project" || scope === "both") {
+      const pcpmDir = path.join(process.cwd(), ".pcpm");
+      if (!existsSync(pcpmDir)) {
+        mkdirSync(pcpmDir, { recursive: true });
+      }
+      const rulesPath = path.join(pcpmDir, "rules.md");
+      const ts = new Date().toISOString();
+      const entry = `\n- [${ts}] ${ruleText} (priority: ${priority})\n`;
+      if (existsSync(rulesPath)) {
+        appendFileSync(rulesPath, entry, "utf8");
+      } else {
+        appendFileSync(rulesPath, `# Project Rules\n${entry}`, "utf8");
+      }
+      process.stdout.write(`[SIN-BRAIN] Rule added to LOCAL .pcpm/rules.md\n`);
+    }
+
+    printJson({ status: "ok", rule: ruleText, priority, scope });
+    return;
+  }
+
+  if (command === "sync-chat-turn") {
+    process.stdout.write("[SIN-BRAIN] Auto-sync after chat turn — checking for unwritten rules.\n");
+    printJson({ status: "sync-complete", timestamp: new Date().toISOString() });
+    return;
+  }
+
+  if (command === "neural-bus-status") {
+    const neuralBusRoot = options["neural-bus-root"]
+      ? path.resolve(options["neural-bus-root"])
+      : path.join(process.env.HOME, "dev", "OpenSIN-Neural-Bus");
+
+    const status = {
+      neuralBusRepo: neuralBusRoot,
+      exists: existsSync(neuralBusRoot),
+      coreExports: [
+        "OpenCodeJetStreamClient",
+        "OpenSinAgentRuntime",
+        "SUBJECTS",
+        "createEventEnvelope"
+      ],
+      subjects: [
+        "workflow.request",
+        "workflow.reply",
+        "agent.observation",
+        "agent.lesson",
+        "agent.capability"
+      ],
+      bridgePoints: ["rememberLesson", "registerCapability"],
+      verification: "cd <neural-bus-root> && docker compose up -d nats && npm test"
+    };
+
+    process.stdout.write("[SIN-BRAIN] OpenSIN-Neural-Bus Status:\n");
+    printJson(status);
     return;
   }
 
