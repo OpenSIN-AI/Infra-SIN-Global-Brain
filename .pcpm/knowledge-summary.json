@@ -1,45 +1,57 @@
 {
-  "global": {
-    "rules": [
-      {
-        "id": "rule-preview-mandatory",
-        "text": "VISUAL ARTIFACT HANDLING: Agents MUST open images in macOS Preview.app via 'open -a Preview'. Never tell users to look in /tmp.",
-        "priority": -4.5,
-        "addedAt": "2026-04-13T14:00:00Z",
-        "source": "user-directive"
-      },
-      {
-        "id": "rule-sin-brain-auto-sync",
-        "text": "SIN-BRAIN AUTO-SYNC: After every chat turn, the global brain is automatically synchronized via sync-chat-turn hook. Agents must not forget to sync.",
-        "priority": -4.0,
-        "addedAt": "2026-04-13T14:00:00Z",
-        "source": "user-directive"
-      },
-      {
-        "id": "rule-neural-bus-required",
-        "text": "OpenSIN-Neural-Bus (JetStream) is the central message bus for all A2A agents. Core exports: OpenCodeJetStreamClient, OpenSinAgentRuntime, SUBJECTS, createEventEnvelope.",
-        "priority": 0,
-        "addedAt": "2026-04-13T14:00:00Z",
-        "source": "architecture"
-      }
-    ],
-    "solutions": [
-      {
-        "id": "sol-sin-brain-cli",
-        "text": "sin-brain CLI provides add-rule, sync-chat-turn, and neural-bus-status commands for automated brain management.",
-        "createdAt": "2026-04-13T14:00:00Z"
-      },
-      {
-        "id": "sol-preview-mcp",
-        "text": "Preview MCP server at src/mcp/preview-server.mjs opens images in macOS Preview.app. Also exposed via sin-brain MCP as open_image_in_preview.",
-        "createdAt": "2026-04-13T14:00:00Z"
-      },
-      {
-        "id": "sol-auto-sync-afterRun",
-        "text": "afterRun hook engine now includes sync-chat-turn call, ensuring automatic brain sync after every OpenCode run.",
-        "createdAt": "2026-04-13T14:00:00Z"
-      }
-    ]
+   "global": {
+     "rules": [
+       {
+         "id": "rule-preview-mandatory",
+         "text": "VISUAL ARTIFACT HANDLING: Agents MUST open images in macOS Preview.app via 'open -a Preview'. Never tell users to look in /tmp.",
+         "priority": -4.5,
+         "addedAt": "2026-04-13T14:00:00Z",
+         "source": "user-directive"
+       },
+       {
+         "id": "rule-sin-brain-auto-sync",
+         "text": "SIN-BRAIN AUTO-SYNC: After every chat turn, the global brain is automatically synchronized via sync-chat-turn hook. Agents must not forget to sync.",
+         "priority": -4.0,
+         "addedAt": "2026-04-13T14:00:00Z",
+         "source": "user-directive"
+       },
+       {
+         "id": "rule-neural-bus-required",
+         "text": "OpenSIN-Neural-Bus (JetStream) is the central message bus for all A2A agents. Core exports: OpenCodeJetStreamClient, OpenSinAgentRuntime, SUBJECTS, createEventEnvelope.",
+         "priority": 0,
+         "addedAt": "2026-04-13T14:00:00Z",
+         "source": "architecture"
+       },
+       {
+         "id": "rule-box-storage-default",
+         "text": "BOX STORAGE DEFAULT: All logs, screenshots, videos, reports must use A2A-SIN-Box-Storage (room-09). GitLab LogCenter deprecated. Migration deadline: 2026-05-01. (priority: 00)",
+         "addedAt": "2026-04-14T18:00:00Z",
+         "source": "task-completion",
+         "priority": 0
+       }
+     ],
+     "solutions": [
+       {
+         "id": "sol-sin-brain-cli",
+         "text": "sin-brain CLI provides add-rule, sync-chat-turn, and neural-bus-status commands for automated brain management.",
+         "createdAt": "2026-04-13T14:00:00Z"
+       },
+       {
+         "id": "sol-preview-mcp",
+         "text": "Preview MCP server at src/mcp/preview-server.mjs opens images in macOS Preview.app. Also exposed via sin-brain MCP as open_image_in_preview.",
+         "createdAt": "2026-04-13T14:00:00Z"
+       },
+       {
+         "id": "sol-auto-sync-afterRun",
+         "text": "afterRun hook engine now includes sync-chat-turn call, ensuring automatic brain sync after every OpenCode run.",
+         "createdAt": "2026-04-13T14:00:00Z"
+       },
+       {
+         "id": "sol-box-storage-migration",
+         "text": "Replaced GitLab LogCenter with A2A-SIN-Box-Storage service. Updated AGENTS.md, .pcpm/rules.md, created compatibility layer (box_storage.py), deprecated gitlab_logcenter.py, and published new service repository. Migration deadline: 2026-05-01.",
+         "createdAt": "2026-04-14T18:00:00Z"
+       }
+     ]
   },
   "project": {
     "decisions": [
