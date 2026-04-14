@@ -48,7 +48,7 @@ node /Users/jeremy/dev/global-brain/src/cli.js setup-hooks \
 \`\`\`
 
 **ERWARTETES ERGEBNIS:**
-1. Der Befehl erstellt eine `.opencode/opencode.json` mit `beforeRun` und `afterRun` Hooks.
+1. Der Befehl erstellt die Hook-Skripte unter `.opencode/hooks/` und die PCPM-Konfiguration in `.opencode/pcpm-config.json`.
 2. Es wird eine initiales `.pcpm/` (Persistent Code Plan Memory) Setup erzeugt.
 3. Ab dem nächsten Run wird dein System-Prompt automatisch mit dem kollektiven Gedächtnis und den Projekt-Plänen angereichert.
 
@@ -248,12 +248,14 @@ To use:
 
 ## OpenCode Integration
 
-The hook engine generates shell scripts that integrate with OpenCode's hook system:
+The hook engine generates shell scripts plus a PCPM-side config file that integrate with OpenCode workflows:
 
 - **beforeRun**: Loads the active context (goal, plan, memory, session) and injects it into the agent's prompt
 - **afterRun**: Extracts knowledge from the completed session transcript and syncs the project brain
 
-After running `setup-hooks`, the generated scripts appear in `<project>/.opencode/hooks/`.
+After running `setup-hooks`, the generated scripts appear in `<project>/.opencode/hooks/` and the PCPM metadata is stored in `<project>/.opencode/pcpm-config.json`.
+
+**Important:** `.opencode/opencode.json` must stay valid against the official OpenCode schema. PCPM-specific keys such as `hooks`, `pcpm`, or `project` must not be written into that file unless OpenCode itself officially supports them.
 
 ## Testing
 

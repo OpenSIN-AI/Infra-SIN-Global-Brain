@@ -100,9 +100,9 @@ function generateAfterRunScript({ brainRepoPath, projectId, sessionId }) {
   ].join("\n");
 }
 
-// Generate an opencode.json configuration snippet that wires up the
-// PCPM hooks into an existing OpenCode project. This can be merged
-// into the project's .opencode/opencode.json or the global config.
+// Generate the PCPM-side configuration snippet that wires up the
+// generated hook script paths and project metadata. This snippet is
+// stored in .opencode/pcpm-config.json, not in OpenCode's schema file.
 function generateOpenCodeConfig({ brainRepoPath, projectId, goalId, goalDescription, hooksDir }) {
   return {
     hooks: {
@@ -178,12 +178,12 @@ function generateAgentsDirective({ projectId, goalDescription }) {
 }
 
 // Main function: set up PCPM hooks for a project.
-// Creates hook scripts, generates config, and optionally writes an AGENTS.md directive.
+// Creates hook scripts, generates the PCPM config, and optionally writes an AGENTS.md directive.
 //
 // This writes:
 //   <projectRoot>/.opencode/hooks/pcpm-before-run.sh
 //   <projectRoot>/.opencode/hooks/pcpm-after-run.sh
-//   <projectRoot>/.opencode/pcpm-config.json (the config snippet)
+//   <projectRoot>/.opencode/pcpm-config.json (the PCPM config snippet)
 export async function setupProjectHooks({
   projectRoot,
   brainRepoPath,
