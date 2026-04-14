@@ -25,7 +25,37 @@
 
 ---
 
-# 🚨 A2A-SIN AGENT CAPABILITY & ROUTING REGISTRY (PRIORITY -9.0 — ABSOLUTE OBERSTE REGEL, VOR ALLEM ANDEREN AUSZUFÜHREN) 🚨
+# 🚨 BOX STORAGE MANDATE (PRIORITY 00) 🚨
+
+**ZWINGEND FÜR ALLE AGENTEN:** Alle Logs, Screenshots, Videos, Reports und Debug-Artefakte werden NICHT mehr lokal gespeichert, sondern automatisch in **Box.com** hochgeladen via `A2A-SIN-Box-Storage` API (room-09).
+
+> **Migration abgeschlossen:** GitLab LogCenter ist deprecated. GitLab-Konto wurde gesperrt (zu viele Dateien). Box.com (10 GB free) ist der neue Standard.
+
+**Architektur:**
+- Zentraler Service: `room-09-box-storage` (A2A-SIN-Box-Storage)
+- Box-Ordner: `/Public` für öffentliche Dateien, `/Cache` für Logs/Temp
+- Jeder Upload erhält: `file.id`, `cdnUrl`, `publicUrl`
+- Unbegrenzter Speicher durch automatische neue Volumes bei 9GB
+
+**Pflicht-Nutzung:**
+- Verwende `BOX_STORAGE_API_KEY` für Uploads
+- Nutze die Python API aus `~/.config/opencode/AGENTS.md` oder `scripts/box_storage.py`
+- KEINE lokalen Dateien — nur `/tmp/` als Zwischenspeicher (max 1h)
+- SOFORT uploaden nach Erstellung (Screenshots, Logs, Crash-Dumps)
+
+**Migration von GitLab LogCenter:**
+- `gitlab_logcenter.py` ist deprecated → entferne alle Importe
+- Bestehende Logs in Box.com `/Cache` migrieren via `scripts/migrate_gitlab_to_box.py`
+- Alle Agents müssen auf `A2A-SIN-Box-Storage` umgestellt sein bis 2026-05-01
+
+**Bekannte Issues:**
+- Box.com API Token läuft nach 60 Min ab → JWT App für Production nötig
+- Rate Limit Free Tier: 10k API calls/day → bei Erschöpfung: Premium Upgrade
+- Uploads >2GB blockieren → Fragmentierung in Chunks geplant für v1.1
+
+---
+
+# 🚨 A2A-SIN AGENT CAPABILITY & ROUTING REGISTRY (PRIORITY -9.0) 🚨
 
 **DAS PRINZIP: JEDER AGENT MUSS SOFORT WISSEN — WELCHER A2A-SIN AGENT IST FÜR WAS ZUSTÄNDIG!**
 
