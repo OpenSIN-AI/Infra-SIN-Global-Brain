@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-security-ai",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:35:41.033Z",
+  "updatedAt": "2026-04-14T15:35:41.033Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:35:41.033Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

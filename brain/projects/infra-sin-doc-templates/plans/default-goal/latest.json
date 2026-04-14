@@ -1,0 +1,15 @@
+{
+  "revision": 1,
+  "projectId": "infra-sin-doc-templates",
+  "goalId": "default-goal",
+  "goalDescription": "Continue development",
+  "status": "active",
+  "strategy": "initial-discovery",
+  "constraints": [],
+  "steps": [],
+  "decisions": [],
+  "issues": [],
+  "notes": [],
+  "createdAt": "2026-04-14T15:36:55.888Z",
+  "updatedAt": "2026-04-14T15:36:55.888Z"
+}

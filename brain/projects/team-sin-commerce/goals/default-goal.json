@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "team-sin-commerce",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:37:08.416Z",
+  "updatedAt": "2026-04-14T15:37:08.416Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:37:08.416Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

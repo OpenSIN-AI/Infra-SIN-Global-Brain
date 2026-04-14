@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-apple-photos-files",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:34:13.573Z",
+  "updatedAt": "2026-04-14T15:34:13.573Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:34:13.573Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

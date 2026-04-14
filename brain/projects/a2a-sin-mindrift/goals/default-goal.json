@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-mindrift",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:35:17.778Z",
+  "updatedAt": "2026-04-14T15:35:17.778Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:35:17.778Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

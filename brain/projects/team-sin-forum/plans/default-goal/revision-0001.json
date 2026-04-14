@@ -1,0 +1,15 @@
+{
+  "revision": 1,
+  "projectId": "team-sin-forum",
+  "goalId": "default-goal",
+  "goalDescription": "Continue development",
+  "status": "active",
+  "strategy": "initial-discovery",
+  "constraints": [],
+  "steps": [],
+  "decisions": [],
+  "issues": [],
+  "notes": [],
+  "createdAt": "2026-04-14T15:37:11.501Z",
+  "updatedAt": "2026-04-14T15:37:11.501Z"
+}

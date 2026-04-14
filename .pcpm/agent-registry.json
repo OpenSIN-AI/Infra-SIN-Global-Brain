@@ -1,8 +1,8 @@
 {
   "version": "dynamic-discovery-v1",
-  "generatedAt": "2026-04-14T20:19:11.599Z",
+  "generatedAt": "2026-04-14T22:11:14.424Z",
   "org": "OpenSIN-AI",
-  "totalAgents": 140,
+  "totalAgents": 141,
   "agents": [
     {
       "name": "A2A-SIN-Team-MyCompany",
@@ -23,7 +23,7 @@
         "team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Team-MyCompany",
-      "lastUpdated": "2026-04-14T16:53:39Z",
+      "lastUpdated": "2026-04-14T20:23:32Z",
       "metadata": {}
     },
     {
@@ -43,7 +43,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Apple",
-      "lastUpdated": "2026-04-14T16:53:29Z",
+      "lastUpdated": "2026-04-14T20:23:22Z",
       "metadata": {}
     },
     {
@@ -69,7 +69,7 @@
         "orchestrator"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-Backend",
-      "lastUpdated": "2026-04-14T16:51:55Z",
+      "lastUpdated": "2026-04-14T20:21:48Z",
       "metadata": {}
     },
     {
@@ -88,7 +88,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-Core",
-      "lastUpdated": "2026-04-14T16:52:02Z",
+      "lastUpdated": "2026-04-14T20:21:58Z",
       "metadata": {}
     },
     {
@@ -112,7 +112,7 @@
         "orchestrator"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-CyberSec",
-      "lastUpdated": "2026-04-14T16:54:06Z",
+      "lastUpdated": "2026-04-14T20:24:02Z",
       "metadata": {}
     },
     {
@@ -136,7 +136,7 @@
         "orchestrator"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-Frontend",
-      "lastUpdated": "2026-04-14T16:52:21Z",
+      "lastUpdated": "2026-04-14T20:22:16Z",
       "metadata": {}
     },
     {
@@ -164,7 +164,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Commerce",
-      "lastUpdated": "2026-04-14T16:51:16Z",
+      "lastUpdated": "2026-04-14T20:21:08Z",
       "metadata": {}
     },
     {
@@ -210,7 +210,7 @@
         "orchestrator"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Forum",
-      "lastUpdated": "2026-04-14T16:51:45Z",
+      "lastUpdated": "2026-04-14T20:21:39Z",
       "metadata": {}
     },
     {
@@ -234,7 +234,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Google",
-      "lastUpdated": "2026-04-14T16:53:12Z",
+      "lastUpdated": "2026-04-14T20:23:05Z",
       "metadata": {}
     },
     {
@@ -257,7 +257,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Infrastructure",
-      "lastUpdated": "2026-04-14T16:54:37Z",
+      "lastUpdated": "2026-04-14T20:24:35Z",
       "metadata": {}
     },
     {
@@ -280,7 +280,7 @@
         "orchestrator"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Legal",
-      "lastUpdated": "2026-04-14T16:52:45Z",
+      "lastUpdated": "2026-04-14T20:22:41Z",
       "metadata": {}
     },
     {
@@ -299,7 +299,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Media-ComfyUI",
-      "lastUpdated": "2026-04-14T16:52:05Z",
+      "lastUpdated": "2026-04-14T20:22:01Z",
       "metadata": {}
     },
     {
@@ -318,7 +318,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Media-Music",
-      "lastUpdated": "2026-04-14T16:52:38Z",
+      "lastUpdated": "2026-04-14T20:22:34Z",
       "metadata": {}
     },
     {
@@ -344,7 +344,7 @@
         "orchestrator"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Messaging",
-      "lastUpdated": "2026-04-14T16:52:22Z",
+      "lastUpdated": "2026-04-14T20:22:17Z",
       "metadata": {}
     },
     {
@@ -364,7 +364,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Microsoft",
-      "lastUpdated": "2026-04-14T16:54:41Z",
+      "lastUpdated": "2026-04-14T20:24:38Z",
       "metadata": {}
     },
     {
@@ -384,7 +384,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Research",
-      "lastUpdated": "2026-04-14T16:51:29Z",
+      "lastUpdated": "2026-04-14T20:21:21Z",
       "metadata": {}
     },
     {
@@ -405,7 +405,7 @@
         "orchestrator"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Social",
-      "lastUpdated": "2026-04-14T16:52:29Z",
+      "lastUpdated": "2026-04-14T20:22:24Z",
       "metadata": {}
     },
     {
@@ -429,7 +429,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Calendar-Contacts",
-      "lastUpdated": "2026-04-14T16:53:47Z",
+      "lastUpdated": "2026-04-14T20:23:39Z",
       "metadata": {}
     },
     {
@@ -453,7 +453,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-DeviceControl",
-      "lastUpdated": "2026-04-14T16:52:17Z",
+      "lastUpdated": "2026-04-14T20:22:13Z",
       "metadata": {}
     },
     {
@@ -477,7 +477,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-FaceTime",
-      "lastUpdated": "2026-04-14T16:52:24Z",
+      "lastUpdated": "2026-04-14T20:22:19Z",
       "metadata": {}
     },
     {
@@ -502,7 +502,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Mail",
-      "lastUpdated": "2026-04-14T16:53:36Z",
+      "lastUpdated": "2026-04-14T20:23:28Z",
       "metadata": {}
     },
     {
@@ -527,7 +527,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Mobile",
-      "lastUpdated": "2026-04-14T16:53:09Z",
+      "lastUpdated": "2026-04-14T20:23:02Z",
       "metadata": {}
     },
     {
@@ -552,7 +552,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Notes",
-      "lastUpdated": "2026-04-14T16:52:04Z",
+      "lastUpdated": "2026-04-14T20:21:59Z",
       "metadata": {}
     },
     {
@@ -576,7 +576,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Notifications",
-      "lastUpdated": "2026-04-14T16:53:45Z",
+      "lastUpdated": "2026-04-14T20:23:38Z",
       "metadata": {}
     },
     {
@@ -601,7 +601,7 @@
         "photos"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Photos-Files",
-      "lastUpdated": "2026-04-14T16:53:22Z",
+      "lastUpdated": "2026-04-14T20:23:14Z",
       "metadata": {}
     },
     {
@@ -626,7 +626,7 @@
         "reminders"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Reminders",
-      "lastUpdated": "2026-04-14T16:53:50Z",
+      "lastUpdated": "2026-04-14T20:23:43Z",
       "metadata": {}
     },
     {
@@ -650,7 +650,7 @@
         "safari"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Safari-WebKit",
-      "lastUpdated": "2026-04-14T16:52:58Z",
+      "lastUpdated": "2026-04-14T20:22:52Z",
       "metadata": {}
     },
     {
@@ -674,7 +674,7 @@
         "shortcuts"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Shortcuts",
-      "lastUpdated": "2026-04-14T16:54:26Z",
+      "lastUpdated": "2026-04-14T20:24:22Z",
       "metadata": {}
     },
     {
@@ -698,7 +698,7 @@
         "settings"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-SystemSettings",
-      "lastUpdated": "2026-04-14T16:53:42Z",
+      "lastUpdated": "2026-04-14T20:23:35Z",
       "metadata": {}
     },
     {
@@ -725,7 +725,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Beeper",
-      "lastUpdated": "2026-04-14T16:51:36Z",
+      "lastUpdated": "2026-04-14T20:21:29Z",
       "metadata": {}
     },
     {
@@ -753,7 +753,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-BlueBubbles",
-      "lastUpdated": "2026-04-14T16:53:14Z",
+      "lastUpdated": "2026-04-14T20:23:07Z",
       "metadata": {}
     },
     {
@@ -811,7 +811,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Chatroom",
-      "lastUpdated": "2026-04-14T16:51:42Z",
+      "lastUpdated": "2026-04-14T20:21:36Z",
       "metadata": {}
     },
     {
@@ -842,7 +842,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-CI-CD",
-      "lastUpdated": "2026-04-14T16:51:53Z",
+      "lastUpdated": "2026-04-14T20:21:47Z",
       "metadata": {}
     },
     {
@@ -867,7 +867,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-ClaimWriter",
-      "lastUpdated": "2026-04-14T16:54:39Z",
+      "lastUpdated": "2026-04-14T20:24:37Z",
       "metadata": {}
     },
     {
@@ -891,7 +891,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-AI",
-      "lastUpdated": "2026-04-14T16:52:14Z",
+      "lastUpdated": "2026-04-14T20:22:10Z",
       "metadata": {}
     },
     {
@@ -918,7 +918,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-DataScience",
-      "lastUpdated": "2026-04-14T16:54:42Z",
+      "lastUpdated": "2026-04-14T20:24:40Z",
       "metadata": {}
     },
     {
@@ -945,7 +945,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-DevOps",
-      "lastUpdated": "2026-04-14T16:51:31Z",
+      "lastUpdated": "2026-04-14T20:21:24Z",
       "metadata": {}
     },
     {
@@ -975,7 +975,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-GitLab-LogsCenter",
-      "lastUpdated": "2026-04-14T16:53:57Z",
+      "lastUpdated": "2026-04-14T20:23:52Z",
       "metadata": {}
     },
     {
@@ -1000,7 +1000,7 @@
         "opensin"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Coding-CEO",
-      "lastUpdated": "2026-04-14T16:52:34Z",
+      "lastUpdated": "2026-04-14T20:22:29Z",
       "metadata": {}
     },
     {
@@ -1028,7 +1028,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Community",
-      "lastUpdated": "2026-04-14T16:52:19Z",
+      "lastUpdated": "2026-04-14T20:22:14Z",
       "metadata": {}
     },
     {
@@ -1053,7 +1053,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Compliance",
-      "lastUpdated": "2026-04-14T16:51:26Z",
+      "lastUpdated": "2026-04-14T20:21:18Z",
       "metadata": {}
     },
     {
@@ -1082,7 +1082,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Contract",
-      "lastUpdated": "2026-04-14T16:53:07Z",
+      "lastUpdated": "2026-04-14T20:23:01Z",
       "metadata": {}
     },
     {
@@ -1112,7 +1112,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Damages",
-      "lastUpdated": "2026-04-14T16:54:04Z",
+      "lastUpdated": "2026-04-14T20:24:00Z",
       "metadata": {}
     },
     {
@@ -1141,7 +1141,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-DevTo",
-      "lastUpdated": "2026-04-14T16:52:27Z",
+      "lastUpdated": "2026-04-14T20:22:22Z",
       "metadata": {}
     },
     {
@@ -1169,7 +1169,7 @@
         "social"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Discord",
-      "lastUpdated": "2026-04-14T16:54:36Z",
+      "lastUpdated": "2026-04-14T20:24:33Z",
       "metadata": {}
     },
     {
@@ -1201,7 +1201,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Email",
-      "lastUpdated": "2026-04-14T16:51:20Z",
+      "lastUpdated": "2026-04-14T20:21:12Z",
       "metadata": {}
     },
     {
@@ -1230,7 +1230,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Evidence",
-      "lastUpdated": "2026-04-14T16:53:24Z",
+      "lastUpdated": "2026-04-14T20:23:16Z",
       "metadata": {}
     },
     {
@@ -1257,7 +1257,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Feishu",
-      "lastUpdated": "2026-04-14T16:52:01Z",
+      "lastUpdated": "2026-04-14T20:21:56Z",
       "metadata": {}
     },
     {
@@ -1286,7 +1286,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Github-Action",
-      "lastUpdated": "2026-04-14T16:51:52Z",
+      "lastUpdated": "2026-04-14T20:21:45Z",
       "metadata": {}
     },
     {
@@ -1313,7 +1313,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Google-Apps",
-      "lastUpdated": "2026-04-14T16:52:42Z",
+      "lastUpdated": "2026-04-14T20:22:37Z",
       "metadata": {}
     },
     {
@@ -1346,7 +1346,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Google-Chat",
-      "lastUpdated": "2026-04-14T16:53:55Z",
+      "lastUpdated": "2026-04-14T20:23:50Z",
       "metadata": {}
     },
     {
@@ -1375,7 +1375,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-HackerNews",
-      "lastUpdated": "2026-04-14T16:52:35Z",
+      "lastUpdated": "2026-04-14T20:22:31Z",
       "metadata": {}
     },
     {
@@ -1404,7 +1404,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-IndieHackers",
-      "lastUpdated": "2026-04-14T16:54:30Z",
+      "lastUpdated": "2026-04-14T20:24:27Z",
       "metadata": {}
     },
     {
@@ -1430,7 +1430,7 @@
         "social"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Instagram",
-      "lastUpdated": "2026-04-14T16:52:51Z",
+      "lastUpdated": "2026-04-14T20:22:46Z",
       "metadata": {}
     },
     {
@@ -1457,7 +1457,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-IRC",
-      "lastUpdated": "2026-04-14T16:54:11Z",
+      "lastUpdated": "2026-04-14T20:24:07Z",
       "metadata": {}
     },
     {
@@ -1482,7 +1482,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-LINE",
-      "lastUpdated": "2026-04-14T16:52:32Z",
+      "lastUpdated": "2026-04-14T20:22:27Z",
       "metadata": {}
     },
     {
@@ -1510,7 +1510,7 @@
         "social"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-LinkedIn",
-      "lastUpdated": "2026-04-14T16:52:47Z",
+      "lastUpdated": "2026-04-14T20:22:42Z",
       "metadata": {}
     },
     {
@@ -1539,7 +1539,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Lobsters",
-      "lastUpdated": "2026-04-14T16:54:29Z",
+      "lastUpdated": "2026-04-14T20:24:25Z",
       "metadata": {}
     },
     {
@@ -1566,7 +1566,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Matrix",
-      "lastUpdated": "2026-04-14T16:54:16Z",
+      "lastUpdated": "2026-04-14T20:24:12Z",
       "metadata": {}
     },
     {
@@ -1588,7 +1588,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Medium",
-      "lastUpdated": "2026-04-14T16:52:44Z",
+      "lastUpdated": "2026-04-14T20:22:39Z",
       "metadata": {}
     },
     {
@@ -1612,7 +1612,7 @@
         "team-flowfactory"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Medusa",
-      "lastUpdated": "2026-04-14T16:52:25Z",
+      "lastUpdated": "2026-04-14T20:22:21Z",
       "metadata": {}
     },
     {
@@ -1636,7 +1636,48 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Mindrift",
-      "lastUpdated": "2026-04-14T16:53:20Z",
+      "lastUpdated": "2026-04-14T20:23:13Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-MiroFish",
+      "type": "a2a-agent",
+      "description": "A2A-SIN-MiroFish — Swarm Intelligence Prediction Engine by OpenSIN-AI. Multi-agent simulation with independent personalities, GraphRAG memory, and social evolution.",
+      "capabilities": [
+        "messaging",
+        "social",
+        "infra",
+        "storage",
+        "prediction",
+        "swarm-simulation",
+        "social-simulation",
+        "graphrag",
+        "multi-agent",
+        "report-generation",
+        "sentiment-analysis",
+        "scenario-modeling"
+      ],
+      "triggers": [
+        "multi-agent swarm intelligence prediction engine. simulates thousands of independent ai agents with personalities, memory, and behavioral logic to predict social evolution, public opinion trajectories, and future scenarios.",
+        "vorhersage",
+        "prognose",
+        "simulation",
+        "zukunft",
+        "trend analyse"
+      ],
+      "topics": [
+        "a2a",
+        "graphrag",
+        "multi-agent",
+        "opensin-agent",
+        "prediction",
+        "python",
+        "simulation",
+        "swarm-intelligence",
+        "vue"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-MiroFish",
+      "lastUpdated": "2026-04-14T22:08:31Z",
       "metadata": {}
     },
     {
@@ -1663,7 +1704,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-N8N",
-      "lastUpdated": "2026-04-14T16:51:28Z",
+      "lastUpdated": "2026-04-14T20:21:20Z",
       "metadata": {}
     },
     {
@@ -1690,7 +1731,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Nintendo",
-      "lastUpdated": "2026-04-14T16:54:34Z",
+      "lastUpdated": "2026-04-14T20:24:31Z",
       "metadata": {}
     },
     {
@@ -1717,7 +1758,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Nostr",
-      "lastUpdated": "2026-04-14T16:51:24Z",
+      "lastUpdated": "2026-04-14T20:21:16Z",
       "metadata": {}
     },
     {
@@ -1743,7 +1784,7 @@
         "policy"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Opal",
-      "lastUpdated": "2026-04-14T16:54:19Z",
+      "lastUpdated": "2026-04-14T20:24:15Z",
       "metadata": {}
     },
     {
@@ -1767,7 +1808,7 @@
         "paragraph"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Paragraph",
-      "lastUpdated": "2026-04-14T16:53:44Z",
+      "lastUpdated": "2026-04-14T20:23:36Z",
       "metadata": {}
     },
     {
@@ -1793,7 +1834,7 @@
         "patents"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Patents",
-      "lastUpdated": "2026-04-14T16:54:21Z",
+      "lastUpdated": "2026-04-14T20:24:17Z",
       "metadata": {}
     },
     {
@@ -1821,7 +1862,7 @@
         "playstation"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-PlayStation",
-      "lastUpdated": "2026-04-14T16:54:07Z",
+      "lastUpdated": "2026-04-14T20:24:04Z",
       "metadata": {}
     },
     {
@@ -1850,7 +1891,7 @@
         "producthunt"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-ProductHunt",
-      "lastUpdated": "2026-04-14T16:53:52Z",
+      "lastUpdated": "2026-04-14T20:23:46Z",
       "metadata": {}
     },
     {
@@ -1875,7 +1916,7 @@
         "quora"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Quora",
-      "lastUpdated": "2026-04-14T16:53:34Z",
+      "lastUpdated": "2026-04-14T20:23:26Z",
       "metadata": {}
     },
     {
@@ -1902,7 +1943,7 @@
         "social"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Reddit",
-      "lastUpdated": "2026-04-14T16:53:26Z",
+      "lastUpdated": "2026-04-14T20:23:18Z",
       "metadata": {}
     },
     {
@@ -1928,7 +1969,7 @@
         "research"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Research",
-      "lastUpdated": "2026-04-14T16:53:02Z",
+      "lastUpdated": "2026-04-14T20:22:55Z",
       "metadata": {}
     },
     {
@@ -1956,7 +1997,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-AI",
-      "lastUpdated": "2026-04-14T16:52:10Z",
+      "lastUpdated": "2026-04-14T20:22:06Z",
       "metadata": {}
     },
     {
@@ -1985,7 +2026,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Audit",
-      "lastUpdated": "2026-04-14T16:51:44Z",
+      "lastUpdated": "2026-04-14T20:21:37Z",
       "metadata": {}
     },
     {
@@ -2013,7 +2054,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Auth",
-      "lastUpdated": "2026-04-14T16:52:07Z",
+      "lastUpdated": "2026-04-14T20:22:02Z",
       "metadata": {}
     },
     {
@@ -2042,7 +2083,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Cloud",
-      "lastUpdated": "2026-04-14T16:51:56Z",
+      "lastUpdated": "2026-04-14T20:21:50Z",
       "metadata": {}
     },
     {
@@ -2070,7 +2111,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Crypto",
-      "lastUpdated": "2026-04-14T16:52:54Z",
+      "lastUpdated": "2026-04-14T20:22:49Z",
       "metadata": {}
     },
     {
@@ -2099,7 +2140,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Exploit",
-      "lastUpdated": "2026-04-14T16:51:34Z",
+      "lastUpdated": "2026-04-14T20:21:27Z",
       "metadata": {}
     },
     {
@@ -2127,7 +2168,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Forensics",
-      "lastUpdated": "2026-04-14T16:54:03Z",
+      "lastUpdated": "2026-04-14T20:23:59Z",
       "metadata": {}
     },
     {
@@ -2155,7 +2196,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Fuzz",
-      "lastUpdated": "2026-04-14T16:54:00Z",
+      "lastUpdated": "2026-04-14T20:23:55Z",
       "metadata": {}
     },
     {
@@ -2183,7 +2224,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-IoT",
-      "lastUpdated": "2026-04-14T16:53:18Z",
+      "lastUpdated": "2026-04-14T20:23:11Z",
       "metadata": {}
     },
     {
@@ -2211,7 +2252,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Malware",
-      "lastUpdated": "2026-04-14T16:52:30Z",
+      "lastUpdated": "2026-04-14T20:22:26Z",
       "metadata": {}
     },
     {
@@ -2239,7 +2280,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Mobile",
-      "lastUpdated": "2026-04-14T16:54:02Z",
+      "lastUpdated": "2026-04-14T20:23:57Z",
       "metadata": {}
     },
     {
@@ -2267,7 +2308,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Network",
-      "lastUpdated": "2026-04-14T16:52:52Z",
+      "lastUpdated": "2026-04-14T20:22:47Z",
       "metadata": {}
     },
     {
@@ -2295,7 +2336,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Recon",
-      "lastUpdated": "2026-04-14T16:52:37Z",
+      "lastUpdated": "2026-04-14T20:22:32Z",
       "metadata": {}
     },
     {
@@ -2324,7 +2365,7 @@
         "social-engineering"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Social",
-      "lastUpdated": "2026-04-14T16:54:24Z",
+      "lastUpdated": "2026-04-14T20:24:20Z",
       "metadata": {}
     },
     {
@@ -2352,7 +2393,7 @@
         "web"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Web",
-      "lastUpdated": "2026-04-14T16:53:11Z",
+      "lastUpdated": "2026-04-14T20:23:04Z",
       "metadata": {}
     },
     {
@@ -2384,7 +2425,7 @@
         "shop"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Shop-Finance",
-      "lastUpdated": "2026-04-14T16:51:48Z",
+      "lastUpdated": "2026-04-14T20:21:42Z",
       "metadata": {}
     },
     {
@@ -2416,7 +2457,7 @@
         "shop"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Shop-Logistic",
-      "lastUpdated": "2026-04-14T16:52:49Z",
+      "lastUpdated": "2026-04-14T20:22:44Z",
       "metadata": {}
     },
     {
@@ -2443,7 +2484,7 @@
         "signal"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Signal",
-      "lastUpdated": "2026-04-14T16:54:18Z",
+      "lastUpdated": "2026-04-14T20:24:14Z",
       "metadata": {}
     },
     {
@@ -2472,7 +2513,7 @@
         "slashdot"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Slashdot",
-      "lastUpdated": "2026-04-14T16:54:27Z",
+      "lastUpdated": "2026-04-14T20:24:23Z",
       "metadata": {}
     },
     {
@@ -2499,7 +2540,7 @@
         "sms"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-SMS",
-      "lastUpdated": "2026-04-14T16:53:48Z",
+      "lastUpdated": "2026-04-14T20:23:41Z",
       "metadata": {}
     },
     {
@@ -2524,7 +2565,7 @@
         "stackoverflow"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-StackOverflow",
-      "lastUpdated": "2026-04-14T16:52:40Z",
+      "lastUpdated": "2026-04-14T20:22:36Z",
       "metadata": {}
     },
     {
@@ -2549,7 +2590,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Storage",
-      "lastUpdated": "2026-04-14T16:53:27Z",
+      "lastUpdated": "2026-04-14T20:23:20Z",
       "metadata": {}
     },
     {
@@ -2585,7 +2626,7 @@
         "stripe"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Stripe",
-      "lastUpdated": "2026-04-14T16:54:32Z",
+      "lastUpdated": "2026-04-14T20:24:29Z",
       "metadata": {}
     },
     {
@@ -2614,7 +2655,7 @@
         "summary"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Summary",
-      "lastUpdated": "2026-04-14T16:51:50Z",
+      "lastUpdated": "2026-04-14T20:21:44Z",
       "metadata": {}
     },
     {
@@ -2639,7 +2680,7 @@
         "tax"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Tax",
-      "lastUpdated": "2026-04-14T16:54:22Z",
+      "lastUpdated": "2026-04-14T20:24:18Z",
       "metadata": {}
     },
     {
@@ -2668,7 +2709,7 @@
         "telegram"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Telegram",
-      "lastUpdated": "2026-04-14T16:51:47Z",
+      "lastUpdated": "2026-04-14T20:21:40Z",
       "metadata": {}
     },
     {
@@ -2690,7 +2731,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-TikTok",
-      "lastUpdated": "2026-04-14T16:54:09Z",
+      "lastUpdated": "2026-04-14T20:24:05Z",
       "metadata": {}
     },
     {
@@ -2719,7 +2760,7 @@
         "tiktok"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-TikTok-Shop",
-      "lastUpdated": "2026-04-14T16:51:22Z",
+      "lastUpdated": "2026-04-14T20:21:14Z",
       "metadata": {}
     },
     {
@@ -2746,7 +2787,7 @@
         "webchat"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-WebChat",
-      "lastUpdated": "2026-04-14T16:51:33Z",
+      "lastUpdated": "2026-04-14T20:21:26Z",
       "metadata": {}
     },
     {
@@ -2771,7 +2812,7 @@
         "wechat"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-WeChat",
-      "lastUpdated": "2026-04-14T16:53:05Z",
+      "lastUpdated": "2026-04-14T20:22:59Z",
       "metadata": {}
     },
     {
@@ -2800,7 +2841,7 @@
         "whatsapp"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-WhatsApp",
-      "lastUpdated": "2026-04-14T16:52:56Z",
+      "lastUpdated": "2026-04-14T21:10:05Z",
       "metadata": {}
     },
     {
@@ -2824,7 +2865,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Worker-heypiggy",
-      "lastUpdated": "2026-04-14T16:52:12Z",
+      "lastUpdated": "2026-04-14T20:22:08Z",
       "metadata": {}
     },
     {
@@ -2876,7 +2917,7 @@
         "twitter"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-X-Twitter",
-      "lastUpdated": "2026-04-14T16:51:38Z",
+      "lastUpdated": "2026-04-14T20:21:31Z",
       "metadata": {}
     },
     {
@@ -2905,7 +2946,7 @@
         "xbox"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Xbox",
-      "lastUpdated": "2026-04-14T16:53:59Z",
+      "lastUpdated": "2026-04-14T20:23:54Z",
       "metadata": {}
     },
     {
@@ -2928,7 +2969,7 @@
         "opnsin-agent"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-YouTube",
-      "lastUpdated": "2026-04-14T16:53:16Z",
+      "lastUpdated": "2026-04-14T20:23:09Z",
       "metadata": {}
     },
     {
@@ -2954,7 +2995,7 @@
         "zoom"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Zoom",
-      "lastUpdated": "2026-04-14T16:52:16Z",
+      "lastUpdated": "2026-04-14T20:22:11Z",
       "metadata": {}
     },
     {
@@ -3597,7 +3638,7 @@
         "security"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-RedTeam",
-      "lastUpdated": "2026-04-14T16:51:39Z",
+      "lastUpdated": "2026-04-14T20:21:33Z",
       "metadata": {}
     },
     {
@@ -3625,7 +3666,7 @@
         "opnsin-team"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Team-MoneyEarners",
-      "lastUpdated": "2026-04-14T16:51:41Z",
+      "lastUpdated": "2026-04-14T20:21:34Z",
       "metadata": {}
     },
     {
@@ -3651,7 +3692,7 @@
         "teams"
       ],
       "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Teams",
-      "lastUpdated": "2026-04-14T16:52:09Z",
+      "lastUpdated": "2026-04-14T20:22:04Z",
       "metadata": {}
     }
   ],
@@ -4106,6 +4147,7 @@
       "A2A-SIN-Box-Storage",
       "A2A-SIN-LinkedIn",
       "A2A-SIN-Medusa",
+      "A2A-SIN-MiroFish",
       "A2A-SIN-Storage",
       "A2A-SIN-Xbox",
       "MCP-SIN-in-chrome",
@@ -4131,6 +4173,7 @@
       "A2A-SIN-LinkedIn",
       "A2A-SIN-Lobsters",
       "A2A-SIN-Medium",
+      "A2A-SIN-MiroFish",
       "A2A-SIN-Nostr",
       "A2A-SIN-ProductHunt",
       "A2A-SIN-Quora",
@@ -4176,6 +4219,7 @@
       "A2A-SIN-LINE",
       "A2A-SIN-Lobsters",
       "A2A-SIN-Matrix",
+      "A2A-SIN-MiroFish",
       "A2A-SIN-N8N",
       "A2A-SIN-Nintendo",
       "A2A-SIN-Nostr",
@@ -4391,6 +4435,7 @@
       "A2A-SIN-LinkedIn",
       "A2A-SIN-Matrix",
       "A2A-SIN-Medusa",
+      "A2A-SIN-MiroFish",
       "A2A-SIN-Nintendo",
       "A2A-SIN-Paragraph",
       "A2A-SIN-PlayStation",
@@ -4537,6 +4582,30 @@
     ],
     "task_completion": [
       "A2A-SIN-Mindrift"
+    ],
+    "prediction": [
+      "A2A-SIN-MiroFish"
+    ],
+    "swarm-simulation": [
+      "A2A-SIN-MiroFish"
+    ],
+    "social-simulation": [
+      "A2A-SIN-MiroFish"
+    ],
+    "graphrag": [
+      "A2A-SIN-MiroFish"
+    ],
+    "multi-agent": [
+      "A2A-SIN-MiroFish"
+    ],
+    "report-generation": [
+      "A2A-SIN-MiroFish"
+    ],
+    "sentiment-analysis": [
+      "A2A-SIN-MiroFish"
+    ],
+    "scenario-modeling": [
+      "A2A-SIN-MiroFish"
     ],
     "nostr_posting": [
       "A2A-SIN-Nostr"
@@ -5274,6 +5343,24 @@
     ],
     "mindrift worker agent": [
       "A2A-SIN-Mindrift"
+    ],
+    "multi-agent swarm intelligence prediction engine. simulates thousands of independent ai agents with personalities, memory, and behavioral logic to predict social evolution, public opinion trajectories, and future scenarios.": [
+      "A2A-SIN-MiroFish"
+    ],
+    "vorhersage": [
+      "A2A-SIN-MiroFish"
+    ],
+    "prognose": [
+      "A2A-SIN-MiroFish"
+    ],
+    "simulation": [
+      "A2A-SIN-MiroFish"
+    ],
+    "zukunft": [
+      "A2A-SIN-MiroFish"
+    ],
+    "trend analyse": [
+      "A2A-SIN-MiroFish"
     ],
     "autonomous n8n workflow management, execution, and webhook orchestration.": [
       "A2A-SIN-N8N"

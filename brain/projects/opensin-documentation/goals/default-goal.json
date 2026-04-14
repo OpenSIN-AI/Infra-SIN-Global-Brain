@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "opensin-documentation",
+  "description": "Test",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T21:28:06.909Z",
+  "updatedAt": "2026-04-14T21:28:06.909Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T21:28:06.909Z",
+      "description": "Test",
+      "status": "active"
+    }
+  ]
+}

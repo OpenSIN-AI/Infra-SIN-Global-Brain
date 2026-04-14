@@ -1,0 +1,5381 @@
+{
+  "version": "dynamic-discovery-v1",
+  "generatedAt": "2026-04-14T18:31:38.420Z",
+  "org": "OpenSIN-AI",
+  "totalAgents": 140,
+  "agents": [
+    {
+      "name": "A2A-SIN-Team-MyCompany",
+      "type": "team",
+      "description": "SIN A2A component: sin-team-company",
+      "capabilities": [
+        "shop",
+        "worker",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für firmeninterne finanzen, steuern und verwaltung."
+      ],
+      "topics": [
+        "company",
+        "opensin",
+        "opnsin-agent",
+        "team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Team-MyCompany",
+      "lastUpdated": "2026-04-14T16:53:39Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Apple",
+      "type": "team",
+      "description": "Orchestrator für Apple-Device-Integration, macOS-Automation und Hardware-Steuerung.",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für apple-device-integration, macos-automation und hardware-steuerung."
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Apple",
+      "lastUpdated": "2026-04-14T16:53:29Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Code-Backend",
+      "type": "team",
+      "description": "Orchestrator für Infrastruktur, Server-Deployments und Core-Backend-Logic.",
+      "capabilities": [
+        "google",
+        "code",
+        "security",
+        "storage",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für infrastruktur, server-deployments und core-backend-logic.",
+        "passwörter speichern",
+        "credentials lesen",
+        "secrets verwalten",
+        "login daten"
+      ],
+      "topics": [
+        "opnsin-team",
+        "orchestrator"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-Backend",
+      "lastUpdated": "2026-04-14T16:51:55Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Code-Core",
+      "type": "team",
+      "description": "Zentraler Orchestrator für die OpenSIN Core-Engine, DevOps, AI-Integrationen und DataScience. Führt die Elite-Coder-Agenten.",
+      "capabilities": [
+        "google",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "zentraler orchestrator für die opensin core-engine, devops, ai-integrationen und datascience. führt die elite-coder-agenten."
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-Core",
+      "lastUpdated": "2026-04-14T16:52:02Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Code-CyberSec",
+      "type": "team",
+      "description": "Orchestrator für Offensive Security, Bug Bounties und Anti-Bot Bypasses.",
+      "capabilities": [
+        "google",
+        "code",
+        "security",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für offensive security, bug bounties und anti-bot bypasses.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opnsin-team",
+        "orchestrator"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-CyberSec",
+      "lastUpdated": "2026-04-14T16:54:06Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Code-Frontend",
+      "type": "team",
+      "description": "Orchestrator für UI/UX, Design, und Client-Side Architectures.",
+      "capabilities": [
+        "google",
+        "shop",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für ui/ux, design, und client-side architectures.",
+        "shop",
+        "e-commerce",
+        "online shop"
+      ],
+      "topics": [
+        "opnsin-team",
+        "orchestrator"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Code-Frontend",
+      "lastUpdated": "2026-04-14T16:52:21Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Commerce",
+      "type": "team",
+      "description": "Orchestrator für E-Commerce, Zahlungsabwicklung und Shop-Management.",
+      "capabilities": [
+        "google",
+        "social",
+        "shop",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für e-commerce, zahlungsabwicklung und shop-management.",
+        "zahlung",
+        "payment",
+        "stripe produkt",
+        "abonnement",
+        "shop",
+        "e-commerce",
+        "online shop"
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Commerce",
+      "lastUpdated": "2026-04-14T16:51:16Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Community",
+      "type": "team",
+      "description": "Orchestrator für die OpenSIN-Community. Bündelt Discord, WhatsApp, Telegram und YouTube zu EINER Community.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für die opensin-community. bündelt discord, whatsapp, telegram und youtube zu einer community.",
+        "telegram bot",
+        "telegram nachricht",
+        "whatsapp",
+        "wa nachricht"
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Community",
+      "lastUpdated": "2026-04-14T16:10:49Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Forum",
+      "type": "team",
+      "description": "Orchestrator für Foren, Community-Building und Nischen-Netzwerke.",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für foren, community-building und nischen-netzwerke."
+      ],
+      "topics": [
+        "opnsin-team",
+        "orchestrator"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Forum",
+      "lastUpdated": "2026-04-14T16:51:45Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Google",
+      "type": "team",
+      "description": "Orchestrator für alle Google Workspace Integrationen und Google-Dienste.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "entertainment",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für alle google workspace integrationen und google-dienste.",
+        "google docs",
+        "dokumente bearbeiten",
+        "docs lesen"
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Google",
+      "lastUpdated": "2026-04-14T16:53:12Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Infrastructure",
+      "type": "team",
+      "description": "Orchestrator für interne Dev-Tools, Sicherheit, Storage und Cloud-Infrastruktur.",
+      "capabilities": [
+        "google",
+        "code",
+        "storage",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für interne dev-tools, sicherheit, storage und cloud-infrastruktur.",
+        "datei speichern",
+        "log speichern",
+        "screenshot hochladen"
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Infrastructure",
+      "lastUpdated": "2026-04-14T16:54:37Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Legal",
+      "type": "team",
+      "description": "Orchestrator für alle juristischen, patentrechtlichen und vertraglichen KI-Operationen.",
+      "capabilities": [
+        "google",
+        "shop",
+        "code",
+        "business",
+        "research",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für alle juristischen, patentrechtlichen und vertraglichen ki-operationen."
+      ],
+      "topics": [
+        "opnsin-team",
+        "orchestrator"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Legal",
+      "lastUpdated": "2026-04-14T16:52:45Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Media-ComfyUI",
+      "type": "team",
+      "description": "Orchestrator für ComfyUI-basierte Bild- und Video-Generierung.",
+      "capabilities": [
+        "google",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für comfyui-basierte bild- und video-generierung."
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Media-ComfyUI",
+      "lastUpdated": "2026-04-14T16:52:05Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Media-Music",
+      "type": "team",
+      "description": "Orchestrator für Music-Generierung, Video-Produktion und Creative AI.",
+      "capabilities": [
+        "google",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für music-generierung, video-produktion und creative ai."
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Media-Music",
+      "lastUpdated": "2026-04-14T16:52:38Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Messaging",
+      "type": "team",
+      "description": "Orchestrator für Direct Messaging, 1:1 Kommunikation und Broadcasts.",
+      "capabilities": [
+        "google",
+        "apple",
+        "messaging",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für direct messaging, 1:1 kommunikation und broadcasts.",
+        "telegram bot",
+        "telegram nachricht",
+        "whatsapp",
+        "wa nachricht"
+      ],
+      "topics": [
+        "opnsin-team",
+        "orchestrator"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Messaging",
+      "lastUpdated": "2026-04-14T16:52:22Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Microsoft",
+      "type": "team",
+      "description": "Orchestrator für alle Microsoft 365 Integrationen und Microsoft-Dienste.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für alle microsoft 365 integrationen und microsoft-dienste."
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Microsoft",
+      "lastUpdated": "2026-04-14T16:54:41Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Research",
+      "type": "team",
+      "description": "Orchestrator für Deep-Research, Data-Mining und Mindrift-Tasks.",
+      "capabilities": [
+        "google",
+        "code",
+        "research",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für deep-research, data-mining und mindrift-tasks."
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Research",
+      "lastUpdated": "2026-04-14T16:51:29Z",
+      "metadata": {}
+    },
+    {
+      "name": "Team-SIN-Social",
+      "type": "team",
+      "description": "Orchestrator für Social Media Management, Content Distribution und Engagement.",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für social media management, content distribution und engagement."
+      ],
+      "topics": [
+        "opnsin-team",
+        "orchestrator"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Team-SIN-Social",
+      "lastUpdated": "2026-04-14T16:52:29Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Calendar-Contacts",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-calendar-contacts",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "calendar_management",
+        "contacts_management"
+      ],
+      "triggers": [
+        "apple calendar and contacts agent"
+      ],
+      "topics": [
+        "apple",
+        "calendar",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Calendar-Contacts",
+      "lastUpdated": "2026-04-14T16:53:47Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-DeviceControl",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-device-control",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "device_management",
+        "system_control"
+      ],
+      "triggers": [
+        "apple device control agent"
+      ],
+      "topics": [
+        "apple",
+        "device-control",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-DeviceControl",
+      "lastUpdated": "2026-04-14T16:52:17Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-FaceTime",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-facetime",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "facetime_call",
+        "facetime_manage"
+      ],
+      "triggers": [
+        "apple facetime agent"
+      ],
+      "topics": [
+        "apple",
+        "facetime",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-FaceTime",
+      "lastUpdated": "2026-04-14T16:52:24Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Mail",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-mail",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "mail_send",
+        "mail_receive",
+        "mailbox_management"
+      ],
+      "triggers": [
+        "apple mail agent"
+      ],
+      "topics": [
+        "apple",
+        "mail",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Mail",
+      "lastUpdated": "2026-04-14T16:53:36Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Mobile",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-mobile",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "security",
+        "team",
+        "device_control",
+        "app_management"
+      ],
+      "triggers": [
+        "apple mobile device agent"
+      ],
+      "topics": [
+        "apple",
+        "ios",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Mobile",
+      "lastUpdated": "2026-04-14T16:53:09Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Notes",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-notes",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "notes_create",
+        "notes_read",
+        "notes_edit"
+      ],
+      "triggers": [
+        "apple notes agent"
+      ],
+      "topics": [
+        "apple",
+        "notes",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Notes",
+      "lastUpdated": "2026-04-14T16:52:04Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Notifications",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-notifications",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "notifications_read",
+        "notifications_manage"
+      ],
+      "triggers": [
+        "apple notifications agent"
+      ],
+      "topics": [
+        "apple",
+        "notifications",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Notifications",
+      "lastUpdated": "2026-04-14T16:53:45Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Photos-Files",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-photos-files",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "storage",
+        "team",
+        "photos_access",
+        "files_access"
+      ],
+      "triggers": [
+        "apple photos and files agent"
+      ],
+      "topics": [
+        "apple",
+        "opensin",
+        "photos"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Photos-Files",
+      "lastUpdated": "2026-04-14T16:53:22Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Reminders",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-reminders",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "reminders_create",
+        "reminders_read",
+        "reminders_edit"
+      ],
+      "triggers": [
+        "apple reminders agent"
+      ],
+      "topics": [
+        "apple",
+        "opensin",
+        "reminders"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Reminders",
+      "lastUpdated": "2026-04-14T16:53:50Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Safari-WebKit",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-safari-webkit",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "browser_control",
+        "tab_management"
+      ],
+      "triggers": [
+        "apple safari/webkit agent"
+      ],
+      "topics": [
+        "apple",
+        "opensin",
+        "safari"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Safari-WebKit",
+      "lastUpdated": "2026-04-14T16:52:58Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-Shortcuts",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-shortcuts",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "shortcuts_run",
+        "shortcuts_create"
+      ],
+      "triggers": [
+        "apple shortcuts agent"
+      ],
+      "topics": [
+        "apple",
+        "opensin",
+        "shortcuts"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-Shortcuts",
+      "lastUpdated": "2026-04-14T16:54:26Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Apple-SystemSettings",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-apple-system-settings",
+      "capabilities": [
+        "google",
+        "apple",
+        "code",
+        "team",
+        "settings_read",
+        "settings_modify"
+      ],
+      "triggers": [
+        "apple system settings agent"
+      ],
+      "topics": [
+        "apple",
+        "opensin",
+        "settings"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Apple-SystemSettings",
+      "lastUpdated": "2026-04-14T16:53:42Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Beeper",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Beeper integration — unified messaging bridge.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "beeper integration — unified messaging bridge.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "beeper",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Beeper",
+      "lastUpdated": "2026-04-14T16:51:36Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-BlueBubbles",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: BlueBubbles iMessage bridge — iMessage integration via BlueBubbles.",
+      "capabilities": [
+        "google",
+        "apple",
+        "messaging",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "bluebubbles imessage bridge — imessage integration via bluebubbles.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "bluebubbles",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-BlueBubbles",
+      "lastUpdated": "2026-04-14T16:53:14Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Box-Storage",
+      "type": "a2a-agent",
+      "description": "Box.com storage API for public file uploads and CDN distribution",
+      "capabilities": [
+        "google",
+        "code",
+        "storage",
+        "team",
+        "storage_upload",
+        "storage_public_url",
+        "file_validation",
+        "cdn_distribution",
+        "cache_management"
+      ],
+      "triggers": [
+        "box.com storage api for public file uploads and cdn distribution",
+        "datei speichern",
+        "log speichern",
+        "screenshot hochladen"
+      ],
+      "topics": [
+        "a2a",
+        "infrastructure",
+        "opnsin-agent",
+        "storage"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Box-Storage",
+      "lastUpdated": "2026-04-14T16:08:55Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Chatroom",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Chatroom integration — multi-platform chat management.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "chatroom integration — multi-platform chat management.",
+        "telegram bot",
+        "telegram nachricht"
+      ],
+      "topics": [
+        "chatroom",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Chatroom",
+      "lastUpdated": "2026-04-14T16:51:42Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-CI-CD",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: CI/CD pipeline integration — automated build and deploy.",
+      "capabilities": [
+        "messaging",
+        "code",
+        "security",
+        "ci-pipeline",
+        "pr-review",
+        "build",
+        "deploy"
+      ],
+      "triggers": [
+        "autonomous ci/cd agent for opensin — lint, test, security, build, deploy",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "automation",
+        "cicd",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-CI-CD",
+      "lastUpdated": "2026-04-14T16:51:53Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-ClaimWriter",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-ClaimWriter",
+      "capabilities": [
+        "google",
+        "messaging",
+        "infra",
+        "research"
+      ],
+      "triggers": [
+        "anwaltlicher a2a agent für anspruchsschreiben, klagegliederungen und forderungstexte.",
+        "telegram bot",
+        "telegram nachricht"
+      ],
+      "topics": [
+        "claims",
+        "legal",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-ClaimWriter",
+      "lastUpdated": "2026-04-14T16:54:39Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Code-AI",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-code-ai",
+      "capabilities": [
+        "google",
+        "code",
+        "team",
+        "code_generation",
+        "code_review",
+        "testing"
+      ],
+      "triggers": [
+        "ai coding assistant agent"
+      ],
+      "topics": [
+        "ai",
+        "ml",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-AI",
+      "lastUpdated": "2026-04-14T16:52:14Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Code-DataScience",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-code-datascience",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security"
+      ],
+      "triggers": [
+        "autonomous cloud coder for data science tasks",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "datascience",
+        "ml",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-DataScience",
+      "lastUpdated": "2026-04-14T16:54:42Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Code-DevOps",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-code-devops",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security"
+      ],
+      "triggers": [
+        "autonomous cloud coder for devops tasks (ci/cd, infrastructure)",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "cicd",
+        "devops",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-DevOps",
+      "lastUpdated": "2026-04-14T16:51:31Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Code-GitLab-LogsCenter",
+      "type": "a2a-agent",
+      "description": "Autonomous log analysis agent: monitors GitLab LogCenter repos, detects errors/bugs via pattern analysis, auto-creates GitHub issues, dispatches fixes to Team Coding",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "business",
+        "team"
+      ],
+      "triggers": [
+        "autonomous log analysis agent",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "gitlab",
+        "logs",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Code-GitLab-LogsCenter",
+      "lastUpdated": "2026-04-14T16:53:57Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Coding-CEO",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-coding-ceo",
+      "capabilities": [
+        "google",
+        "code",
+        "team",
+        "architecture_design",
+        "code_generation",
+        "code_review",
+        "team_coordination"
+      ],
+      "triggers": [
+        "coding ceo agent"
+      ],
+      "topics": [
+        "ceo",
+        "coding",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Coding-CEO",
+      "lastUpdated": "2026-04-14T16:52:34Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Community",
+      "type": "a2a-agent",
+      "description": "OpenSIN Marketing Agent for Community - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "structural community engagement and growth agent.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "community",
+        "marketing",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Community",
+      "lastUpdated": "2026-04-14T16:52:19Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Compliance",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Compliance",
+      "capabilities": [
+        "google",
+        "messaging",
+        "infra",
+        "research"
+      ],
+      "triggers": [
+        "anwaltlicher a2a agent für compliance-gap-analysen, kontrollmapping und remediation-pläne.",
+        "telegram bot",
+        "telegram nachricht"
+      ],
+      "topics": [
+        "compliance",
+        "legal",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Compliance",
+      "lastUpdated": "2026-04-14T16:51:26Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Contract",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Contract",
+      "capabilities": [
+        "google",
+        "messaging",
+        "shop",
+        "security",
+        "infra"
+      ],
+      "triggers": [
+        "anwaltlicher a2a agent für vertragsanalyse, klauselrisiken und redline-vorschläge.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "contracts",
+        "legal",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Contract",
+      "lastUpdated": "2026-04-14T16:53:07Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Damages",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Damages",
+      "capabilities": [
+        "google",
+        "apple",
+        "messaging",
+        "security",
+        "infra",
+        "research"
+      ],
+      "triggers": [
+        "anwaltlicher a2a agent für schadensberechnung, verlusttabellen und szenarioanalysen.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "damages",
+        "legal",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Damages",
+      "lastUpdated": "2026-04-14T16:54:04Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-DevTo",
+      "type": "a2a-agent",
+      "description": "OpenSIN Marketing Agent for DevTo - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "dev.to research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "devto",
+        "forum",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-DevTo",
+      "lastUpdated": "2026-04-14T16:52:27Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Discord",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Discord",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "code",
+        "security",
+        "infra"
+      ],
+      "triggers": [
+        "discord integration — discord bot and server management.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "discord",
+        "opensin",
+        "opnsin-agent",
+        "social"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Discord",
+      "lastUpdated": "2026-04-14T16:54:36Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Email",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Email integration — full email agent with IMAP/SMTP.",
+      "capabilities": [
+        "google",
+        "apple",
+        "messaging",
+        "security",
+        "infra",
+        "team",
+        "email_send",
+        "email_receive",
+        "imap_smtp",
+        "attachment_handling"
+      ],
+      "triggers": [
+        "email integration agent",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "email",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Email",
+      "lastUpdated": "2026-04-14T16:51:20Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Evidence",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Evidence",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "research"
+      ],
+      "triggers": [
+        "anwaltlicher a2a agent für beweismittel, anlagen, provenienz und widerspruchsprüfung.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "evidence",
+        "legal",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Evidence",
+      "lastUpdated": "2026-04-14T16:53:24Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Feishu",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Feishu integration — Feishu/Lark messaging platform.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "feishu",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Feishu",
+      "lastUpdated": "2026-04-14T16:52:01Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Github-Action",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Github-Action",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "sovereign ci/cd a2a agent replacing github actions. features a 100% free a2a infrastructure with opencode cli (openai/gpt-5.4 via opencode auth login). implements infinite scaling rotator on supabase oci for token refresh every 10 minutes. includes opencode and oh-my-opencode updaters for all a2a hf vms.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "actions",
+        "github",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Github-Action",
+      "lastUpdated": "2026-04-14T16:51:52Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Google-Apps",
+      "type": "a2a-agent",
+      "description": "OpenSIN Marketing Agent for Google-Apps - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "apple",
+        "messaging",
+        "business",
+        "team"
+      ],
+      "triggers": [
+        "autonomous onboarding orchestrator with chrome password manager integration, cookie/session extraction, gcp secret manager, browser automation, and full 6-phase opensin onboarding pipeline. zero manual intervention.",
+        "google docs",
+        "dokumente bearbeiten",
+        "docs lesen",
+        "google sheets",
+        "tabellen erstellen",
+        "daten exportieren"
+      ],
+      "topics": [
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Google-Apps",
+      "lastUpdated": "2026-04-14T16:52:42Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Google-Chat",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Google Chat integration — Google Workspace messaging.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "team",
+        "google_chat_messaging",
+        "thread_management",
+        "file_sharing"
+      ],
+      "triggers": [
+        "google chat integration agent",
+        "google docs",
+        "dokumente bearbeiten",
+        "docs lesen",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "google-chat",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Google-Chat",
+      "lastUpdated": "2026-04-14T16:53:55Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-HackerNews",
+      "type": "a2a-agent",
+      "description": "OpenSIN Marketing Agent for HackerNews - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "hacker news research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "forum",
+        "hackernews",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-HackerNews",
+      "lastUpdated": "2026-04-14T16:52:35Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-IndieHackers",
+      "type": "a2a-agent",
+      "description": "OpenSIN Forum Agent for IndieHackers - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "reddit research and draft agent with browser-session auth, subreddit/thread/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "forum",
+        "indiehackers",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-IndieHackers",
+      "lastUpdated": "2026-04-14T16:54:30Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Instagram",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Instagram",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team",
+        "posting",
+        "engagement",
+        "analytics"
+      ],
+      "triggers": [
+        "instagram automation agent"
+      ],
+      "topics": [
+        "instagram",
+        "opensin",
+        "opnsin-agent",
+        "social"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Instagram",
+      "lastUpdated": "2026-04-14T16:52:51Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-IRC",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: IRC protocol integration — IRC chat bot and messaging.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "irc protocol integration — irc chat bot and messaging.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "irc",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-IRC",
+      "lastUpdated": "2026-04-14T16:54:11Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-LINE",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: LINE messaging integration — LINE bot and message handling.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "team",
+        "line_messaging",
+        "sticker_handling"
+      ],
+      "triggers": [
+        "line messaging agent"
+      ],
+      "topics": [
+        "line",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-LINE",
+      "lastUpdated": "2026-04-14T16:52:32Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-LinkedIn",
+      "type": "a2a-agent",
+      "description": "OpenSIN Marketing Agent for LinkedIn - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "apple",
+        "social",
+        "code",
+        "security",
+        "infra",
+        "business",
+        "research",
+        "storage",
+        "team"
+      ],
+      "triggers": [
+        "linkedin research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts."
+      ],
+      "topics": [
+        "linkedin",
+        "opensin",
+        "opnsin-agent",
+        "social"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-LinkedIn",
+      "lastUpdated": "2026-04-14T16:52:47Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Lobsters",
+      "type": "a2a-agent",
+      "description": "OpenSIN Forum Agent for Lobsters - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "reddit research and draft agent with browser-session auth, subreddit/thread/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "forum",
+        "lobsters",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Lobsters",
+      "lastUpdated": "2026-04-14T16:54:29Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Matrix",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Matrix protocol integration — Matrix messaging bridge.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "matrix protocol integration — matrix messaging bridge.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "matrix",
+        "messaging",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Matrix",
+      "lastUpdated": "2026-04-14T16:54:16Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Medium",
+      "type": "a2a-agent",
+      "description": "Medium publishing agent",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team",
+        "article_publishing",
+        "draft_management"
+      ],
+      "triggers": [
+        "medium publishing agent"
+      ],
+      "topics": [
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Medium",
+      "lastUpdated": "2026-04-14T16:52:44Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Medusa",
+      "type": "a2a-agent",
+      "description": "The Self-Extender Agent (Software 3.0). Synthesizes and deploys new MCP tools dynamically when the Swarm detects a capability gap.",
+      "capabilities": [
+        "code",
+        "entertainment",
+        "infra",
+        "storage",
+        "team",
+        "mcp_generation",
+        "sandbox_testing",
+        "fleet_deployment"
+      ],
+      "triggers": [],
+      "topics": [
+        "mcp-factory",
+        "opnsin-agent",
+        "team-flowfactory"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Medusa",
+      "lastUpdated": "2026-04-14T16:52:25Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Mindrift",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-mindrift",
+      "capabilities": [
+        "google",
+        "code",
+        "worker",
+        "team",
+        "task_completion"
+      ],
+      "triggers": [
+        "mindrift worker agent"
+      ],
+      "topics": [
+        "automation",
+        "mindrift",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Mindrift",
+      "lastUpdated": "2026-04-14T16:53:20Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-N8N",
+      "type": "a2a-agent",
+      "description": "N8N workflow automation for OpenSIN A2A agents — automated workflow management.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "autonomous n8n workflow management, execution, and webhook orchestration.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "automation",
+        "n8n",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-N8N",
+      "lastUpdated": "2026-04-14T16:51:28Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Nintendo",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Nintendo Switch Online integration — Nintendo messaging.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "entertainment",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "gaming",
+        "nintendo",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Nintendo",
+      "lastUpdated": "2026-04-14T16:54:34Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Nostr",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Nostr protocol integration — decentralized social messaging.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "code",
+        "team",
+        "nostr_posting",
+        "nostr_reading",
+        "relay_management"
+      ],
+      "triggers": [
+        "nostr protocol agent"
+      ],
+      "topics": [
+        "messaging",
+        "nostr",
+        "opensin",
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Nostr",
+      "lastUpdated": "2026-04-14T16:51:24Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Opal",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-opal",
+      "capabilities": [
+        "google",
+        "code",
+        "entertainment",
+        "team",
+        "google_integration"
+      ],
+      "triggers": [
+        "google opal agent",
+        "google docs",
+        "dokumente bearbeiten",
+        "docs lesen"
+      ],
+      "topics": [
+        "opal",
+        "opensin",
+        "policy"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Opal",
+      "lastUpdated": "2026-04-14T16:54:19Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Paragraph",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Paragraph",
+      "capabilities": [
+        "google",
+        "messaging",
+        "infra"
+      ],
+      "triggers": [
+        "anwaltlicher a2a agent für juristische paragraphen-prüfung, gesetzesabgleich und fall-analyse.",
+        "telegram bot",
+        "telegram nachricht"
+      ],
+      "topics": [
+        "legal",
+        "opensin",
+        "opnsin-agent",
+        "paragraph"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Paragraph",
+      "lastUpdated": "2026-04-14T16:53:44Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Patents",
+      "type": "a2a-agent",
+      "description": "Autonomer Patent-Agent für DPMA Gebrauchsmuster-Anmeldungen",
+      "capabilities": [
+        "google",
+        "code",
+        "business",
+        "research",
+        "team",
+        "patent_drafting",
+        "prior_art_search"
+      ],
+      "triggers": [
+        "patent automation agent"
+      ],
+      "topics": [
+        "legal",
+        "opensin",
+        "opnsin-agent",
+        "patents"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Patents",
+      "lastUpdated": "2026-04-14T16:54:21Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-PlayStation",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: PlayStation Network integration — PSN messaging.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "entertainment",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "playstation network integration — psn messaging.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "gaming",
+        "opensin",
+        "opnsin-agent",
+        "playstation"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-PlayStation",
+      "lastUpdated": "2026-04-14T16:54:07Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-ProductHunt",
+      "type": "a2a-agent",
+      "description": "OpenSIN Marketing Agent for ProductHunt - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "product hunt research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "forum",
+        "opensin",
+        "opnsin-agent",
+        "producthunt"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-ProductHunt",
+      "lastUpdated": "2026-04-14T16:53:52Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Quora",
+      "type": "a2a-agent",
+      "description": "OpenSIN Forum Agent for Quora - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team",
+        "answer_generation",
+        "question_posting"
+      ],
+      "triggers": [
+        "quora automation agent"
+      ],
+      "topics": [
+        "forum",
+        "opensin",
+        "opnsin-agent",
+        "quora"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Quora",
+      "lastUpdated": "2026-04-14T16:53:34Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Reddit",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Reddit",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "infra",
+        "research"
+      ],
+      "triggers": [
+        "reddit research and draft agent with browser-session auth, subreddit/thread/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht"
+      ],
+      "topics": [
+        "opensin",
+        "opnsin-agent",
+        "reddit",
+        "social"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Reddit",
+      "lastUpdated": "2026-04-14T16:53:26Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Research",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Research",
+      "capabilities": [
+        "google",
+        "code",
+        "research",
+        "team",
+        "deep_research",
+        "synthesis",
+        "reporting"
+      ],
+      "triggers": [
+        "deep research agent"
+      ],
+      "topics": [
+        "agent",
+        "opensin",
+        "opnsin-agent",
+        "research"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Research",
+      "lastUpdated": "2026-04-14T16:53:02Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-AI",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-ai",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "ai-security",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-AI",
+      "lastUpdated": "2026-04-14T16:52:10Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Audit",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-audit",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business",
+        "research"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "audit",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Audit",
+      "lastUpdated": "2026-04-14T16:51:44Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Auth",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-auth",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "auth",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Auth",
+      "lastUpdated": "2026-04-14T16:52:07Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Cloud",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-cloud",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business",
+        "research"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "cloud",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Cloud",
+      "lastUpdated": "2026-04-14T16:51:56Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Crypto",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-crypto",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "crypto",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Crypto",
+      "lastUpdated": "2026-04-14T16:52:54Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Exploit",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-exploit",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business",
+        "research"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "exploit",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Exploit",
+      "lastUpdated": "2026-04-14T16:51:34Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Forensics",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-forensics",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "forensics",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Forensics",
+      "lastUpdated": "2026-04-14T16:54:03Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Fuzz",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-fuzz",
+      "capabilities": [
+        "google",
+        "code",
+        "security",
+        "team",
+        "fuzzing",
+        "exploit_development",
+        "reporting"
+      ],
+      "triggers": [
+        "security fuzzing agent",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "fuzzing",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Fuzz",
+      "lastUpdated": "2026-04-14T16:54:00Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-IoT",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-iot",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "iot",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-IoT",
+      "lastUpdated": "2026-04-14T16:53:18Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Malware",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-malware",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "malware",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Malware",
+      "lastUpdated": "2026-04-14T16:52:30Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Mobile",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-mobile",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "mobile",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Mobile",
+      "lastUpdated": "2026-04-14T16:54:02Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Network",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-network",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "network",
+        "opensin",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Network",
+      "lastUpdated": "2026-04-14T16:52:52Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Recon",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-recon",
+      "capabilities": [
+        "google",
+        "code",
+        "security",
+        "team",
+        "reconnaissance",
+        "vulnerability_scanning",
+        "reporting"
+      ],
+      "triggers": [
+        "security reconnaissance agent",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opensin",
+        "recon",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Recon",
+      "lastUpdated": "2026-04-14T16:52:37Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Social",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-social",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opensin",
+        "security",
+        "social-engineering"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Social",
+      "lastUpdated": "2026-04-14T16:54:24Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-Web",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-hacker-web",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opensin",
+        "security",
+        "web"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-Web",
+      "lastUpdated": "2026-04-14T16:53:11Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Shop-Finance",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-shop-finance",
+      "capabilities": [
+        "google",
+        "messaging",
+        "shop",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "shop",
+        "e-commerce",
+        "online shop",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "finance",
+        "opensin",
+        "opnsin-agent",
+        "shop"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Shop-Finance",
+      "lastUpdated": "2026-04-14T16:51:48Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Shop-Logistic",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-shop-logistic",
+      "capabilities": [
+        "google",
+        "messaging",
+        "shop",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "shop",
+        "e-commerce",
+        "online shop",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "logistics",
+        "opensin",
+        "opnsin-agent",
+        "shop"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Shop-Logistic",
+      "lastUpdated": "2026-04-14T16:52:49Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Signal",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Signal messaging integration — encrypted messaging via Signal.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "signal messaging integration — encrypted messaging via signal.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "messaging",
+        "opensin",
+        "opnsin-agent",
+        "signal"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Signal",
+      "lastUpdated": "2026-04-14T16:54:18Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Slashdot",
+      "type": "a2a-agent",
+      "description": "OpenSIN Forum Agent for Slashdot - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "reddit research and draft agent with browser-session auth, subreddit/thread/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "forum",
+        "opensin",
+        "opnsin-agent",
+        "slashdot"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Slashdot",
+      "lastUpdated": "2026-04-14T16:54:27Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-SMS",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: SMS messaging integration — SMS sending and receiving.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "sms messaging integration — sms sending and receiving.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "messaging",
+        "opensin",
+        "opnsin-agent",
+        "sms"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-SMS",
+      "lastUpdated": "2026-04-14T16:53:48Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-StackOverflow",
+      "type": "a2a-agent",
+      "description": "OpenSIN Forum Agent for StackOverflow - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team",
+        "answer_generation",
+        "question_posting"
+      ],
+      "triggers": [
+        "stackoverflow automation agent"
+      ],
+      "topics": [
+        "forum",
+        "opensin",
+        "opnsin-agent",
+        "stackoverflow"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-StackOverflow",
+      "lastUpdated": "2026-04-14T16:52:40Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Storage",
+      "type": "a2a-agent",
+      "description": "Storage management agent",
+      "capabilities": [
+        "google",
+        "code",
+        "storage",
+        "team",
+        "storage_management",
+        "backup"
+      ],
+      "triggers": [
+        "storage management agent",
+        "datei speichern",
+        "log speichern",
+        "screenshot hochladen"
+      ],
+      "topics": [
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Storage",
+      "lastUpdated": "2026-04-14T16:53:27Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Stripe",
+      "type": "a2a-agent",
+      "description": "SIN Stripe automation agent for payment links, webhooks, checkout redirects, and sub-3-minute onboarding",
+      "capabilities": [
+        "google",
+        "messaging",
+        "shop",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "stripe automation and onboarding specialist for sub-3-minute setup, payment links, redirects, and webhook/secret fanout.",
+        "passwörter speichern",
+        "credentials lesen",
+        "secrets verwalten",
+        "login daten",
+        "zahlung",
+        "payment",
+        "stripe produkt",
+        "abonnement",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opensin",
+        "opnsin-agent",
+        "payments",
+        "stripe"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Stripe",
+      "lastUpdated": "2026-04-14T16:54:32Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Summary",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-Summary",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "research"
+      ],
+      "triggers": [
+        "anwaltlicher a2a agent für fallzusammenfassungen, chronologien und issue trees.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "legal",
+        "opensin",
+        "opnsin-agent",
+        "summary"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Summary",
+      "lastUpdated": "2026-04-14T16:51:50Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Tax",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-tax",
+      "capabilities": [
+        "google",
+        "shop",
+        "code",
+        "team",
+        "tax_calculation",
+        "filing_assistance"
+      ],
+      "triggers": [
+        "tax assistance agent"
+      ],
+      "topics": [
+        "finance",
+        "opensin",
+        "opnsin-agent",
+        "tax"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Tax",
+      "lastUpdated": "2026-04-14T16:54:22Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Telegram",
+      "type": "a2a-agent",
+      "description": "OpenSIN Marketing Agent for Telegram - Autonomous cold outreach, lead scraping, and engagement",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "security",
+        "business"
+      ],
+      "triggers": [
+        "telegram research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opensin",
+        "opnsin-agent",
+        "social",
+        "telegram"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Telegram",
+      "lastUpdated": "2026-04-14T16:51:47Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-TikTok",
+      "type": "a2a-agent",
+      "description": "TikTok automation agent",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team",
+        "video_upload",
+        "trend_analysis"
+      ],
+      "triggers": [
+        "tiktok automation agent"
+      ],
+      "topics": [
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-TikTok",
+      "lastUpdated": "2026-04-14T16:54:09Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-TikTok-Shop",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: sin-tiktok-shop",
+      "capabilities": [
+        "google",
+        "social",
+        "shop",
+        "code",
+        "team",
+        "product_listing",
+        "order_management"
+      ],
+      "triggers": [
+        "tiktok shop agent",
+        "shop",
+        "e-commerce",
+        "online shop"
+      ],
+      "topics": [
+        "opensin",
+        "opnsin-agent",
+        "shop",
+        "tiktok"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-TikTok-Shop",
+      "lastUpdated": "2026-04-14T16:51:22Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-WebChat",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: WebChat integration — web-based chat widget.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "webchat integration — web-based chat widget.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "messaging",
+        "opensin",
+        "opnsin-agent",
+        "webchat"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-WebChat",
+      "lastUpdated": "2026-04-14T16:51:33Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-WeChat",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: WeChat messaging integration — WeChat bot and message handling.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "team",
+        "wechat_messaging",
+        "contact_management"
+      ],
+      "triggers": [
+        "wechat messaging agent"
+      ],
+      "topics": [
+        "messaging",
+        "opensin",
+        "opnsin-agent",
+        "wechat"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-WeChat",
+      "lastUpdated": "2026-04-14T16:53:05Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-WhatsApp",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: WhatsApp messaging integration — WhatsApp Business API.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "team",
+        "whatsapp_send",
+        "whatsapp_receive",
+        "media_handling",
+        "group_management"
+      ],
+      "triggers": [
+        "whatsapp messaging agent",
+        "whatsapp",
+        "wa nachricht"
+      ],
+      "topics": [
+        "messaging",
+        "opensin",
+        "opnsin-agent",
+        "whatsapp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-WhatsApp",
+      "lastUpdated": "2026-04-14T16:52:56Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Worker-heypiggy",
+      "type": "a2a-agent",
+      "description": "Autonomous HeyPiggy survey worker",
+      "capabilities": [
+        "google",
+        "worker",
+        "team",
+        "survey_completion",
+        "autonomous_operation"
+      ],
+      "triggers": [
+        "autonomous heypiggy survey worker",
+        "google docs",
+        "dokumente bearbeiten",
+        "docs lesen"
+      ],
+      "topics": [
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Worker-heypiggy",
+      "lastUpdated": "2026-04-14T16:52:12Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Worker-Prolific",
+      "type": "a2a-agent",
+      "description": "Autonomous Prolific survey worker",
+      "capabilities": [
+        "google",
+        "worker",
+        "team",
+        "survey_discovery",
+        "survey_application",
+        "survey_completion",
+        "autonomous_operation"
+      ],
+      "triggers": [
+        "autonomous prolific survey worker",
+        "google docs",
+        "dokumente bearbeiten",
+        "docs lesen"
+      ],
+      "topics": [
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Worker-Prolific",
+      "lastUpdated": "2026-04-14T16:10:46Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-X-Twitter",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: A2A-SIN-X-Twitter",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team",
+        "posting",
+        "engagement",
+        "trend_analysis"
+      ],
+      "triggers": [
+        "x/twitter automation agent"
+      ],
+      "topics": [
+        "opensin",
+        "opnsin-agent",
+        "social",
+        "twitter"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-X-Twitter",
+      "lastUpdated": "2026-04-14T16:51:38Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Xbox",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Xbox gaming platform integration — Xbox Live messaging.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "security",
+        "entertainment",
+        "infra",
+        "storage",
+        "team"
+      ],
+      "triggers": [
+        "xbox gaming platform integration — xbox live messaging.",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "gaming",
+        "opensin",
+        "opnsin-agent",
+        "xbox"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Xbox",
+      "lastUpdated": "2026-04-14T16:53:59Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-YouTube",
+      "type": "a2a-agent",
+      "description": "YouTube management agent",
+      "capabilities": [
+        "google",
+        "social",
+        "code",
+        "team",
+        "video_upload",
+        "channel_management",
+        "analytics"
+      ],
+      "triggers": [
+        "youtube management agent"
+      ],
+      "topics": [
+        "opnsin-agent"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-YouTube",
+      "lastUpdated": "2026-04-14T16:53:16Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Zoom",
+      "type": "a2a-agent",
+      "description": "SIN A2A component: Zoom integration — Zoom meeting management and chat.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "entertainment",
+        "team",
+        "zoom_meeting_management",
+        "recording_access"
+      ],
+      "triggers": [
+        "zoom integration agent"
+      ],
+      "topics": [
+        "messaging",
+        "opensin",
+        "opnsin-agent",
+        "zoom"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Zoom",
+      "lastUpdated": "2026-04-14T16:52:16Z",
+      "metadata": {}
+    },
+    {
+      "name": "MCP-SIN-chrome-extension",
+      "type": "mcp",
+      "description": "MCP Server for chrome-extension - provides browser automation and tool capabilities",
+      "capabilities": [
+        "google",
+        "code",
+        "infra",
+        "team"
+      ],
+      "triggers": [],
+      "topics": [
+        "ai-agents",
+        "browser-automation",
+        "mcp-server",
+        "opnsin-mcp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/MCP-SIN-chrome-extension",
+      "lastUpdated": "2026-04-14T16:10:53Z",
+      "metadata": {}
+    },
+    {
+      "name": "MCP-SIN-computer-use",
+      "type": "mcp",
+      "description": "MCP Server for computer-use - provides browser automation and tool capabilities",
+      "capabilities": [
+        "apple",
+        "security",
+        "infra"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "ai-agents",
+        "browser-automation",
+        "mcp-server",
+        "opnsin-mcp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/MCP-SIN-computer-use",
+      "lastUpdated": "2026-04-14T16:10:55Z",
+      "metadata": {}
+    },
+    {
+      "name": "MCP-SIN-in-chrome",
+      "type": "mcp",
+      "description": "MCP Server for in-chrome - provides browser automation and tool capabilities",
+      "capabilities": [
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "storage"
+      ],
+      "triggers": [
+        "datei speichern",
+        "log speichern",
+        "screenshot hochladen"
+      ],
+      "topics": [
+        "ai-agents",
+        "browser-automation",
+        "mcp-server",
+        "opnsin-mcp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/MCP-SIN-in-chrome",
+      "lastUpdated": "2026-04-14T16:10:56Z",
+      "metadata": {}
+    },
+    {
+      "name": "MCP-SIN-mcp-gateway",
+      "type": "mcp",
+      "description": "MCP Server for mcp-gateway - provides browser automation and tool capabilities",
+      "capabilities": [
+        "code",
+        "security",
+        "infra"
+      ],
+      "triggers": [],
+      "topics": [
+        "ai-agents",
+        "browser-automation",
+        "mcp-server",
+        "opnsin-mcp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/MCP-SIN-mcp-gateway",
+      "lastUpdated": "2026-04-14T16:10:58Z",
+      "metadata": {}
+    },
+    {
+      "name": "MCP-SIN-memory",
+      "type": "mcp",
+      "description": "MCP Server for memory - provides browser automation and tool capabilities",
+      "capabilities": [
+        "security",
+        "infra",
+        "storage"
+      ],
+      "triggers": [
+        "datei speichern",
+        "log speichern",
+        "screenshot hochladen"
+      ],
+      "topics": [
+        "ai-agents",
+        "browser-automation",
+        "mcp-server",
+        "opnsin-mcp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/MCP-SIN-memory",
+      "lastUpdated": "2026-04-14T16:11:00Z",
+      "metadata": {}
+    },
+    {
+      "name": "MCP-SIN-platform-auth",
+      "type": "mcp",
+      "description": "MCP Server for platform-auth - provides browser automation and tool capabilities",
+      "capabilities": [
+        "google",
+        "code",
+        "security",
+        "infra",
+        "storage"
+      ],
+      "triggers": [
+        "passwörter speichern",
+        "credentials lesen",
+        "secrets verwalten",
+        "login daten",
+        "datei speichern",
+        "log speichern",
+        "screenshot hochladen"
+      ],
+      "topics": [
+        "ai-agents",
+        "browser-automation",
+        "mcp-server",
+        "opnsin-mcp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/MCP-SIN-platform-auth",
+      "lastUpdated": "2026-04-14T16:11:02Z",
+      "metadata": {}
+    },
+    {
+      "name": "MCP-SIN-usebrowser",
+      "type": "mcp",
+      "description": "MCP Server for usebrowser - provides browser automation and tool capabilities",
+      "capabilities": [
+        "google",
+        "security",
+        "infra",
+        "storage"
+      ],
+      "triggers": [],
+      "topics": [
+        "ai-agents",
+        "browser-automation",
+        "mcp-server",
+        "opnsin-mcp"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/MCP-SIN-usebrowser",
+      "lastUpdated": "2026-04-14T16:11:04Z",
+      "metadata": {}
+    },
+    {
+      "name": "CLI-SIN-Repo-Sync",
+      "type": "cli",
+      "description": "SIN A2A component: sin-repo-sync",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra"
+      ],
+      "triggers": [
+        "structural repository synchronization and repo-hygiene agent.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "git",
+        "opensin",
+        "sync"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/CLI-SIN-Repo-Sync",
+      "lastUpdated": "2026-04-14T13:12:27Z",
+      "metadata": {}
+    },
+    {
+      "name": "CLI-SIN-TelegramBot",
+      "type": "cli",
+      "description": "SIN Fleet Telegram Bot CLI + MCP — canonical fleet-wide Telegram tooling for all A2A agents",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "infra",
+        "team"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht"
+      ],
+      "topics": [
+        "cli",
+        "mcp",
+        "opensin",
+        "telegram"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/CLI-SIN-TelegramBot",
+      "lastUpdated": "2026-04-14T13:12:29Z",
+      "metadata": {}
+    },
+    {
+      "name": "Plugin-SIN-Biometrics",
+      "type": "plugin",
+      "description": "OpenCode plugin for bootstrapping and operating the BIOMETRICS control plane. Adds governance, policy enforcement, and supervisor capabilities to OpenCode workflows.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "biometrics",
+        "governance",
+        "opensin",
+        "policy"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Plugin-SIN-Biometrics",
+      "lastUpdated": "2026-04-14T13:53:08Z",
+      "metadata": {}
+    },
+    {
+      "name": "Plugin-SIN-Swarm",
+      "type": "plugin",
+      "description": "OpenSIN subagent workflow plugin for OpenCode with tmux side-by-side sessions, parallel fan-out, messaging, and MAX-mode git worktrees.",
+      "capabilities": [
+        "messaging",
+        "code",
+        "infra",
+        "research"
+      ],
+      "triggers": [],
+      "topics": [
+        "opensin",
+        "subagent",
+        "tmux",
+        "workflow"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Plugin-SIN-Swarm",
+      "lastUpdated": "2026-04-14T13:13:38Z",
+      "metadata": {}
+    },
+    {
+      "name": "Skill-SIN-Agent-Forge",
+      "type": "skill",
+      "description": "OpenCode skill SSOT: sin-a2a-agent-forge",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "agent-creation",
+        "opensin",
+        "skill"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Skill-SIN-Agent-Forge",
+      "lastUpdated": "2026-04-14T13:53:12Z",
+      "metadata": {}
+    },
+    {
+      "name": "Skill-SIN-Create-TelegramBot",
+      "type": "skill",
+      "description": "OpenCode skill SSOT: create-telegrambot",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opensin",
+        "skill",
+        "telegram"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Skill-SIN-Create-TelegramBot",
+      "lastUpdated": "2026-04-14T13:53:16Z",
+      "metadata": {}
+    },
+    {
+      "name": "Skill-SIN-Enterprise-Deep-Debug",
+      "type": "skill",
+      "description": "OpenCode skill SSOT: enterprise-deep-debug",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "debug",
+        "opensin",
+        "skill"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Skill-SIN-Enterprise-Deep-Debug",
+      "lastUpdated": "2026-04-14T13:53:18Z",
+      "metadata": {}
+    },
+    {
+      "name": "Biz-SIN-Blog-Posts",
+      "type": "business",
+      "description": "OpenSIN Blog Posts - Public mirror from marketing strategie",
+      "capabilities": [
+        "messaging",
+        "code",
+        "security",
+        "entertainment",
+        "infra",
+        "worker",
+        "business",
+        "storage"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "blog",
+        "content",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Biz-SIN-Blog-Posts",
+      "lastUpdated": "2026-04-14T16:01:27Z",
+      "metadata": {}
+    },
+    {
+      "name": "Biz-SIN-Blueprints",
+      "type": "business",
+      "description": "Reusable blueprints for AI products, workflow systems, and developer platforms.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "shop",
+        "code",
+        "security",
+        "infra",
+        "business",
+        "storage"
+      ],
+      "triggers": [
+        "shop",
+        "e-commerce",
+        "online shop",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "ai",
+        "architecture",
+        "blueprints",
+        "developer-tools",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Biz-SIN-Blueprints",
+      "lastUpdated": "2026-04-14T13:12:17Z",
+      "metadata": {}
+    },
+    {
+      "name": "Biz-SIN-Competitor-Tracker",
+      "type": "business",
+      "description": "Automated competitor research and feature gap analysis for SIN Agent Fleet",
+      "capabilities": [
+        "google",
+        "messaging",
+        "social",
+        "code",
+        "business",
+        "research"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht"
+      ],
+      "topics": [
+        "analysis",
+        "competitor",
+        "opensin",
+        "research"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Biz-SIN-Competitor-Tracker",
+      "lastUpdated": "2026-04-14T16:00:28Z",
+      "metadata": {}
+    },
+    {
+      "name": "Biz-SIN-Jobs",
+      "type": "business",
+      "description": "Job board and career opportunities at OpenSIN-AI.",
+      "capabilities": [
+        "code",
+        "security",
+        "business",
+        "team"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "careers",
+        "jobs",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Biz-SIN-Jobs",
+      "lastUpdated": "2026-04-14T16:00:57Z",
+      "metadata": {}
+    },
+    {
+      "name": "Biz-SIN-Ledger",
+      "type": "business",
+      "description": "Live autonomous logbook and activity showcase of the OpenSIN 24/7 A2A Agent Fleet.",
+      "capabilities": [
+        "security",
+        "infra",
+        "business"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "fleet-activity",
+        "ledger",
+        "logbook",
+        "opensin"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Biz-SIN-Ledger",
+      "lastUpdated": "2026-04-14T13:12:23Z",
+      "metadata": {}
+    },
+    {
+      "name": "Biz-SIN-Marketing",
+      "type": "business",
+      "description": "Marketing & release strategy for OpenSIN (open-source) and MyOpenSIN (subscription). Launch hub, community discussions, and execution playbooks.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "business",
+        "team"
+      ],
+      "triggers": [],
+      "topics": [
+        "marketing",
+        "opensin",
+        "release-strategy",
+        "strategy"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Biz-SIN-Marketing",
+      "lastUpdated": "2026-04-14T16:00:35Z",
+      "metadata": {}
+    },
+    {
+      "name": "Biz-SIN-Patents",
+      "type": "business",
+      "description": "Patent portfolio and intellectual property management for OpenSIN technology.",
+      "capabilities": [
+        "security",
+        "infra",
+        "business",
+        "research",
+        "storage",
+        "team"
+      ],
+      "triggers": [],
+      "topics": [
+        "ip",
+        "opensin",
+        "patents"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Biz-SIN-Patents",
+      "lastUpdated": "2026-04-14T16:01:25Z",
+      "metadata": {}
+    },
+    {
+      "name": "Template-SIN-Agent",
+      "type": "template",
+      "description": "Template for creating new A2A agents — standardized blueprint for OpenSIN agent development.",
+      "capabilities": [
+        "google",
+        "code",
+        "security",
+        "worker",
+        "team"
+      ],
+      "triggers": [
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "agent",
+        "opensin",
+        "template"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Template-SIN-Agent",
+      "lastUpdated": "2026-04-14T16:01:02Z",
+      "metadata": {}
+    },
+    {
+      "name": "Template-SIN-Agent-Worker",
+      "type": "template",
+      "description": "Template for A2A Agent Worker processes",
+      "capabilities": [
+        "google",
+        "code",
+        "worker",
+        "team"
+      ],
+      "triggers": [],
+      "topics": [
+        "opnsin-template"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Template-SIN-Agent-Worker",
+      "lastUpdated": "2026-04-14T16:01:14Z",
+      "metadata": {}
+    },
+    {
+      "name": "Template-SIN-Team",
+      "type": "template",
+      "description": "Canonical template for SIN A2A Team Manager agents",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "infra",
+        "worker",
+        "team"
+      ],
+      "triggers": [],
+      "topics": [
+        "opensin",
+        "team",
+        "template"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Template-SIN-Team",
+      "lastUpdated": "2026-04-14T16:01:07Z",
+      "metadata": {}
+    },
+    {
+      "name": "Template-SIN-Worker",
+      "type": "template",
+      "description": "Worker process template for A2A agent execution — standardized worker blueprint.",
+      "capabilities": [
+        "google",
+        "infra",
+        "worker"
+      ],
+      "triggers": [
+        "__sin_agent_description__",
+        "google docs",
+        "dokumente bearbeiten",
+        "docs lesen"
+      ],
+      "topics": [
+        "opensin",
+        "template",
+        "worker"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/Template-SIN-Worker",
+      "lastUpdated": "2026-04-14T12:04:30Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Security-RedTeam",
+      "type": "unknown",
+      "description": "SIN A2A component: sin-hacker-redteam",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "security",
+        "infra",
+        "business",
+        "team"
+      ],
+      "triggers": [
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opensin",
+        "redteam",
+        "security"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Security-RedTeam",
+      "lastUpdated": "2026-04-14T16:51:39Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Team-MoneyEarners",
+      "type": "unknown",
+      "description": "Orchestrator für alle autonomen Earning-, Freelance- und Micro-Job Worker.",
+      "capabilities": [
+        "messaging",
+        "shop",
+        "code",
+        "security",
+        "infra",
+        "worker",
+        "team"
+      ],
+      "triggers": [
+        "orchestrator für alle autonomen earning-, freelance- und micro-job worker.",
+        "telegram bot",
+        "telegram nachricht",
+        "security check",
+        "pentest",
+        "sicherheits audit"
+      ],
+      "topics": [
+        "opnsin-team"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Team-MoneyEarners",
+      "lastUpdated": "2026-04-14T16:51:41Z",
+      "metadata": {}
+    },
+    {
+      "name": "A2A-SIN-Teams",
+      "type": "unknown",
+      "description": "SIN A2A component: Team coordination and management — multi-agent team orchestration.",
+      "capabilities": [
+        "google",
+        "messaging",
+        "code",
+        "team",
+        "teams_messaging",
+        "channel_management",
+        "meeting_scheduling"
+      ],
+      "triggers": [
+        "microsoft teams integration agent"
+      ],
+      "topics": [
+        "management",
+        "opensin",
+        "opnsin-agent",
+        "teams"
+      ],
+      "githubUrl": "https://github.com/OpenSIN-AI/A2A-SIN-Teams",
+      "lastUpdated": "2026-04-14T16:52:09Z",
+      "metadata": {}
+    }
+  ],
+  "byCapability": {
+    "shop": [
+      "A2A-SIN-Team-MyCompany",
+      "Team-SIN-Code-Frontend",
+      "Team-SIN-Commerce",
+      "Team-SIN-Legal",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Tax",
+      "A2A-SIN-TikTok-Shop",
+      "Biz-SIN-Blueprints",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "worker": [
+      "A2A-SIN-Team-MyCompany",
+      "A2A-SIN-Mindrift",
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific",
+      "Biz-SIN-Blog-Posts",
+      "Template-SIN-Agent",
+      "Template-SIN-Agent-Worker",
+      "Template-SIN-Team",
+      "Template-SIN-Worker",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "team": [
+      "A2A-SIN-Team-MyCompany",
+      "Team-SIN-Apple",
+      "Team-SIN-Code-Backend",
+      "Team-SIN-Code-Core",
+      "Team-SIN-Code-CyberSec",
+      "Team-SIN-Code-Frontend",
+      "Team-SIN-Commerce",
+      "Team-SIN-Community",
+      "Team-SIN-Forum",
+      "Team-SIN-Google",
+      "Team-SIN-Infrastructure",
+      "Team-SIN-Legal",
+      "Team-SIN-Media-ComfyUI",
+      "Team-SIN-Media-Music",
+      "Team-SIN-Messaging",
+      "Team-SIN-Microsoft",
+      "Team-SIN-Research",
+      "Team-SIN-Social",
+      "A2A-SIN-Apple-Calendar-Contacts",
+      "A2A-SIN-Apple-DeviceControl",
+      "A2A-SIN-Apple-FaceTime",
+      "A2A-SIN-Apple-Mail",
+      "A2A-SIN-Apple-Mobile",
+      "A2A-SIN-Apple-Notes",
+      "A2A-SIN-Apple-Notifications",
+      "A2A-SIN-Apple-Photos-Files",
+      "A2A-SIN-Apple-Reminders",
+      "A2A-SIN-Apple-Safari-WebKit",
+      "A2A-SIN-Apple-Shortcuts",
+      "A2A-SIN-Apple-SystemSettings",
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-Box-Storage",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-Code-AI",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Coding-CEO",
+      "A2A-SIN-Email",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-Instagram",
+      "A2A-SIN-IRC",
+      "A2A-SIN-LINE",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-Medium",
+      "A2A-SIN-Medusa",
+      "A2A-SIN-Mindrift",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-Nostr",
+      "A2A-SIN-Opal",
+      "A2A-SIN-Patents",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-Quora",
+      "A2A-SIN-Research",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-Recon",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-SMS",
+      "A2A-SIN-StackOverflow",
+      "A2A-SIN-Storage",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Tax",
+      "A2A-SIN-TikTok",
+      "A2A-SIN-TikTok-Shop",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-WeChat",
+      "A2A-SIN-WhatsApp",
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific",
+      "A2A-SIN-X-Twitter",
+      "A2A-SIN-Xbox",
+      "A2A-SIN-YouTube",
+      "A2A-SIN-Zoom",
+      "MCP-SIN-chrome-extension",
+      "CLI-SIN-TelegramBot",
+      "Biz-SIN-Jobs",
+      "Biz-SIN-Marketing",
+      "Biz-SIN-Patents",
+      "Template-SIN-Agent",
+      "Template-SIN-Agent-Worker",
+      "Template-SIN-Team",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners",
+      "A2A-SIN-Teams"
+    ],
+    "google": [
+      "Team-SIN-Apple",
+      "Team-SIN-Code-Backend",
+      "Team-SIN-Code-Core",
+      "Team-SIN-Code-CyberSec",
+      "Team-SIN-Code-Frontend",
+      "Team-SIN-Commerce",
+      "Team-SIN-Community",
+      "Team-SIN-Forum",
+      "Team-SIN-Google",
+      "Team-SIN-Infrastructure",
+      "Team-SIN-Legal",
+      "Team-SIN-Media-ComfyUI",
+      "Team-SIN-Media-Music",
+      "Team-SIN-Messaging",
+      "Team-SIN-Microsoft",
+      "Team-SIN-Research",
+      "Team-SIN-Social",
+      "A2A-SIN-Apple-Calendar-Contacts",
+      "A2A-SIN-Apple-DeviceControl",
+      "A2A-SIN-Apple-FaceTime",
+      "A2A-SIN-Apple-Mail",
+      "A2A-SIN-Apple-Mobile",
+      "A2A-SIN-Apple-Notes",
+      "A2A-SIN-Apple-Notifications",
+      "A2A-SIN-Apple-Photos-Files",
+      "A2A-SIN-Apple-Reminders",
+      "A2A-SIN-Apple-Safari-WebKit",
+      "A2A-SIN-Apple-Shortcuts",
+      "A2A-SIN-Apple-SystemSettings",
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-Box-Storage",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-ClaimWriter",
+      "A2A-SIN-Code-AI",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Coding-CEO",
+      "A2A-SIN-Community",
+      "A2A-SIN-Compliance",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Email",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-Instagram",
+      "A2A-SIN-IRC",
+      "A2A-SIN-LINE",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-Medium",
+      "A2A-SIN-Mindrift",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-Nostr",
+      "A2A-SIN-Opal",
+      "A2A-SIN-Paragraph",
+      "A2A-SIN-Patents",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Quora",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Research",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Recon",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-SMS",
+      "A2A-SIN-StackOverflow",
+      "A2A-SIN-Storage",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Tax",
+      "A2A-SIN-Telegram",
+      "A2A-SIN-TikTok",
+      "A2A-SIN-TikTok-Shop",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-WeChat",
+      "A2A-SIN-WhatsApp",
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific",
+      "A2A-SIN-X-Twitter",
+      "A2A-SIN-Xbox",
+      "A2A-SIN-YouTube",
+      "A2A-SIN-Zoom",
+      "MCP-SIN-chrome-extension",
+      "MCP-SIN-platform-auth",
+      "MCP-SIN-usebrowser",
+      "CLI-SIN-Repo-Sync",
+      "CLI-SIN-TelegramBot",
+      "Plugin-SIN-Biometrics",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Competitor-Tracker",
+      "Biz-SIN-Marketing",
+      "Template-SIN-Agent",
+      "Template-SIN-Agent-Worker",
+      "Template-SIN-Team",
+      "Template-SIN-Worker",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Teams"
+    ],
+    "apple": [
+      "Team-SIN-Apple",
+      "Team-SIN-Messaging",
+      "A2A-SIN-Apple-Calendar-Contacts",
+      "A2A-SIN-Apple-DeviceControl",
+      "A2A-SIN-Apple-FaceTime",
+      "A2A-SIN-Apple-Mail",
+      "A2A-SIN-Apple-Mobile",
+      "A2A-SIN-Apple-Notes",
+      "A2A-SIN-Apple-Notifications",
+      "A2A-SIN-Apple-Photos-Files",
+      "A2A-SIN-Apple-Reminders",
+      "A2A-SIN-Apple-Safari-WebKit",
+      "A2A-SIN-Apple-Shortcuts",
+      "A2A-SIN-Apple-SystemSettings",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-Damages",
+      "A2A-SIN-Email",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-LinkedIn",
+      "MCP-SIN-computer-use"
+    ],
+    "code": [
+      "Team-SIN-Apple",
+      "Team-SIN-Code-Backend",
+      "Team-SIN-Code-Core",
+      "Team-SIN-Code-CyberSec",
+      "Team-SIN-Code-Frontend",
+      "Team-SIN-Commerce",
+      "Team-SIN-Community",
+      "Team-SIN-Forum",
+      "Team-SIN-Google",
+      "Team-SIN-Infrastructure",
+      "Team-SIN-Legal",
+      "Team-SIN-Media-ComfyUI",
+      "Team-SIN-Media-Music",
+      "Team-SIN-Messaging",
+      "Team-SIN-Microsoft",
+      "Team-SIN-Research",
+      "Team-SIN-Social",
+      "A2A-SIN-Apple-Calendar-Contacts",
+      "A2A-SIN-Apple-DeviceControl",
+      "A2A-SIN-Apple-FaceTime",
+      "A2A-SIN-Apple-Mail",
+      "A2A-SIN-Apple-Mobile",
+      "A2A-SIN-Apple-Notes",
+      "A2A-SIN-Apple-Notifications",
+      "A2A-SIN-Apple-Photos-Files",
+      "A2A-SIN-Apple-Reminders",
+      "A2A-SIN-Apple-Safari-WebKit",
+      "A2A-SIN-Apple-Shortcuts",
+      "A2A-SIN-Apple-SystemSettings",
+      "A2A-SIN-Box-Storage",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-Code-AI",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Coding-CEO",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Instagram",
+      "A2A-SIN-LINE",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Medium",
+      "A2A-SIN-Medusa",
+      "A2A-SIN-Mindrift",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Nostr",
+      "A2A-SIN-Opal",
+      "A2A-SIN-Patents",
+      "A2A-SIN-Quora",
+      "A2A-SIN-Research",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Recon",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-StackOverflow",
+      "A2A-SIN-Storage",
+      "A2A-SIN-Tax",
+      "A2A-SIN-TikTok",
+      "A2A-SIN-TikTok-Shop",
+      "A2A-SIN-WeChat",
+      "A2A-SIN-WhatsApp",
+      "A2A-SIN-X-Twitter",
+      "A2A-SIN-YouTube",
+      "A2A-SIN-Zoom",
+      "MCP-SIN-chrome-extension",
+      "MCP-SIN-in-chrome",
+      "MCP-SIN-mcp-gateway",
+      "MCP-SIN-platform-auth",
+      "CLI-SIN-Repo-Sync",
+      "CLI-SIN-TelegramBot",
+      "Plugin-SIN-Biometrics",
+      "Plugin-SIN-Swarm",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Competitor-Tracker",
+      "Biz-SIN-Jobs",
+      "Biz-SIN-Marketing",
+      "Template-SIN-Agent",
+      "Template-SIN-Agent-Worker",
+      "Template-SIN-Team",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners",
+      "A2A-SIN-Teams"
+    ],
+    "security": [
+      "Team-SIN-Code-Backend",
+      "Team-SIN-Code-CyberSec",
+      "A2A-SIN-Apple-Mobile",
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Email",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-IRC",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Recon",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-SMS",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Telegram",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-Xbox",
+      "MCP-SIN-computer-use",
+      "MCP-SIN-in-chrome",
+      "MCP-SIN-mcp-gateway",
+      "MCP-SIN-memory",
+      "MCP-SIN-platform-auth",
+      "MCP-SIN-usebrowser",
+      "CLI-SIN-Repo-Sync",
+      "Plugin-SIN-Biometrics",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Jobs",
+      "Biz-SIN-Ledger",
+      "Biz-SIN-Marketing",
+      "Biz-SIN-Patents",
+      "Template-SIN-Agent",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "storage": [
+      "Team-SIN-Code-Backend",
+      "Team-SIN-Infrastructure",
+      "A2A-SIN-Apple-Photos-Files",
+      "A2A-SIN-Box-Storage",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Medusa",
+      "A2A-SIN-Storage",
+      "A2A-SIN-Xbox",
+      "MCP-SIN-in-chrome",
+      "MCP-SIN-memory",
+      "MCP-SIN-platform-auth",
+      "MCP-SIN-usebrowser",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Patents"
+    ],
+    "social": [
+      "Team-SIN-Commerce",
+      "Team-SIN-Community",
+      "Team-SIN-Forum",
+      "Team-SIN-Social",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-Instagram",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Medium",
+      "A2A-SIN-Nostr",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Quora",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-StackOverflow",
+      "A2A-SIN-Telegram",
+      "A2A-SIN-TikTok",
+      "A2A-SIN-TikTok-Shop",
+      "A2A-SIN-X-Twitter",
+      "A2A-SIN-YouTube",
+      "Biz-SIN-Competitor-Tracker"
+    ],
+    "messaging": [
+      "Team-SIN-Community",
+      "Team-SIN-Google",
+      "Team-SIN-Messaging",
+      "Team-SIN-Microsoft",
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-ClaimWriter",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-Compliance",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Email",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-IRC",
+      "A2A-SIN-LINE",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-Nostr",
+      "A2A-SIN-Paragraph",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-SMS",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Telegram",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-WeChat",
+      "A2A-SIN-WhatsApp",
+      "A2A-SIN-Xbox",
+      "A2A-SIN-Zoom",
+      "MCP-SIN-in-chrome",
+      "CLI-SIN-Repo-Sync",
+      "CLI-SIN-TelegramBot",
+      "Plugin-SIN-Biometrics",
+      "Plugin-SIN-Swarm",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Competitor-Tracker",
+      "Biz-SIN-Marketing",
+      "Template-SIN-Team",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners",
+      "A2A-SIN-Teams"
+    ],
+    "entertainment": [
+      "Team-SIN-Google",
+      "A2A-SIN-Medusa",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-Opal",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-Xbox",
+      "A2A-SIN-Zoom",
+      "Biz-SIN-Blog-Posts"
+    ],
+    "business": [
+      "Team-SIN-Legal",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Patents",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-Telegram",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Competitor-Tracker",
+      "Biz-SIN-Jobs",
+      "Biz-SIN-Ledger",
+      "Biz-SIN-Marketing",
+      "Biz-SIN-Patents",
+      "A2A-SIN-Security-RedTeam"
+    ],
+    "research": [
+      "Team-SIN-Legal",
+      "Team-SIN-Research",
+      "A2A-SIN-ClaimWriter",
+      "A2A-SIN-Compliance",
+      "A2A-SIN-Damages",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Patents",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Research",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Summary",
+      "Plugin-SIN-Swarm",
+      "Biz-SIN-Competitor-Tracker",
+      "Biz-SIN-Patents"
+    ],
+    "calendar_management": [
+      "A2A-SIN-Apple-Calendar-Contacts"
+    ],
+    "contacts_management": [
+      "A2A-SIN-Apple-Calendar-Contacts"
+    ],
+    "device_management": [
+      "A2A-SIN-Apple-DeviceControl"
+    ],
+    "system_control": [
+      "A2A-SIN-Apple-DeviceControl"
+    ],
+    "facetime_call": [
+      "A2A-SIN-Apple-FaceTime"
+    ],
+    "facetime_manage": [
+      "A2A-SIN-Apple-FaceTime"
+    ],
+    "mail_send": [
+      "A2A-SIN-Apple-Mail"
+    ],
+    "mail_receive": [
+      "A2A-SIN-Apple-Mail"
+    ],
+    "mailbox_management": [
+      "A2A-SIN-Apple-Mail"
+    ],
+    "device_control": [
+      "A2A-SIN-Apple-Mobile"
+    ],
+    "app_management": [
+      "A2A-SIN-Apple-Mobile"
+    ],
+    "notes_create": [
+      "A2A-SIN-Apple-Notes"
+    ],
+    "notes_read": [
+      "A2A-SIN-Apple-Notes"
+    ],
+    "notes_edit": [
+      "A2A-SIN-Apple-Notes"
+    ],
+    "notifications_read": [
+      "A2A-SIN-Apple-Notifications"
+    ],
+    "notifications_manage": [
+      "A2A-SIN-Apple-Notifications"
+    ],
+    "photos_access": [
+      "A2A-SIN-Apple-Photos-Files"
+    ],
+    "files_access": [
+      "A2A-SIN-Apple-Photos-Files"
+    ],
+    "reminders_create": [
+      "A2A-SIN-Apple-Reminders"
+    ],
+    "reminders_read": [
+      "A2A-SIN-Apple-Reminders"
+    ],
+    "reminders_edit": [
+      "A2A-SIN-Apple-Reminders"
+    ],
+    "browser_control": [
+      "A2A-SIN-Apple-Safari-WebKit"
+    ],
+    "tab_management": [
+      "A2A-SIN-Apple-Safari-WebKit"
+    ],
+    "shortcuts_run": [
+      "A2A-SIN-Apple-Shortcuts"
+    ],
+    "shortcuts_create": [
+      "A2A-SIN-Apple-Shortcuts"
+    ],
+    "settings_read": [
+      "A2A-SIN-Apple-SystemSettings"
+    ],
+    "settings_modify": [
+      "A2A-SIN-Apple-SystemSettings"
+    ],
+    "infra": [
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-ClaimWriter",
+      "A2A-SIN-Compliance",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Email",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-IRC",
+      "A2A-SIN-LinkedIn",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-Medusa",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-Paragraph",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-SMS",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Summary",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-Xbox",
+      "MCP-SIN-chrome-extension",
+      "MCP-SIN-computer-use",
+      "MCP-SIN-in-chrome",
+      "MCP-SIN-mcp-gateway",
+      "MCP-SIN-memory",
+      "MCP-SIN-platform-auth",
+      "MCP-SIN-usebrowser",
+      "CLI-SIN-Repo-Sync",
+      "CLI-SIN-TelegramBot",
+      "Plugin-SIN-Biometrics",
+      "Plugin-SIN-Swarm",
+      "Skill-SIN-Create-TelegramBot",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Ledger",
+      "Biz-SIN-Patents",
+      "Template-SIN-Team",
+      "Template-SIN-Worker",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "storage_upload": [
+      "A2A-SIN-Box-Storage"
+    ],
+    "storage_public_url": [
+      "A2A-SIN-Box-Storage"
+    ],
+    "file_validation": [
+      "A2A-SIN-Box-Storage"
+    ],
+    "cdn_distribution": [
+      "A2A-SIN-Box-Storage"
+    ],
+    "cache_management": [
+      "A2A-SIN-Box-Storage"
+    ],
+    "ci-pipeline": [
+      "A2A-SIN-CI-CD"
+    ],
+    "pr-review": [
+      "A2A-SIN-CI-CD"
+    ],
+    "build": [
+      "A2A-SIN-CI-CD"
+    ],
+    "deploy": [
+      "A2A-SIN-CI-CD"
+    ],
+    "code_generation": [
+      "A2A-SIN-Code-AI",
+      "A2A-SIN-Coding-CEO"
+    ],
+    "code_review": [
+      "A2A-SIN-Code-AI",
+      "A2A-SIN-Coding-CEO"
+    ],
+    "testing": [
+      "A2A-SIN-Code-AI"
+    ],
+    "architecture_design": [
+      "A2A-SIN-Coding-CEO"
+    ],
+    "team_coordination": [
+      "A2A-SIN-Coding-CEO"
+    ],
+    "email_send": [
+      "A2A-SIN-Email"
+    ],
+    "email_receive": [
+      "A2A-SIN-Email"
+    ],
+    "imap_smtp": [
+      "A2A-SIN-Email"
+    ],
+    "attachment_handling": [
+      "A2A-SIN-Email"
+    ],
+    "google_chat_messaging": [
+      "A2A-SIN-Google-Chat"
+    ],
+    "thread_management": [
+      "A2A-SIN-Google-Chat"
+    ],
+    "file_sharing": [
+      "A2A-SIN-Google-Chat"
+    ],
+    "posting": [
+      "A2A-SIN-Instagram",
+      "A2A-SIN-X-Twitter"
+    ],
+    "engagement": [
+      "A2A-SIN-Instagram",
+      "A2A-SIN-X-Twitter"
+    ],
+    "analytics": [
+      "A2A-SIN-Instagram",
+      "A2A-SIN-YouTube"
+    ],
+    "line_messaging": [
+      "A2A-SIN-LINE"
+    ],
+    "sticker_handling": [
+      "A2A-SIN-LINE"
+    ],
+    "article_publishing": [
+      "A2A-SIN-Medium"
+    ],
+    "draft_management": [
+      "A2A-SIN-Medium"
+    ],
+    "mcp_generation": [
+      "A2A-SIN-Medusa"
+    ],
+    "sandbox_testing": [
+      "A2A-SIN-Medusa"
+    ],
+    "fleet_deployment": [
+      "A2A-SIN-Medusa"
+    ],
+    "task_completion": [
+      "A2A-SIN-Mindrift"
+    ],
+    "nostr_posting": [
+      "A2A-SIN-Nostr"
+    ],
+    "nostr_reading": [
+      "A2A-SIN-Nostr"
+    ],
+    "relay_management": [
+      "A2A-SIN-Nostr"
+    ],
+    "google_integration": [
+      "A2A-SIN-Opal"
+    ],
+    "patent_drafting": [
+      "A2A-SIN-Patents"
+    ],
+    "prior_art_search": [
+      "A2A-SIN-Patents"
+    ],
+    "answer_generation": [
+      "A2A-SIN-Quora",
+      "A2A-SIN-StackOverflow"
+    ],
+    "question_posting": [
+      "A2A-SIN-Quora",
+      "A2A-SIN-StackOverflow"
+    ],
+    "deep_research": [
+      "A2A-SIN-Research"
+    ],
+    "synthesis": [
+      "A2A-SIN-Research"
+    ],
+    "reporting": [
+      "A2A-SIN-Research",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-Recon"
+    ],
+    "fuzzing": [
+      "A2A-SIN-Security-Fuzz"
+    ],
+    "exploit_development": [
+      "A2A-SIN-Security-Fuzz"
+    ],
+    "reconnaissance": [
+      "A2A-SIN-Security-Recon"
+    ],
+    "vulnerability_scanning": [
+      "A2A-SIN-Security-Recon"
+    ],
+    "storage_management": [
+      "A2A-SIN-Storage"
+    ],
+    "backup": [
+      "A2A-SIN-Storage"
+    ],
+    "tax_calculation": [
+      "A2A-SIN-Tax"
+    ],
+    "filing_assistance": [
+      "A2A-SIN-Tax"
+    ],
+    "video_upload": [
+      "A2A-SIN-TikTok",
+      "A2A-SIN-YouTube"
+    ],
+    "trend_analysis": [
+      "A2A-SIN-TikTok",
+      "A2A-SIN-X-Twitter"
+    ],
+    "product_listing": [
+      "A2A-SIN-TikTok-Shop"
+    ],
+    "order_management": [
+      "A2A-SIN-TikTok-Shop"
+    ],
+    "wechat_messaging": [
+      "A2A-SIN-WeChat"
+    ],
+    "contact_management": [
+      "A2A-SIN-WeChat"
+    ],
+    "whatsapp_send": [
+      "A2A-SIN-WhatsApp"
+    ],
+    "whatsapp_receive": [
+      "A2A-SIN-WhatsApp"
+    ],
+    "media_handling": [
+      "A2A-SIN-WhatsApp"
+    ],
+    "group_management": [
+      "A2A-SIN-WhatsApp"
+    ],
+    "survey_completion": [
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific"
+    ],
+    "autonomous_operation": [
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific"
+    ],
+    "survey_discovery": [
+      "A2A-SIN-Worker-Prolific"
+    ],
+    "survey_application": [
+      "A2A-SIN-Worker-Prolific"
+    ],
+    "channel_management": [
+      "A2A-SIN-YouTube",
+      "A2A-SIN-Teams"
+    ],
+    "zoom_meeting_management": [
+      "A2A-SIN-Zoom"
+    ],
+    "recording_access": [
+      "A2A-SIN-Zoom"
+    ],
+    "teams_messaging": [
+      "A2A-SIN-Teams"
+    ],
+    "meeting_scheduling": [
+      "A2A-SIN-Teams"
+    ]
+  },
+  "byTrigger": {
+    "orchestrator für firmeninterne finanzen, steuern und verwaltung.": [
+      "A2A-SIN-Team-MyCompany"
+    ],
+    "orchestrator für apple-device-integration, macos-automation und hardware-steuerung.": [
+      "Team-SIN-Apple"
+    ],
+    "orchestrator für infrastruktur, server-deployments und core-backend-logic.": [
+      "Team-SIN-Code-Backend"
+    ],
+    "passwörter speichern": [
+      "Team-SIN-Code-Backend",
+      "A2A-SIN-Stripe",
+      "MCP-SIN-platform-auth"
+    ],
+    "credentials lesen": [
+      "Team-SIN-Code-Backend",
+      "A2A-SIN-Stripe",
+      "MCP-SIN-platform-auth"
+    ],
+    "secrets verwalten": [
+      "Team-SIN-Code-Backend",
+      "A2A-SIN-Stripe",
+      "MCP-SIN-platform-auth"
+    ],
+    "login daten": [
+      "Team-SIN-Code-Backend",
+      "A2A-SIN-Stripe",
+      "MCP-SIN-platform-auth"
+    ],
+    "zentraler orchestrator für die opensin core-engine, devops, ai-integrationen und datascience. führt die elite-coder-agenten.": [
+      "Team-SIN-Code-Core"
+    ],
+    "orchestrator für offensive security, bug bounties und anti-bot bypasses.": [
+      "Team-SIN-Code-CyberSec"
+    ],
+    "security check": [
+      "Team-SIN-Code-CyberSec",
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Email",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-IRC",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Recon",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-SMS",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Telegram",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-Xbox",
+      "MCP-SIN-computer-use",
+      "CLI-SIN-Repo-Sync",
+      "Plugin-SIN-Biometrics",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Jobs",
+      "Biz-SIN-Ledger",
+      "Template-SIN-Agent",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "pentest": [
+      "Team-SIN-Code-CyberSec",
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Email",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-IRC",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Recon",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-SMS",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Telegram",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-Xbox",
+      "MCP-SIN-computer-use",
+      "CLI-SIN-Repo-Sync",
+      "Plugin-SIN-Biometrics",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Jobs",
+      "Biz-SIN-Ledger",
+      "Template-SIN-Agent",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "sicherheits audit": [
+      "Team-SIN-Code-CyberSec",
+      "A2A-SIN-Beeper",
+      "A2A-SIN-BlueBubbles",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Discord",
+      "A2A-SIN-Email",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Feishu",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-IRC",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Matrix",
+      "A2A-SIN-N8N",
+      "A2A-SIN-Nintendo",
+      "A2A-SIN-PlayStation",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-Fuzz",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Recon",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Signal",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-SMS",
+      "A2A-SIN-Stripe",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Telegram",
+      "A2A-SIN-WebChat",
+      "A2A-SIN-Xbox",
+      "MCP-SIN-computer-use",
+      "CLI-SIN-Repo-Sync",
+      "Plugin-SIN-Biometrics",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Blog-Posts",
+      "Biz-SIN-Blueprints",
+      "Biz-SIN-Jobs",
+      "Biz-SIN-Ledger",
+      "Template-SIN-Agent",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "orchestrator für ui/ux, design, und client-side architectures.": [
+      "Team-SIN-Code-Frontend"
+    ],
+    "shop": [
+      "Team-SIN-Code-Frontend",
+      "Team-SIN-Commerce",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-TikTok-Shop",
+      "Biz-SIN-Blueprints"
+    ],
+    "e-commerce": [
+      "Team-SIN-Code-Frontend",
+      "Team-SIN-Commerce",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-TikTok-Shop",
+      "Biz-SIN-Blueprints"
+    ],
+    "online shop": [
+      "Team-SIN-Code-Frontend",
+      "Team-SIN-Commerce",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-TikTok-Shop",
+      "Biz-SIN-Blueprints"
+    ],
+    "orchestrator für e-commerce, zahlungsabwicklung und shop-management.": [
+      "Team-SIN-Commerce"
+    ],
+    "zahlung": [
+      "Team-SIN-Commerce",
+      "A2A-SIN-Stripe"
+    ],
+    "payment": [
+      "Team-SIN-Commerce",
+      "A2A-SIN-Stripe"
+    ],
+    "stripe produkt": [
+      "Team-SIN-Commerce",
+      "A2A-SIN-Stripe"
+    ],
+    "abonnement": [
+      "Team-SIN-Commerce",
+      "A2A-SIN-Stripe"
+    ],
+    "orchestrator für die opensin-community. bündelt discord, whatsapp, telegram und youtube zu einer community.": [
+      "Team-SIN-Community"
+    ],
+    "telegram bot": [
+      "Team-SIN-Community",
+      "Team-SIN-Messaging",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-ClaimWriter",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-Compliance",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Paragraph",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Telegram",
+      "CLI-SIN-Repo-Sync",
+      "CLI-SIN-TelegramBot",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Competitor-Tracker",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "telegram nachricht": [
+      "Team-SIN-Community",
+      "Team-SIN-Messaging",
+      "A2A-SIN-Chatroom",
+      "A2A-SIN-CI-CD",
+      "A2A-SIN-ClaimWriter",
+      "A2A-SIN-Code-DataScience",
+      "A2A-SIN-Code-DevOps",
+      "A2A-SIN-Code-GitLab-LogsCenter",
+      "A2A-SIN-Community",
+      "A2A-SIN-Compliance",
+      "A2A-SIN-Contract",
+      "A2A-SIN-Damages",
+      "A2A-SIN-DevTo",
+      "A2A-SIN-Evidence",
+      "A2A-SIN-Github-Action",
+      "A2A-SIN-HackerNews",
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Paragraph",
+      "A2A-SIN-ProductHunt",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Security-AI",
+      "A2A-SIN-Security-Audit",
+      "A2A-SIN-Security-Auth",
+      "A2A-SIN-Security-Cloud",
+      "A2A-SIN-Security-Crypto",
+      "A2A-SIN-Security-Exploit",
+      "A2A-SIN-Security-Forensics",
+      "A2A-SIN-Security-IoT",
+      "A2A-SIN-Security-Malware",
+      "A2A-SIN-Security-Mobile",
+      "A2A-SIN-Security-Network",
+      "A2A-SIN-Security-Social",
+      "A2A-SIN-Security-Web",
+      "A2A-SIN-Shop-Finance",
+      "A2A-SIN-Shop-Logistic",
+      "A2A-SIN-Slashdot",
+      "A2A-SIN-Summary",
+      "A2A-SIN-Telegram",
+      "CLI-SIN-Repo-Sync",
+      "CLI-SIN-TelegramBot",
+      "Skill-SIN-Agent-Forge",
+      "Skill-SIN-Create-TelegramBot",
+      "Skill-SIN-Enterprise-Deep-Debug",
+      "Biz-SIN-Competitor-Tracker",
+      "A2A-SIN-Security-RedTeam",
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "whatsapp": [
+      "Team-SIN-Community",
+      "Team-SIN-Messaging",
+      "A2A-SIN-WhatsApp"
+    ],
+    "wa nachricht": [
+      "Team-SIN-Community",
+      "Team-SIN-Messaging",
+      "A2A-SIN-WhatsApp"
+    ],
+    "orchestrator für foren, community-building und nischen-netzwerke.": [
+      "Team-SIN-Forum"
+    ],
+    "orchestrator für alle google workspace integrationen und google-dienste.": [
+      "Team-SIN-Google"
+    ],
+    "google docs": [
+      "Team-SIN-Google",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-Opal",
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific",
+      "Template-SIN-Worker"
+    ],
+    "dokumente bearbeiten": [
+      "Team-SIN-Google",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-Opal",
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific",
+      "Template-SIN-Worker"
+    ],
+    "docs lesen": [
+      "Team-SIN-Google",
+      "A2A-SIN-Google-Apps",
+      "A2A-SIN-Google-Chat",
+      "A2A-SIN-Opal",
+      "A2A-SIN-Worker-heypiggy",
+      "A2A-SIN-Worker-Prolific",
+      "Template-SIN-Worker"
+    ],
+    "orchestrator für interne dev-tools, sicherheit, storage und cloud-infrastruktur.": [
+      "Team-SIN-Infrastructure"
+    ],
+    "datei speichern": [
+      "Team-SIN-Infrastructure",
+      "A2A-SIN-Box-Storage",
+      "A2A-SIN-Storage",
+      "MCP-SIN-in-chrome",
+      "MCP-SIN-memory",
+      "MCP-SIN-platform-auth"
+    ],
+    "log speichern": [
+      "Team-SIN-Infrastructure",
+      "A2A-SIN-Box-Storage",
+      "A2A-SIN-Storage",
+      "MCP-SIN-in-chrome",
+      "MCP-SIN-memory",
+      "MCP-SIN-platform-auth"
+    ],
+    "screenshot hochladen": [
+      "Team-SIN-Infrastructure",
+      "A2A-SIN-Box-Storage",
+      "A2A-SIN-Storage",
+      "MCP-SIN-in-chrome",
+      "MCP-SIN-memory",
+      "MCP-SIN-platform-auth"
+    ],
+    "orchestrator für alle juristischen, patentrechtlichen und vertraglichen ki-operationen.": [
+      "Team-SIN-Legal"
+    ],
+    "orchestrator für comfyui-basierte bild- und video-generierung.": [
+      "Team-SIN-Media-ComfyUI"
+    ],
+    "orchestrator für music-generierung, video-produktion und creative ai.": [
+      "Team-SIN-Media-Music"
+    ],
+    "orchestrator für direct messaging, 1:1 kommunikation und broadcasts.": [
+      "Team-SIN-Messaging"
+    ],
+    "orchestrator für alle microsoft 365 integrationen und microsoft-dienste.": [
+      "Team-SIN-Microsoft"
+    ],
+    "orchestrator für deep-research, data-mining und mindrift-tasks.": [
+      "Team-SIN-Research"
+    ],
+    "orchestrator für social media management, content distribution und engagement.": [
+      "Team-SIN-Social"
+    ],
+    "apple calendar and contacts agent": [
+      "A2A-SIN-Apple-Calendar-Contacts"
+    ],
+    "apple device control agent": [
+      "A2A-SIN-Apple-DeviceControl"
+    ],
+    "apple facetime agent": [
+      "A2A-SIN-Apple-FaceTime"
+    ],
+    "apple mail agent": [
+      "A2A-SIN-Apple-Mail"
+    ],
+    "apple mobile device agent": [
+      "A2A-SIN-Apple-Mobile"
+    ],
+    "apple notes agent": [
+      "A2A-SIN-Apple-Notes"
+    ],
+    "apple notifications agent": [
+      "A2A-SIN-Apple-Notifications"
+    ],
+    "apple photos and files agent": [
+      "A2A-SIN-Apple-Photos-Files"
+    ],
+    "apple reminders agent": [
+      "A2A-SIN-Apple-Reminders"
+    ],
+    "apple safari/webkit agent": [
+      "A2A-SIN-Apple-Safari-WebKit"
+    ],
+    "apple shortcuts agent": [
+      "A2A-SIN-Apple-Shortcuts"
+    ],
+    "apple system settings agent": [
+      "A2A-SIN-Apple-SystemSettings"
+    ],
+    "beeper integration — unified messaging bridge.": [
+      "A2A-SIN-Beeper"
+    ],
+    "bluebubbles imessage bridge — imessage integration via bluebubbles.": [
+      "A2A-SIN-BlueBubbles"
+    ],
+    "box.com storage api for public file uploads and cdn distribution": [
+      "A2A-SIN-Box-Storage"
+    ],
+    "chatroom integration — multi-platform chat management.": [
+      "A2A-SIN-Chatroom"
+    ],
+    "autonomous ci/cd agent for opensin — lint, test, security, build, deploy": [
+      "A2A-SIN-CI-CD"
+    ],
+    "anwaltlicher a2a agent für anspruchsschreiben, klagegliederungen und forderungstexte.": [
+      "A2A-SIN-ClaimWriter"
+    ],
+    "ai coding assistant agent": [
+      "A2A-SIN-Code-AI"
+    ],
+    "autonomous cloud coder for data science tasks": [
+      "A2A-SIN-Code-DataScience"
+    ],
+    "autonomous cloud coder for devops tasks (ci/cd, infrastructure)": [
+      "A2A-SIN-Code-DevOps"
+    ],
+    "autonomous log analysis agent": [
+      "A2A-SIN-Code-GitLab-LogsCenter"
+    ],
+    "coding ceo agent": [
+      "A2A-SIN-Coding-CEO"
+    ],
+    "structural community engagement and growth agent.": [
+      "A2A-SIN-Community"
+    ],
+    "anwaltlicher a2a agent für compliance-gap-analysen, kontrollmapping und remediation-pläne.": [
+      "A2A-SIN-Compliance"
+    ],
+    "anwaltlicher a2a agent für vertragsanalyse, klauselrisiken und redline-vorschläge.": [
+      "A2A-SIN-Contract"
+    ],
+    "anwaltlicher a2a agent für schadensberechnung, verlusttabellen und szenarioanalysen.": [
+      "A2A-SIN-Damages"
+    ],
+    "dev.to research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.": [
+      "A2A-SIN-DevTo"
+    ],
+    "discord integration — discord bot and server management.": [
+      "A2A-SIN-Discord"
+    ],
+    "email integration agent": [
+      "A2A-SIN-Email"
+    ],
+    "anwaltlicher a2a agent für beweismittel, anlagen, provenienz und widerspruchsprüfung.": [
+      "A2A-SIN-Evidence"
+    ],
+    "sovereign ci/cd a2a agent replacing github actions. features a 100% free a2a infrastructure with opencode cli (openai/gpt-5.4 via opencode auth login). implements infinite scaling rotator on supabase oci for token refresh every 10 minutes. includes opencode and oh-my-opencode updaters for all a2a hf vms.": [
+      "A2A-SIN-Github-Action"
+    ],
+    "autonomous onboarding orchestrator with chrome password manager integration, cookie/session extraction, gcp secret manager, browser automation, and full 6-phase opensin onboarding pipeline. zero manual intervention.": [
+      "A2A-SIN-Google-Apps"
+    ],
+    "google sheets": [
+      "A2A-SIN-Google-Apps"
+    ],
+    "tabellen erstellen": [
+      "A2A-SIN-Google-Apps"
+    ],
+    "daten exportieren": [
+      "A2A-SIN-Google-Apps"
+    ],
+    "google chat integration agent": [
+      "A2A-SIN-Google-Chat"
+    ],
+    "hacker news research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.": [
+      "A2A-SIN-HackerNews"
+    ],
+    "reddit research and draft agent with browser-session auth, subreddit/thread/comment provenance, and structured research artifacts.": [
+      "A2A-SIN-IndieHackers",
+      "A2A-SIN-Lobsters",
+      "A2A-SIN-Reddit",
+      "A2A-SIN-Slashdot"
+    ],
+    "instagram automation agent": [
+      "A2A-SIN-Instagram"
+    ],
+    "irc protocol integration — irc chat bot and messaging.": [
+      "A2A-SIN-IRC"
+    ],
+    "line messaging agent": [
+      "A2A-SIN-LINE"
+    ],
+    "linkedin research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.": [
+      "A2A-SIN-LinkedIn"
+    ],
+    "matrix protocol integration — matrix messaging bridge.": [
+      "A2A-SIN-Matrix"
+    ],
+    "medium publishing agent": [
+      "A2A-SIN-Medium"
+    ],
+    "mindrift worker agent": [
+      "A2A-SIN-Mindrift"
+    ],
+    "autonomous n8n workflow management, execution, and webhook orchestration.": [
+      "A2A-SIN-N8N"
+    ],
+    "nostr protocol agent": [
+      "A2A-SIN-Nostr"
+    ],
+    "google opal agent": [
+      "A2A-SIN-Opal"
+    ],
+    "anwaltlicher a2a agent für juristische paragraphen-prüfung, gesetzesabgleich und fall-analyse.": [
+      "A2A-SIN-Paragraph"
+    ],
+    "patent automation agent": [
+      "A2A-SIN-Patents"
+    ],
+    "playstation network integration — psn messaging.": [
+      "A2A-SIN-PlayStation"
+    ],
+    "product hunt research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.": [
+      "A2A-SIN-ProductHunt"
+    ],
+    "quora automation agent": [
+      "A2A-SIN-Quora"
+    ],
+    "deep research agent": [
+      "A2A-SIN-Research"
+    ],
+    "security fuzzing agent": [
+      "A2A-SIN-Security-Fuzz"
+    ],
+    "security reconnaissance agent": [
+      "A2A-SIN-Security-Recon"
+    ],
+    "signal messaging integration — encrypted messaging via signal.": [
+      "A2A-SIN-Signal"
+    ],
+    "sms messaging integration — sms sending and receiving.": [
+      "A2A-SIN-SMS"
+    ],
+    "stackoverflow automation agent": [
+      "A2A-SIN-StackOverflow"
+    ],
+    "storage management agent": [
+      "A2A-SIN-Storage"
+    ],
+    "stripe automation and onboarding specialist for sub-3-minute setup, payment links, redirects, and webhook/secret fanout.": [
+      "A2A-SIN-Stripe"
+    ],
+    "anwaltlicher a2a agent für fallzusammenfassungen, chronologien und issue trees.": [
+      "A2A-SIN-Summary"
+    ],
+    "tax assistance agent": [
+      "A2A-SIN-Tax"
+    ],
+    "telegram research and draft agent with browser-session auth, post/comment provenance, and structured research artifacts.": [
+      "A2A-SIN-Telegram"
+    ],
+    "tiktok automation agent": [
+      "A2A-SIN-TikTok"
+    ],
+    "tiktok shop agent": [
+      "A2A-SIN-TikTok-Shop"
+    ],
+    "webchat integration — web-based chat widget.": [
+      "A2A-SIN-WebChat"
+    ],
+    "wechat messaging agent": [
+      "A2A-SIN-WeChat"
+    ],
+    "whatsapp messaging agent": [
+      "A2A-SIN-WhatsApp"
+    ],
+    "autonomous heypiggy survey worker": [
+      "A2A-SIN-Worker-heypiggy"
+    ],
+    "autonomous prolific survey worker": [
+      "A2A-SIN-Worker-Prolific"
+    ],
+    "x/twitter automation agent": [
+      "A2A-SIN-X-Twitter"
+    ],
+    "xbox gaming platform integration — xbox live messaging.": [
+      "A2A-SIN-Xbox"
+    ],
+    "youtube management agent": [
+      "A2A-SIN-YouTube"
+    ],
+    "zoom integration agent": [
+      "A2A-SIN-Zoom"
+    ],
+    "structural repository synchronization and repo-hygiene agent.": [
+      "CLI-SIN-Repo-Sync"
+    ],
+    "__sin_agent_description__": [
+      "Template-SIN-Worker"
+    ],
+    "orchestrator für alle autonomen earning-, freelance- und micro-job worker.": [
+      "A2A-SIN-Team-MoneyEarners"
+    ],
+    "microsoft teams integration agent": [
+      "A2A-SIN-Teams"
+    ]
+  }
+}

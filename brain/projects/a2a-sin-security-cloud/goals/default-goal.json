@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-security-cloud",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:35:46.091Z",
+  "updatedAt": "2026-04-14T15:35:46.091Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:35:46.091Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

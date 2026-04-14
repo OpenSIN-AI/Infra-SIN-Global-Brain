@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-medium",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:35:13.750Z",
+  "updatedAt": "2026-04-14T15:35:13.750Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:35:13.750Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

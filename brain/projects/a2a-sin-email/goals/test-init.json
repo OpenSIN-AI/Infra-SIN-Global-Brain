@@ -1,0 +1,17 @@
+{
+  "id": "test-init",
+  "projectId": "a2a-sin-email",
+  "description": "Test initialization",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:21:24.553Z",
+  "updatedAt": "2026-04-14T15:21:24.553Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:21:24.553Z",
+      "description": "Test initialization",
+      "status": "active"
+    }
+  ]
+}

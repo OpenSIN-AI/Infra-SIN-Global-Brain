@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "opensin-overview",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T16:27:49.700Z",
+  "updatedAt": "2026-04-14T16:27:49.700Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T16:27:49.700Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

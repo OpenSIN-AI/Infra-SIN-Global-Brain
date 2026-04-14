@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "team-sin-media-music",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:37:19.378Z",
+  "updatedAt": "2026-04-14T15:37:19.378Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:37:19.378Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

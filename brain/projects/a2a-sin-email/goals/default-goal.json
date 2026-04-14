@@ -1,0 +1,22 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-email",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:21:45.199Z",
+  "updatedAt": "2026-04-14T16:28:05.274Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:21:45.199Z",
+      "description": "Continue development",
+      "status": "active"
+    },
+    {
+      "changedAt": "2026-04-14T16:28:05.274Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

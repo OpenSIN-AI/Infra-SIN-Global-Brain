@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "team-sin-infrastructure",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:37:14.188Z",
+  "updatedAt": "2026-04-14T15:37:14.188Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:37:14.188Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

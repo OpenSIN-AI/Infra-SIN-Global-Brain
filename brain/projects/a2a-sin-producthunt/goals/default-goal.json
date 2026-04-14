@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-producthunt",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:35:32.649Z",
+  "updatedAt": "2026-04-14T15:35:32.649Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:35:32.649Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

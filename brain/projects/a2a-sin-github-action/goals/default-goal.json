@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-github-action",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:34:55.411Z",
+  "updatedAt": "2026-04-14T15:34:55.411Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:34:55.411Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

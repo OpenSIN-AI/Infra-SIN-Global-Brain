@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-reddit",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:35:37.102Z",
+  "updatedAt": "2026-04-14T15:35:37.102Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:35:37.102Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

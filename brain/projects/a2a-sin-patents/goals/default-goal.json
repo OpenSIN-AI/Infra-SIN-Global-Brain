@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-patents",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:35:28.706Z",
+  "updatedAt": "2026-04-14T15:35:28.706Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:35:28.706Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

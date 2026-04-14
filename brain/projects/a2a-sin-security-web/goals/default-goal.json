@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-security-web",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:36:05.541Z",
+  "updatedAt": "2026-04-14T15:36:05.541Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:36:05.541Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

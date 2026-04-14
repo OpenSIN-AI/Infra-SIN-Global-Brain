@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "sin-claude",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T16:28:00.811Z",
+  "updatedAt": "2026-04-14T16:28:00.811Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T16:28:00.811Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

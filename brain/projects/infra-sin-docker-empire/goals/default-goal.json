@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "infra-sin-docker-empire",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:36:57.884Z",
+  "updatedAt": "2026-04-14T15:36:57.884Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:36:57.884Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

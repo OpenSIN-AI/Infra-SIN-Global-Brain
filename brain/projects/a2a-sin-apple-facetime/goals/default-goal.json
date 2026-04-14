@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-apple-facetime",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:34:05.135Z",
+  "updatedAt": "2026-04-14T15:34:05.135Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:34:05.135Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

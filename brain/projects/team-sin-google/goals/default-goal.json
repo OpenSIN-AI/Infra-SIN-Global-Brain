@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "team-sin-google",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:37:12.786Z",
+  "updatedAt": "2026-04-14T15:37:12.786Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:37:12.786Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "revision": 1,
+  "projectId": "a2a-sin-tax",
+  "goalId": "default-goal",
+  "goalDescription": "Continue development",
+  "status": "active",
+  "strategy": "initial-discovery",
+  "constraints": [],
+  "steps": [],
+  "decisions": [],
+  "issues": [],
+  "notes": [],
+  "createdAt": "2026-04-14T15:36:23.709Z",
+  "updatedAt": "2026-04-14T15:36:23.709Z"
+}

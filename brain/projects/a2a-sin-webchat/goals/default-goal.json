@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-webchat",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:36:37.001Z",
+  "updatedAt": "2026-04-14T15:36:37.001Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:36:37.001Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

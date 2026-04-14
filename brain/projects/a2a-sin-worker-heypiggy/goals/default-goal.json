@@ -1,0 +1,22 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-worker-heypiggy",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:36:43.437Z",
+  "updatedAt": "2026-04-14T16:27:54.520Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:36:43.437Z",
+      "description": "Continue development",
+      "status": "active"
+    },
+    {
+      "changedAt": "2026-04-14T16:27:54.520Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

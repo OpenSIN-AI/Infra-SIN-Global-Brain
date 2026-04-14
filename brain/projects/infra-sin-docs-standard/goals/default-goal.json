@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "infra-sin-docs-standard",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:36:59.145Z",
+  "updatedAt": "2026-04-14T15:36:59.145Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:36:59.145Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "default-goal",
+  "projectId": "a2a-sin-damages",
+  "description": "Continue development",
+  "status": "active",
+  "constraints": [],
+  "tags": [],
+  "createdAt": "2026-04-14T15:34:46.141Z",
+  "updatedAt": "2026-04-14T15:34:46.141Z",
+  "history": [
+    {
+      "changedAt": "2026-04-14T15:34:46.141Z",
+      "description": "Continue development",
+      "status": "active"
+    }
+  ]
+}
