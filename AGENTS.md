@@ -55,295 +55,75 @@
 
 ---
 
-# 🚨 A2A-SIN AGENT CAPABILITY & ROUTING REGISTRY (PRIORITY -9.0) 🚨
+# 🚨 A2A-SIN DYNAMIC AGENT DISCOVERY & ROUTING (PRIORITY -9.0 — AUTO-UPDATING, NEVER STALE) 🚨
 
-**DAS PRINZIP: JEDER AGENT MUSS SOFORT WISSEN — WELCHER A2A-SIN AGENT IST FÜR WAS ZUSTÄNDIG!**
+**ABSOLUTES VERBOT: KEINE STATISCHEN AGENT-LISTEN MEHR! Diese Registry veraltet sofort.**
 
-**ABSOLUTES VERBOT: Kein Agent darf Aufgaben ALLEINE lösen wenn es dafür einen spezialisierten A2A-SIN-Agenten gibt!**
+**PFLICHT-WORKFLOW VOR JEDER AUFGABE:**
+```bash
+# 1. Discovery ausfuehren — scannt GitHub Organization in Echtzeit
+node /Users/jeremy/dev/global-brain/src/engines/discover-agents.js
 
-**REGEL:** Wenn der User eine Aufgabe nennt, MUSS der Agent SOFORT analysieren:
-1. Welche A2A-SIN-Agenten sind dafür zuständig?
-2. Welche Aufgaben können PARALLEL delegiert werden?
-3. Welche Aufgaben müssen NACHEINANDER laufen?
-4. Welche Teams müssen involviert werden?
+# 2. Registry laden
+cat /Users/jeremy/dev/global-brain/.pcpm/agent-registry.json
 
-**NIEMALS** soll der User extra sagen müssen "nutz A2A-SIN-X für Y". Das muss AUTOMATISCH passieren!
-
----
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 1: STORAGE & CREDENTIALS
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Passwörter, Credentials, Secrets speichern/lesen | **A2A-SIN-PasswordManager** | Zentrale Passwortverwaltung für alle Agenten |
-| Dateien, Logs, Screenshots speichern | **A2A-SIN-Storage** | Zentrale Dateiablage |
-| Box.com Upload/Download | **A2A-SIN-Box-Storage** | Cloud Storage via Box.com |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 2: GOOGLE ECOSYSTEM
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Google Docs (lesen, schreiben, bearbeiten, Tabs) | **A2A-SIN-Google-Apps** | ALLE Google Docs Operationen |
-| Google Sheets (Tabellen, Daten, Enterprise-Sheets) | **A2A-SIN-Google-Apps** | ALLE Google Sheets Operationen |
-| Google Drive, Google Calendar, Google Chat | **A2A-SIN-Google-Apps** | ALLE Google Workspace Services |
-| Google Admin Console, Domain-Wide Delegation | **Team-SIN-Google** | Workspace Admin Tasks |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 3: APPLE ECOSYSTEM
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Apple Mail, Kalender, Kontakte | **A2A-SIN-Apple-Mail** | Apple Mail + Calendar + Contacts |
-| Apple Notes, Reminders, Notifications | **A2A-SIN-Apple-Notes** | Notes + Reminders + Notifications |
-| Apple FaceTime, iMessage, SMS | **A2A-SIN-Apple-FaceTime** | FaceTime + Messages |
-| Apple Photos, Files, Safari | **A2A-SIN-Apple-Photos-Files** | Photos + Files + Safari |
-| Apple Shortcuts, SystemSettings, DeviceControl | **A2A-SIN-Apple-Shortcuts** | Shortcuts + Settings + Device |
-| Apple Mobile (iOS Geräte) | **A2A-SIN-Apple-Mobile** | iOS Device Management |
-| **ALLE Apple Tasks gesamt** | **Team-SIN-Apple** | Apple Ecosystem Orchestrierung |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 4: MESSAGING & KOMMUNIKATION
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Telegram Bot erstellen, steuern, deployen | **A2A-SIN-Telegram** | Telegram Automation |
-| WhatsApp Nachrichten, Gruppen, Business | **A2A-SIN-WhatsApp** | WhatsApp Automation |
-| Signal Nachrichten | **A2A-SIN-Signal** | Signal Messenger |
-| Discord Bot, Server, Channels | **A2A-SIN-Discord** | Discord Automation |
-| Slack, Teams, Chatroom | **A2A-SIN-Teams** | Microsoft Teams + Chat |
-| Email senden, empfangen, verwalten | **A2A-SIN-Email** | Email Automation |
-| LINE Messenger | **A2A-SIN-LINE** | LINE Automation |
-| WeChat Nachrichten | **A2A-SIN-WeChat** | WeChat Automation |
-| Beeper (Universal Messenger) | **A2A-SIN-Beeper** | Multi-Platform Messaging |
-| BlueBubbles (iMessage Bridge) | **A2A-SIN-BlueBubbles** | iMessage via Android Bridge |
-| Matrix Chat | **A2A-SIN-Matrix** | Matrix Protocol |
-| IRC Chat | **A2A-SIN-IRC** | IRC Protocol |
-| **ALLE Messaging Tasks gesamt** | **Team-SIN-Messaging** | Messaging Orchestrierung |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 5: SOCIAL MEDIA & PLATTFORMEN
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Instagram Posts, Stories, DMs | **A2A-SIN-Instagram** | Instagram Automation |
-| X/Twitter Posts, Threads, DMs | **A2A-SIN-X-Twitter** | Twitter/X Automation |
-| TikTok Videos, Shop, Comments | **A2A-SIN-TikTok** | TikTok Automation |
-| TikTok Shop Produkte, Bestellungen | **A2A-SIN-TikTok-Shop** | TikTok Commerce |
-| LinkedIn Posts, Jobs, Networking | **A2A-SIN-LinkedIn** | LinkedIn Automation |
-| Reddit Posts, Comments, Subreddits | **A2A-SIN-Reddit** | Reddit Automation |
-| YouTube Videos, Channel, Analytics | **A2A-SIN-YouTube** | YouTube Automation |
-| Facebook, WebChat | **A2A-SIN-WebChat** | Facebook/Web Chat |
-| Medium Artikel, Publications | **A2A-SIN-Medium** | Medium Publishing |
-| Dev.to Artikel, Tech Blog | **A2A-SIN-DevTo** | Dev.to Publishing |
-| Product Hunt Launch | **A2A-SIN-ProductHunt** | Product Hunt Launch |
-| HackerNews Posts, Comments | **A2A-SIN-HackerNews** | HackerNews |
-| StackOverflow Fragen, Antworten | **A2A-SIN-StackOverflow** | StackOverflow |
-| Quora Antworten, Fragen | **A2A-SIN-Quora** | Quora |
-| IndieHackers Build in Public | **A2A-SIN-IndieHackers** | IndieHackers |
-| Lobsters Tech Posts | **A2A-SIN-Lobsters** | Lobsters |
-| Slashdot News | **A2A-SIN-Slashdot** | Slashdot |
-| Nostr Posts, Relays | **A2A-SIN-Nostr** | Nostr Protocol |
-| Feishu (Lark) | **A2A-SIN-Feishu** | Feishu/Lark |
-| Mindrift Tasks | **A2A-SIN-Mindrift** | Mindrift Platform |
-| **ALLE Social Media Tasks gesamt** | **Team-SIN-Social** | Social Media Orchestrierung |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 6: E-COMMERCE & SHOP
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Stripe Produkte, Zahlungen, Subscriptions | **A2A-SIN-Stripe** | Payment Processing |
-| Shop Finance, Buchhaltung, Steuern | **A2A-SIN-Shop-Finance** | Shop Finance |
-| Shop Logistik, Versand, Lieferanten | **A2A-SIN-Shop-Logistic** | Shop Logistics |
-| Steuern, Tax Compliance | **A2A-SIN-Tax** | Tax Management |
-| Contracts, Verträge | **A2A-SIN-Contract** | Contract Management |
-| **ALLE Shop/E-Commerce Tasks gesamt** | **Team-SIN-Commerce** | E-Commerce Orchestrierung |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 7: CODING & DEVOPS
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Code schreiben, refactoren, reviewen | **Team-SIN-Code-Core** | Core Development |
-| Backend APIs, Datenbanken, Services | **Team-SIN-Code-Backend** | Backend Development |
-| Frontend UI, React, Next.js, Styling | **Team-SIN-Code-Frontend** | Frontend Development |
-| DevOps, CI/CD, Docker, Deployments | **A2A-SIN-Code-DevOps** | DevOps Automation |
-| Security Audits, Pentesting, Exploits | **A2A-SIN-Security-Audit** | Security Auditing |
-| Code AI, ML Models, Data Science | **A2A-SIN-Code-AI** | AI/ML Development |
-| GitHub Actions, PRs, Issues | **A2A-SIN-Github-Action** | GitHub Automation |
-| N8N Workflows, Automation | **A2A-SIN-N8N** | n8n Workflow Management |
-| GitLab Logs, CI | **A2A-SIN-Code-GitLab-LogsCenter** | GitLab Integration |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 8: BUSINESS & MARKETING
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Blog Posts, Content Creation | **Biz-SIN-Blog-Posts** | Blog Content |
-| Marketing Kampagnen, Ads | **Biz-SIN-Marketing** | Marketing Automation |
-| Job Suche, Freelancer, Upwork | **Biz-SIN-Jobs** | Job Platform Automation |
-| Competitor Analysis | **Biz-SIN-Competitor-Tracker** | Competitor Tracking |
-| Patente, Claims | **Biz-SIN-Patents** | Patent Management |
-| Blueprints, Architektur | **Biz-SIN-Blueprints** | Architecture Blueprints |
-| Ledger, GitHub Showcase | **Biz-SIN-Ledger** | Achievement Ledger |
-| **ALLE Business Tasks gesamt** | **Team-SIN-Forum** | Forum/Community |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 9: SECURITY SUITE
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Security Audit, Pentest | **A2A-SIN-Security-Audit** | Security Auditing |
-| Auth, OAuth, Tokens | **A2A-SIN-Security-Auth** | Authentication Security |
-| Cloud Security, AWS, GCP | **A2A-SIN-Security-Cloud** | Cloud Security |
-| Crypto, Blockchain Security | **A2A-SIN-Security-Crypto** | Crypto Security |
-| Exploit Development | **A2A-SIN-Security-Exploit** | Exploit Development |
-| Forensics, Incident Response | **A2A-SIN-Security-Forensics** | Digital Forensics |
-| Fuzzing, Vulnerability Scanning | **A2A-SIN-Security-Fuzz** | Fuzzing |
-| IoT Security | **A2A-SIN-Security-IoT** | IoT Security |
-| Malware Analysis | **A2A-SIN-Security-Malware** | Malware Analysis |
-| Mobile Security | **A2A-SIN-Security-Mobile** | Mobile Security |
-| Network Security | **A2A-SIN-Security-Network** | Network Security |
-| Recon, OSINT | **A2A-SIN-Security-Recon** | Reconnaissance |
-| Red Team, Offensive Security | **A2A-SIN-Security-RedTeam** | Red Team Operations |
-| Social Engineering | **A2A-SIN-Security-Social** | Social Engineering |
-| Web Security | **A2A-SIN-Security-Web** | Web Application Security |
-| AI Security | **A2A-SIN-Security-AI** | AI/ML Security |
-| **ALLE Security Tasks gesamt** | **Team-SIN-Code-CyberSec** | CyberSec Orchestrierung |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 10: ENTERTAINMENT & GAMING
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Nintendo (Switch, eShop) | **A2A-SIN-Nintendo** | Nintendo Platform |
-| PlayStation (PS5, PSN) | **A2A-SIN-PlayStation** | PlayStation Platform |
-| Xbox | **A2A-SIN-Xbox** | Xbox Platform |
-| TikTok Gaming | **A2A-SIN-TikTok** | TikTok Gaming Content |
-| Medusa (Gaming Platform) | **A2A-SIN-Medusa** | Medusa Platform |
-| Opal (Gaming) | **A2A-SIN-Opal** | Opal Platform |
-| Zoom Meetings, Webinare | **A2A-SIN-Zoom** | Zoom Automation |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 11: INFRASTRUKTUR & TOOLS
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Chrome Extension, Browser Automation | **MCP-SIN-chrome-extension** | Chrome Extension MCP |
-| Computer Use (Screen Control) | **MCP-SIN-computer-use** | Computer Control MCP |
-| MCP Gateway (Routing) | **MCP-SIN-mcp-gateway** | MCP Routing Gateway |
-| MCP Memory (Knowledge) | **MCP-SIN-memory** | Memory MCP |
-| Platform Auth | **MCP-SIN-platform-auth** | Platform Authentication |
-| Browser Automation | **MCP-SIN-usebrowser** | Browser Automation MCP |
-| Repo Sync | **CLI-SIN-Repo-Sync** | Repository Sync CLI |
-| TelegramBot CLI | **CLI-SIN-TelegramBot** | Telegram CLI |
-| Biometrics Plugin | **Plugin-SIN-Biometrics** | Biometric Auth |
-| Swarm Plugin | **Plugin-SIN-Swarm** | Swarm Orchestration |
-| Agent Forge (Agent Creation) | **Skill-SIN-Agent-Forge** | Agent Creation Skill |
-| TelegramBot Creation | **Skill-SIN-Create-TelegramBot** | Bot Creation Skill |
-| Enterprise Deep Debug | **Skill-SIN-Enterprise-Deep-Debug** | Debugging Skill |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 12: WORKER & EARNINGS
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Prolific Surveys | **A2A-SIN-Worker-Prolific** | Prolific Survey Automation |
-| HeyPiggy Tasks | **A2A-SIN-Worker-heypiggy** | HeyPiggy Automation |
-| Money Earners (alle Plattformen) | **A2A-SIN-Team-MoneyEarners** | Money Earning Orchestrierung |
-| MyCompany Management | **A2A-SIN-Team-MyCompany** | Company Management |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 13: CONTENT & RESEARCH
-
-| Trigger | Delegiere an | Zweck |
-|---------|-------------|-------|
-| Research, Recherche | **A2A-SIN-Research** | Research Automation |
-| Summary, Zusammenfassung | **A2A-SIN-Summary** | Content Summarization |
-| ClaimWriter (Patents, Claims) | **A2A-SIN-ClaimWriter** | Claim Writing |
-| Evidence, Beweise | **A2A-SIN-Evidence** | Evidence Management |
-| Damages, Schadensersatz | **A2A-SIN-Damages** | Damage Claims |
-| Compliance, DSGVO | **A2A-SIN-Compliance** | Compliance Management |
-| Patents | **A2A-SIN-Patents** | Patent Management |
-| **ALLE Research Tasks gesamt** | **Team-SIN-Research** | Research Orchestrierung |
-
-## A2A-SIN AGENT REGISTRY — KATEGORIE 14: TEAMS (ORCHESTRIERUNG)
-
-| Team | Zuständig für |
-|------|--------------|
-| **Team-SIN-Apple** | Orchestriert ALLE Apple-Agenten |
-| **Team-SIN-Google** | Orchestriert ALLE Google-Agenten |
-| **Team-SIN-Messaging** | Orchestriert ALLE Messaging-Agenten |
-| **Team-SIN-Social** | Orchestriert ALLE Social Media Agenten |
-| **Team-SIN-Commerce** | Orchestriert ALLE E-Commerce Agenten |
-| **Team-SIN-Code-Core** | Orchestriert ALLE Coding-Agenten |
-| **Team-SIN-Code-Backend** | Backend Development |
-| **Team-SIN-Code-Frontend** | Frontend Development |
-| **Team-SIN-Code-CyberSec** | Orchestriert ALLE Security-Agenten |
-| **Team-SIN-Research** | Orchestriert ALLE Research-Agenten |
-| **Team-SIN-Community** | Community Management |
-| **Team-SIN-Forum** | Forum Management |
-| **Team-SIN-Media-ComfyUI** | Media Generation (ComfyUI) |
-| **Team-SIN-Media-Music** | Music Generation |
-| **Team-SIN-Infrastructure** | Infrastructure Management |
-| **Team-SIN-Legal** | Legal Management |
-| **Team-SIN-Microsoft** | Microsoft Ecosystem |
-
----
-
-## 🧠 INTELLIGENTE DELEGATIONSLOGIK — BEISPIELE
-
-### Beispiel 1: "Baue mir einen neuen Shop mit Bezahlfunktionen"
-```
-PARALLEL:
-  → Team-SIN-Google: Google Docs/Sheets für Shop-Dokumentation erstellen
-  → A2A-SIN-Stripe: Produkte, Payment Intents, Subscriptions einrichten
-  → Team-SIN-Code-Frontend: Shop Frontend bauen
-  → Team-SIN-Code-Backend: Shop Backend + API bauen
-  
-NACHEINANDER:
-  → A2A-SIN-Shop-Finance: Buchhaltung einrichten (nach Stripe)
-  → A2A-SIN-Shop-Logistic: Versand/Lieferanten einrichten (nach Shop)
-  → Biz-SIN-Marketing: Marketing Kampagne starten (nach Shop live)
-  → Team-SIN-Social: Social Media Posts (nach Marketing)
+# 3. Passende Agenten finden:
+# - byTrigger: Suche nach User-Task Keywords (z.B. "google docs", "passwoerter", "shop")
+# - byCapability: Suche nach Capability-Kategorien (z.B. "google", "apple", "security")
 ```
 
-### Beispiel 2: "Verändere Code in Thema XYZ"
-```
-ANALYSE:
-  → Welche Komponenten sind betroffen?
-  → Backend? → Team-SIN-Code-Backend delegieren
-  → Frontend? → Team-SIN-Code-Frontend delegieren
-  → Security? → A2A-SIN-Security-Audit delegieren
-  → Datenbank? → Team-SIN-Code-Backend delegieren
-  → Deployment? → A2A-SIN-Code-DevOps delegieren
-  
-ACTION: PARALLEL an alle betroffenen Teams delegieren!
+**WIE ES FUNKTIONIERT:**
+1. Das Discovery Script scannt ALLE Repos der OpenSIN-AI Organization via GitHub API
+2. Erkennt automatisch: Typ (a2a-agent, team, mcp, cli, plugin, skill), Capabilities, Trigger-Keywords
+3. Baut Indexe: `byTrigger` (Task → Agent) und `byCapability` (Kategorie → Agenten)
+4. **NEUE Agenten werden AUTOMATISCH erkannt** — kein manuelles Update noetig!
+5. Speichert Registry unter `.pcpm/agent-registry.json`
+
+**ROUTING BEISPIELE:**
+- "google docs" → Registry zeigt: A2A-SIN-Google-Apps, Team-SIN-Google
+- "passwoerter speichern" → Registry zeigt: A2A-SIN-PasswordManager
+- "shop" → Registry zeigt: Team-SIN-Commerce, A2A-SIN-Stripe, A2A-SIN-Shop-Finance
+- "vorhersage"/"simulation" → Registry zeigt: A2A-SIN-MiroFish (wenn vorhanden)
+
+**DELEGATIONSLOGIK:**
+1. Discovery ausfuehren → Registry laden
+2. User-Task keywords in `byTrigger` suchen → zustaendige Agenten finden
+3. PARALLEL delegieren wo unabhaengig, NACHEINANDER bei Abhaengigkeiten
+4. Teams als Orchestrator fuer multi-domain Aufgaben
+
+**BEISPIEL: "Baue mir einen neuen Shop mit Bezahlfunktionen"**
+```bash
+node /Users/jeremy/dev/global-brain/src/engines/discover-agents.js
+# Registry zeigt:
+# "shop" → Team-SIN-Commerce, A2A-SIN-Shop-Finance, A2A-SIN-Shop-Logistic
+# "payment" → A2A-SIN-Stripe
+# "google docs" → A2A-SIN-Google-Apps
+
+# PARALLEL:
+#   → Team-SIN-Commerce: Shop Orchestrierung
+#   → A2A-SIN-Stripe: Payment Setup
+#   → A2A-SIN-Google-Apps: Shop Dokumentation
+#   → Team-SIN-Code-Frontend: Shop UI
+#   → Team-SIN-Code-Backend: Shop API
+# NACHEINANDER:
+#   → A2A-SIN-Shop-Finance: Buchhaltung (nach Stripe)
+#   → Biz-SIN-Marketing: Marketing (nach Shop live)
+#   → Team-SIN-Social: Social Posts (nach Marketing)
 ```
 
-### Beispiel 3: "Mach was in Google Docs"
-```
-SOFORT: → A2A-SIN-Google-Apps delegieren!
-NICHT: Selbst versuchen Google Docs zu bearbeiten!
-```
+**BEISPIEL: "Mach was in Google Docs"**
+→ SOFORT: Discovery → "google docs" → A2A-SIN-Google-Apps → delegieren!
 
-### Beispiel 4: "Speichere diese Credentials"
-```
-SOFORT: → A2A-SIN-PasswordManager delegieren!
-NICHT: Selbst in eine Datei schreiben!
-```
+**BEISPIEL: "Speichere diese Credentials"**
+→ SOFORT: Discovery → "passwoerter" → A2A-SIN-PasswordManager → delegieren!
 
-### Beispiel 5: "Erstelle einen Blog Post und teile ihn überall"
-```
-SEQUENZ:
-  1. Biz-SIN-Blog-Posts: Blog Post erstellen
-  2. Team-SIN-Social: PARALLEL auf allen Plattformen teilen:
-     → A2A-SIN-X-Twitter
-     → A2A-SIN-LinkedIn
-     → A2A-SIN-Reddit
-     → A2A-SIN-Instagram
-     → A2A-SIN-Facebook
-  3. Team-SIN-Forum: In Foren teilen
-```
-
----
-
-## ⚡ DELEGATIONSREGELN (ABSOLUT, KEINE AUSNAHMEN)
-
-1. **SPEZIALISIERTE AGENTEN FIRST:** Wenn es einen A2A-SIN-Agenten für eine Aufgabe gibt → IMMEDIATE DELEGATION.
-2. **PARALLEL WO MÖGLICH:** Unabhängige Tasks PARALLEL an verschiedene Agenten delegieren.
-3. **TEAMS FÜR KOMPLEXE AUFGABEN:** Bei Aufgaben die mehrere Domänen betreffen → Teams als Orchestrator nutzen.
-4. **NIEMALS ALLEINE MACHEN:** Ein Agent soll NIE versuchen, Aufgaben zu lösen die ein spezialisierter Agent besser kann.
-5. **USER MUSS ES NICHT SAGEN:** Die Delegation passiert AUTOMATISCH basierend auf der Task-Analyse.
+**REGELN (ABSOLUT, KEINE AUSNAHMEN):**
+1. **DISCOVERY FIRST:** Immer erst Discovery ausfuehren vor Task-Analyse
+2. **SPEZIALISIERT FIRST:** Wenn Agent existiert → SOFORT delegieren
+3. **PARALLEL:** Unabhaengige Tasks parallel an verschiedene Agenten
+4. **TEAMS:** Multi-domain Aufgaben → Teams als Orchestrator
+5. **NIEMALS ALLEINE:** Nie Aufgaben loesen die ein spezialisierter Agent besser kann
+6. **USER SAGT ES NICHT:** Delegation passiert AUTOMATISCH
 
 ---
 
