@@ -174,6 +174,32 @@ npm install && npm test
 
 ---
 
+## Parallel Exploration Mandate (PRIORITY -4.5)
 
+Bei Codebase-Analyse auf grossen Projekten MUESSEN Agenten **5-10 parallele explore + 5-10 librarian-Agenten** starten. Ein einzelner Agent liefert nur ~20% Abdeckung.
 
+```
+task(subagent_type="explore", run_in_background=true, load_skills=[], description="Find APIs", prompt="[CONTEXT]: Grosse Codebase. [GOAL]: Alle API-Endpunkte. [REQUEST]: Dateipfade + Beschreibung.")
+task(subagent_type="explore", run_in_background=true, load_skills=[], description="Find Services", prompt="[CONTEXT]: Grosse Codebase. [GOAL]: Alle Services. [REQUEST]: Dateipfade + Methoden + Dependencies.")
+// ... 5-10 weitere parallele Agenten
+```
+
+Siehe [Agent Configuration Guide](https://github.com/OpenSIN-AI/OpenSIN-documentation/blob/main/docs/guide/agent-configuration.md) fuer vollstaendige Dokumentation.
+
+---
+
+## Agent Configuration System (v5)
+
+Alle Agenten-Modelle werden durch ein mehrstufiges Konfigurationssystem verwaltet:
+
+| Datei | Zweck |
+|:---|:---|
+| `opencode.json` | Haupt-Config (Provider, Modelle, MCPs, Agenten, Commands) |
+| `oh-my-openagent.json` | Subagenten-Modelle (explore, librarian, oracle, etc.) |
+| `oh-my-sin.json` | Zentrales A2A Team Register |
+| `my-sin-team-code.json` | Team Coding Agenten + Modelle |
+| `my-sin-team-worker.json` | Team Worker Agenten + Modelle |
+| `my-sin-team-infrastructure.json` | Team Infra Agenten + Modelle |
+
+Nach jeder Aenderung MUSS `sin-sync` ausgefuehrt werden.
 

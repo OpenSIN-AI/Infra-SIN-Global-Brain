@@ -295,3 +295,28 @@ import {
 6. **Fail-safe memory**: Knowledge entries are never deleted, only marked as `invalidated`.
 7. **Graph-first knowledge**: Every write produces a graph edge. Relations between decisions are first-class citizens.
 8. **Score-aware context**: Forbidden lists and drifting entries are surfaced by score, not insertion order.
+
+---
+
+## Agent Configuration (v5)
+
+The global-brain integrates with the OpenSIN agent configuration system. All agent model assignments are managed through a tiered configuration hierarchy:
+
+### Configuration Files
+
+| Datei | Zweck | Repo |
+|:---|:---|:---|
+| `opencode.json` | Haupt-Config — Provider, Modelle, MCPs, sichtbare Agenten | `upgraded-opencode-stack` |
+| `oh-my-openagent.json` | Subagenten-Modelle — explore, librarian, oracle, etc. | `upgraded-opencode-stack` |
+| `oh-my-sin.json` | Zentrales A2A Team Register — alle Teams klassifiziert | `upgraded-opencode-stack` |
+| `my-sin-team-code.json` | Team Coding Agenten + Modelle | `upgraded-opencode-stack` |
+| `my-sin-team-worker.json` | Team Worker Agenten + Modelle | `upgraded-opencode-stack` |
+| `my-sin-team-infrastructure.json` | Team Infra Agenten + Modelle | `upgraded-opencode-stack` |
+
+### Parallel Exploration Mandate
+
+Bei grossen Codebases MUESSEN Agenten **5-10 parallele explore + 5-10 librarian-Agenten** starten. Dies ist in `AGENTS.md` als `PARALLEL-EXPLORATION MANDATE (PRIORITY -4.5)` definiert.
+
+### Vollstaendige Dokumentation
+
+Siehe [Agent Configuration Guide](https://github.com/OpenSIN-AI/OpenSIN-documentation/blob/main/docs/guide/agent-configuration.md) fuer vollstaendige Dokumentation aller Config-Dateien, Modelle, Fallback-Ketten und Team-Architektur.
