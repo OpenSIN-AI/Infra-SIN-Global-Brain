@@ -311,6 +311,32 @@
     "driftReasons": [],
     "lastValidatedAt": "2026-04-15T17:00:00.000Z",
     "ageDays": 0
+  },
+  {
+    "id": "rule-20260415-cloudflare-cache-issue",
+    "type": "rule",
+    "text": "Cloudflare Pages cached die HTML Datei auf Custom Domains extrem hart. Zone ID: 6f9212bfe8656507578d9b6b02a2dfeb. Cache purgen via: curl -X POST https://api.cloudflare.com/client/v4/zones/6f9212bfe8656507578d9b6b02a2dfeb/purge_cache -H 'Authorization: Bearer TOKEN' -H 'Content-Type: application/json' -d '{\"purge_everything\":true}'. Das Pages API Token hat KEINE Zone Permissions - muss manuell im Dashboard gemacht werden.",
+    "topic": "cloudflare-cache-issue",
+    "status": "active",
+    "scope": "global",
+    "score": 1,
+    "tags": ["cloudflare", "cache", "pages", "custom-domain", "zone-id"],
+    "source": {
+      "projectId": "website-opensin.ai",
+      "goalId": "cache-bug-fix",
+      "sessionId": "session-20260415-cache-issue",
+      "sourceType": "execution"
+    },
+    "rationale": "opensin.ai liefert noch alte 404.html aus weil Cloudflare cached. Zone ID 6f9212bfe8656507578d9b6b02a2dfeb.",
+    "createdAt": "2026-04-15T19:00:00.000Z",
+    "updatedAt": "2026-04-15T19:00:00.000Z",
+    "invalidatedBy": [],
+    "invalidates": [],
+    "replacesTopic": false,
+    "driftStatus": "fresh",
+    "driftReasons": [],
+    "lastValidatedAt": "2026-04-15T19:00:00.000Z",
+    "ageDays": 0
   }
 ]
 }
