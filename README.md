@@ -260,10 +260,10 @@ After running `setup-hooks`, the generated scripts appear in `<project>/.opencod
 ## Testing
 
 ```bash
-npm test
+bun test
 ```
 
-Runs all tests via `node --test test/*.test.js`. Tests cover plan versioning, orchestration, transcript extraction, bidirectional sync, hook generation, auto-invalidation, knowledge graph edges, score/drift annotation, and conflict resolution (14 tests total).
+Runs all tests via `bun test`. Tests cover plan versioning, orchestration, transcript extraction, bidirectional sync, hook generation, auto-invalidation, knowledge graph edges, score/drift annotation, and conflict resolution (14 tests total).
 
 ## Programmatic API
 
