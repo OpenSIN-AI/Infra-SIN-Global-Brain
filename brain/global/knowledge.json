@@ -497,7 +497,40 @@
       "replacesTopic": false,
       "driftStatus": "fresh",
       "driftReasons": [],
-      "lastValidatedAt": "2026-04-15T00:00:00.000Z",
+"lastValidatedAt": "2026-04-15T00:00:00.000Z",
+    "ageDays": 0
+    },
+    {
+      "id": "rule-20260416-model-upgrade-nvidia-minimax",
+      "type": "rule",
+      "text": "Standard-Modell geändert 2026-04-16: Default von openai/gpt-5.4 -> nvidia/minimaxai/minimax-m2.7 (NVIDIA NIM, kostenlos, OCI Gateway). Vision-Modell für Agenten: antigravity-gemini-3-flash -> meta/llama-3.2-11b-vision-instruct (NVIDIA NIM, kostenlos, getestet 4.3s Latenz).",
+      "topic": "model-upgrade-2026-04-16",
+      "status": "active",
+      "scope": "global",
+      "score": 1,
+      "tags": [
+        "opencode",
+        "model",
+        "nvidia-nim",
+        "minimax-m2.7",
+        "llama-vision",
+        "vision-gate"
+      ],
+      "source": {
+        "projectId": "opensin-documentation",
+        "goalId": "model-upgrade-2026",
+        "sessionId": "session-20260416-opensin-documentation",
+        "sourceType": "execution"
+      },
+      "rationale": "antigravity-gemini-3-flash Token läuft ab -> Ersatz durch kostenlose NVIDIA NIM Modelle",
+      "createdAt": "2026-04-16T00:00:00.000Z",
+      "updatedAt": "2026-04-16T00:00:00.000Z",
+      "invalidatedBy": [],
+      "invalidates": [],
+      "replacesTopic": false,
+      "driftStatus": "fresh",
+      "driftReasons": [],
+      "lastValidatedAt": "2026-04-16T00:00:00.000Z",
       "ageDays": 0
     }
   ]
