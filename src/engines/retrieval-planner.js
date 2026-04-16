@@ -26,6 +26,17 @@ export const Intent = {
 };
 
 /**
+ * MAGMA Graph Dimensions
+ * 4 orthogonal views of the knowledge graph
+ */
+export const GraphDimension = {
+  SEMANTIC: "semantic",   // Meaning-based relationships (embedding similarity)
+  TEMPORAL: "temporal",   // Time-based relationships (chronology, recency)
+  CAUSAL: "causal",       // Cause-effect relationships (invalidation, conflict)
+  ENTITY: "entity"        // Entity-centric relationships (same topic/project)
+};
+
+/**
  * 意图配置映射：每种意图对应的知识类型、图跳跃深度、优先级
  */
 const INTENT_CONFIG = {
