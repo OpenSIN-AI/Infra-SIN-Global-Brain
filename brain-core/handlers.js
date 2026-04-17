@@ -153,6 +153,14 @@ export function createHandlers({ store, bridge, promoter }) {
 
     stats() {
       return { ...store.stats(), ts: new Date().toISOString() };
+    },
+
+    /**
+     * adminTick — force the AutoPromoter to evaluate immediately. Used by
+     * the smoke test and by ops when a rule landslide is pending.
+     */
+    async adminTick() {
+      return promoter.tick();
     }
   };
 }

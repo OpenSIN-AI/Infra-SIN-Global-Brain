@@ -57,6 +57,15 @@ export async function startHttpServer({ port, host, handlers }) {
     }
   });
 
+  app.post("/admin/tick", async (req, reply) => {
+    try {
+      return { ok: true, result: await handlers.adminTick() };
+    } catch (err) {
+      reply.code(400);
+      return { ok: false, error: err.message };
+    }
+  });
+
   await app.listen({ port, host });
   return app;
 }

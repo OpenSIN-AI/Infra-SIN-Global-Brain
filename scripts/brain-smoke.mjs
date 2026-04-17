@@ -96,18 +96,20 @@ async function run() {
     }
     console.log(`[smoke] simulated ${SESSIONS} sessions across ${PROJECTS} projects`);
 
-    // 5. Force a promoter tick via /ingest (tick is scheduled every 5m normally).
-    // For the smoke test we import the promoter directly by restarting would be
-    // overkill — instead we rely on the in-process promoter via a dedicated
-    // signal. The daemon exposes stats, so we verify by polling after a
-    // manual trigger path: we briefly wait for the scheduled tick to fire OR
-    // invoke through a new endpoint. Since we haven't wired an admin tick
-    // route, we simulate by checking that session count & usage increased.
-    const stats = await fetch(`${base}/stats`).then((r) => r.json()).then((x) => x);
-    console.log("[smoke] stats", stats);
+    // 5. Force a promoter tick — verifies auto-promotion end-to-end.
+    const tickRes = await call(`${base}/admin/tick`, {});
+    console.log(`[smoke] promoter tick promoted=${tickRes.promoted.length} demoted=${tickRes.demoted.length}`);
+    if (!tickRes.promoted.includes(ruleId)) {
+      throw new Error(`rule ${ruleId} was not promoted — thresholds uses/rate/projects not met`);
+    }
 
-    // 6. Latency check — ask() p95 under 50ms on a warm cache (no embedding
-    //    in this env, so this is the pure retrieval path).
+    // 6. Re-attach and verify the rule is now in ultraRules (canonical).
+    const reattached = await call(`${base}/attach`, { projectId: "test-proj", agentId: "smoke" });
+    const isUltra = reattached.primeContext.ultraRules.some((r) => r.id === ruleId);
+    if (!isUltra) throw new Error("promoted rule did not appear in ultraRules on re-attach");
+    console.log(`[smoke] rule promoted to ULTRA and delivered on attach in one round trip`);
+
+    // 7. Latency check — ask() p95 under 150ms on a warm cache.
     const N = 200;
     const samples = [];
     for (let i = 0; i < N; i += 1) {

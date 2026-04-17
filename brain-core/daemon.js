@@ -20,6 +20,22 @@
 import path from "node:path";
 import process from "node:process";
 
+// Deduplicate noisy "[Embedding] Failed …" warnings from the embedding engine.
+// First occurrence prints a compact line; the rest are suppressed so agents
+// see clean logs.
+const _origWarn = console.warn.bind(console);
+let _embedWarnPrinted = false;
+console.warn = (...args) => {
+  const first = args[0];
+  if (typeof first === "string" && first.startsWith("[Embedding]")) {
+    if (_embedWarnPrinted) return;
+    _embedWarnPrinted = true;
+    _origWarn("[brain] embedding provider unavailable — using deterministic fallback vectors");
+    return;
+  }
+  _origWarn(...args);
+};
+
 import { BrainStore } from "./lib/store.js";
 import { ProjectBridge } from "./lib/project-bridge.js";
 import { NeuralBus } from "./transport/neural-bus.js";
@@ -57,6 +73,7 @@ async function main() {
     bus.onRequest("brain.rules", handlers.rules);
     bus.onRequest("brain.ingest", handlers.ingest);
     bus.onRequest("brain.session.end", handlers.sessionEnd);
+    bus.onRequest("brain.admin.tick", handlers.adminTick);
 
     store.subscribe((record) => {
       const projectId = record.payload?.source?.projectId ?? record.payload?.projectId ?? "global";

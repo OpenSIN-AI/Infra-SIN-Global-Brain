@@ -8,6 +8,7 @@
     "brain": "node ./src/cli.js",
     "brain:core": "node ./brain-core/daemon.js",
     "brain:smoke": "node ./scripts/brain-smoke.mjs",
+    "brain:smoke:client": "node ./scripts/brain-client-smoke.mjs",
     "mcp:sin-brain": "node ./src/mcp/sin-brain-server.mjs",
     "mcp:brain": "node ./src/mcp/brain-server.mjs",
     "mcp:preview": "node ./src/mcp/preview-server.mjs",
