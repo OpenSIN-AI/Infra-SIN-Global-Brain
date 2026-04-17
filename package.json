@@ -9,5 +9,13 @@
     "mcp:sin-brain": "node ./src/mcp/sin-brain-server.mjs",
     "mcp:preview": "node ./src/mcp/preview-server.mjs",
     "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "fastify": "^5.8.5",
+    "lru-cache": "^11.3.5",
+    "nats": "^2.29.3",
+    "p-queue": "^9.1.2",
+    "zod": "^4.3.6"
   }
 }
