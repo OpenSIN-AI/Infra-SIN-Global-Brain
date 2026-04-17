@@ -14,7 +14,7 @@
  * bun run system-directive-watcher.js --interval=5000
  */
 
-import { readFileSync, writeFileSync, renameSync, existsSync, readdirSync, statSync } from "fs";
+import { readFileSync, writeFileSync, renameSync, existsSync, readdirSync, statSync, unlinkSync } from "fs";
 import { join } from "path";
 import { homedir, tmpdir } from "os";
 import { spawn } from "child_process";
@@ -305,15 +305,23 @@ async function pollLoop(intervalMs) {
 async function runDaemon() {
   const pidFile = join(tmpdir(), "opensin-directive-watcher.pid");
   if (existsSync(pidFile)) {
+    const rawPid = readFileSync(pidFile, "utf-8").trim();
+    const existingPid = Number.parseInt(rawPid, 10);
     try {
-      process.kill(parseInt(readFileSync(pidFile, "utf-8").trim()), 0);
-      console.log(`[watcher] Already running (PID ${readFileSync(pidFile, "utf-8").trim()})`);
-      process.exit(0);
-    } catch (e) {}
+      if (!Number.isFinite(existingPid) || existingPid <= 0) {
+        unlinkSync(pidFile);
+      } else {
+        process.kill(existingPid, 0);
+        console.log(`[watcher] Already running (PID ${rawPid})`);
+        process.exit(0);
+      }
+    } catch (e) {
+      try { unlinkSync(pidFile); } catch (unlinkError) {}
+    }
   }
   writeFileSync(pidFile, process.pid.toString(), "utf-8");
   process.on("exit", () => {
-    try { require("fs").unlinkSync(pidFile); } catch (e) {}
+    try { unlinkSync(pidFile); } catch (e) {}
   });
   process.on("SIGINT", () => process.exit(0));
   process.on("SIGTERM", () => process.exit(0));
