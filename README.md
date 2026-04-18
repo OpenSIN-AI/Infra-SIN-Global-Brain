@@ -16,9 +16,13 @@ The long-running brain-core daemon is the recommended path for all new agents.
 # Local dev
 npm install
 node brain-core/daemon.js            # http :7070 (+ nats if BRAIN_NATS_URL set)
-npm run brain:smoke                  # end-to-end auto-promotion check
-npm run brain:smoke:seed             # seeds PRIORITY canon from AGENTS.md
+                                     # dashboard at http://127.0.0.1:7070/
+
+# Smoke tests — all four must be green
+npm run brain:smoke                  # end-to-end auto-promotion
+npm run brain:smoke:seed             # seeds PRIORITY canon from AGENTS.md + WAL replay
 npm run brain:smoke:client           # thin-client attach() round-trip
+npm run brain:smoke:meta             # dedup + contradictions + SSE + Prometheus + dashboard
 
 # Seed authored canon (idempotent)
 BRAIN_URL=http://127.0.0.1:7070 npm run brain:seed
@@ -26,6 +30,55 @@ BRAIN_URL=http://127.0.0.1:7070 npm run brain:seed
 # Build the one-shot VM install package
 npm run brain:pack                   # produces brain-oci.tar.gz
 ```
+
+### Observability (Phase 3)
+
+The daemon ships its own ops UI. No Grafana, no build step, no framework.
+
+| Endpoint | What it returns |
+|---|---|
+| `GET /`              | Redirects to the live dashboard |
+| `GET /dashboard.html` | Self-contained ops UI — cards, live event feed via SSE, Ultra-canon panel, latency histogram, meta-learner summary |
+| `GET /events`         | Server-Sent-Events stream — every committed WAL record + meta events, with 50-event replay on connect |
+| `GET /metrics`        | Prometheus text exposition — counters, gauges, histograms (p50/p95/p99 rolling) |
+| `GET /stats/rich`     | One-shot `{ store, metrics }` JSON (dashboard source) |
+| `GET /admin/diagnose` | Rolls up AutoPromoter.tick + MetaLearner.tick — handy for CI |
+| `POST /admin/meta/tick` | Force MetaLearner to re-scan for contradictions and apply decay |
+| `POST /admin/tick`    | Force AutoPromoter to re-evaluate promote/demote thresholds |
+| `POST /admin/seed`    | Privileged seeding path (used by `brain:seed`) |
+
+Prometheus sample (first scrape after a few asks):
+
+```
+brain_asks_total{project="my-app"} 42
+brain_ingests_total{project="my-app",type="rule"} 7
+brain_meta_dedup_total{type="rule",via="jaccard"} 3
+brain_meta_contradictions_total{via="jaccard"} 1
+brain_ask_ms_bucket{project="my-app",le="1"} 38
+brain_ask_ms_bucket{project="my-app",le="5"} 42
+brain_cache_ultra_rules 17
+```
+
+### Reflexive meta-learning (Phase 5)
+
+On every `ingest`, before the WAL append, the `MetaLearner` runs online
+dedup: embedding-cosine + token-Jaccard dual path, polarity-aware. If the
+new entry is semantically or textually ≥ threshold to an existing active
+entry of the same type+scope and agrees on polarity, it is merged into the
+existing row (usageCount++, text appended as alias). The caller gets back
+`{ dedup: true, into: id, sim, via }` instead of a fresh insert.
+
+Every 10 minutes (or on demand via `POST /admin/meta/tick`) the batch
+subsystems run:
+
+- **Contradictions** — opposing rules with overlapping content are flagged
+  as `contradictsWith[]` and surfaced on `attach().primeContext.contradictions`
+  so agents can warn before acting on conflicting canon.
+- **Decay** — idle non-Ultra rules lose score on a 30-day half-life;
+  sub-threshold rules become AutoPromoter demote candidates.
+
+Ultra canon (authored, seeded from `AGENTS.md`) is immune to both dedup
+and decay — it's canon by construction.
 
 ### Deploying to the OCI VM (92.5.60.87)
 

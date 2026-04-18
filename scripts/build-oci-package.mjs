@@ -41,7 +41,8 @@ const includes = [
   "package-lock.json",
   "scripts/brain-smoke.mjs",
   "scripts/brain-client-smoke.mjs",
-  "scripts/brain-seed-smoke.mjs"
+  "scripts/brain-seed-smoke.mjs",
+  "scripts/brain-meta-smoke.mjs"
 ];
 
 console.log(`[pack] staging -> ${stage}`);

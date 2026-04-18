@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>brain-core · live</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-2: #1a1a1a;
+    --border: #262626;
+    --fg: #ededed;
+    --muted: #737373;
+    --accent: #4ade80;
+    --warn: #f59e0b;
+    --danger: #ef4444;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--fg);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    position: sticky; top: 0; z-index: 10;
+  }
+  header .brand {
+    display: flex; align-items: center; gap: 12px;
+    font-weight: 600; letter-spacing: 0.02em;
+  }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--muted);
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  .dot.live { background: var(--accent); animation: pulse 1.6s ease-out infinite; }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.45); }
+    100% { box-shadow: 0 0 0 12px rgba(74,222,128,0); }
+  }
+  header .meta {
+    display: flex; gap: 16px; align-items: center;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color: var(--muted); font-size: 12px;
+  }
+  main { padding: 24px; max-width: 1400px; margin: 0 auto; }
+  .grid {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-bottom: 24px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .card .label {
+    color: var(--muted); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .card .value {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 28px; font-weight: 500; letter-spacing: -0.02em;
+  }
+  .card .sub { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .columns {
+    display: grid; gap: 16px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .columns { grid-template-columns: 1fr 1fr; }
+  }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .panel h2 {
+    margin: 0; padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 500;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .panel h2 .count { color: var(--fg); font-family: ui-monospace, monospace; }
+  .list { max-height: 420px; overflow-y: auto; }
+  .list::-webkit-scrollbar { width: 6px; }
+  .list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .row {
+    padding: 10px 16px; border-bottom: 1px solid var(--surface-2);
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .row:last-child { border-bottom: none; }
+  .row .tag {
+    flex-shrink: 0;
+    font-family: ui-monospace, monospace;
+    font-size: 11px; padding: 2px 8px; border-radius: 999px;
+    background: var(--surface-2); color: var(--muted);
+    border: 1px solid var(--border);
+  }
+  .tag.add { color: var(--accent); border-color: rgba(74,222,128,0.3); }
+  .tag.promote { color: var(--accent); border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.08); }
+  .tag.demote, .tag.invalidate { color: var(--danger); border-color: rgba(239,68,68,0.3); }
+  .tag.session { color: var(--warn); border-color: rgba(245,158,11,0.3); }
+  .tag.meta { color: #a78bfa; border-color: rgba(167,139,250,0.3); }
+  .row .text { flex: 1; min-width: 0; }
+  .row .text .summary {
+    font-family: ui-monospace, monospace; font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .row .text .sub { color: var(--muted); font-size: 11px; margin-top: 2px; }
+  .rule-text { font-size: 13px; line-height: 1.45; }
+  .rule-prio {
+    display: inline-block; min-width: 34px;
+    font-family: ui-monospace, monospace; font-size: 11px;
+    padding: 1px 6px; border-radius: 4px; margin-right: 8px;
+    background: var(--accent); color: #0a0a0a; font-weight: 600;
+  }
+  .kv { display: flex; justify-content: space-between; padding: 8px 16px; border-bottom: 1px solid var(--surface-2); }
+  .kv:last-child { border: none; }
+  .kv .k { color: var(--muted); font-size: 12px; }
+  .kv .v { font-family: ui-monospace, monospace; font-size: 12px; }
+  footer { padding: 24px; color: var(--muted); font-size: 11px; text-align: center; font-family: ui-monospace, monospace; }
+  .err { color: var(--danger); }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="dot" id="live-dot"></span>
+    <span>brain-core</span>
+    <span style="color: var(--muted); font-weight: 400; font-size: 12px;">one-brain / v4</span>
+  </div>
+  <div class="meta">
+    <span id="uptime">—</span>
+    <span>·</span>
+    <span id="seq">seq 0</span>
+    <span>·</span>
+    <span id="host">—</span>
+  </div>
+</header>
+
+<main>
+  <div class="grid" id="stats-grid"></div>
+
+  <div class="columns">
+    <div class="panel">
+      <h2>Ultra canon <span class="count" id="ultra-count">0</span></h2>
+      <div class="list" id="ultra-list"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Live events <span class="count" id="event-count">0</span></h2>
+      <div class="list" id="event-list"></div>
+    </div>
+  </div>
+
+  <div class="columns" style="margin-top: 16px;">
+    <div class="panel">
+      <h2>Latency histogram <span class="count" id="lat-label">brain_ask_ms</span></h2>
+      <div id="lat-body"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Meta-learner</h2>
+      <div id="meta-body"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  brain-core daemon · GET /stats/rich · GET /metrics · GET /events (SSE)
+</footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+
+function fmt(n) {
+  if (typeof n !== "number") return "—";
+  if (n >= 1e6) return (n/1e6).toFixed(1) + "M";
+  if (n >= 1e3) return (n/1e3).toFixed(1) + "k";
+  if (Number.isInteger(n)) return String(n);
+  return n.toFixed(n < 10 ? 2 : 1);
+}
+function fmtDuration(ms) {
+  const s = Math.floor(ms/1000);
+  if (s < 60) return s + "s";
+  if (s < 3600) return Math.floor(s/60) + "m " + (s%60) + "s";
+  return Math.floor(s/3600) + "h " + Math.floor((s%3600)/60) + "m";
+}
+function esc(s) { return String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function renderStats(rich) {
+  const s = rich.store;
+  const m = rich.metrics;
+  const asks = m.histograms["brain_ask_ms"] ?? { p50:0, p95:0, count:0 };
+  const cards = [
+    { label: "Entries",    value: fmt(s.entries),        sub: s.projects + " projects" },
+    { label: "Rules",      value: fmt(s.rules),          sub: "active" },
+    { label: "Ultra",      value: fmt(s.ultraRules),     sub: "canon" },
+    { label: "Vectors",    value: fmt(s.vectors),        sub: s.vectorIndex?.mode ?? "none" },
+    { label: "Ask p50",    value: fmt(asks.p50) + "ms",  sub: "p95 " + fmt(asks.p95) + "ms" },
+    { label: "Asks total", value: fmt(m.counters["brain_asks_total"] ?? 0), sub: fmt(m.counters["brain_ingests_total"] ?? 0) + " ingests" }
+  ];
+  $("stats-grid").innerHTML = cards.map((c) => `
+    <div class="card">
+      <div class="label">${c.label}</div>
+      <div class="value">${c.value}</div>
+      <div class="sub">${c.sub}</div>
+    </div>
+  `).join("");
+
+  $("uptime").textContent = "up " + fmtDuration(m.uptimeMs);
+  $("seq").textContent = "seq " + (s.appliedSeq ?? 0);
+  $("host").textContent = rich.host ?? "—";
+
+  // latency panel
+  $("lat-body").innerHTML = `
+    <div class="kv"><span class="k">count</span><span class="v">${fmt(asks.count)}</span></div>
+    <div class="kv"><span class="k">p50</span><span class="v">${fmt(asks.p50)} ms</span></div>
+    <div class="kv"><span class="k">p95</span><span class="v">${fmt(asks.p95)} ms</span></div>
+    <div class="kv"><span class="k">p99</span><span class="v">${fmt(asks.p99)} ms</span></div>
+    <div class="kv"><span class="k">avg</span><span class="v">${fmt(asks.avg)} ms</span></div>
+  `;
+
+  // meta panel
+  $("meta-body").innerHTML = `
+    <div class="kv"><span class="k">dedup merges</span><span class="v">${fmt(countByPrefix(m.counters, "brain_meta_dedup_total"))}</span></div>
+    <div class="kv"><span class="k">contradictions</span><span class="v">${fmt(m.counters["brain_meta_contradictions_total"] ?? 0)}</span></div>
+    <div class="kv"><span class="k">decayed rules</span><span class="v">${fmt(m.counters["brain_meta_decay_total"] ?? 0)}</span></div>
+    <div class="kv"><span class="k">promotions</span><span class="v">${fmt(m.counters["brain_promotions_total"] ?? 0)}</span></div>
+    <div class="kv"><span class="k">demotions</span><span class="v">${fmt(m.counters["brain_demotions_total"] ?? 0)}</span></div>
+  `;
+}
+
+function countByPrefix(obj, prefix) {
+  let n = 0;
+  for (const k in obj) if (k === prefix || k.startsWith(prefix + "{")) n += obj[k];
+  return n;
+}
+
+function renderUltra(rules) {
+  $("ultra-count").textContent = rules.length;
+  if (!rules.length) {
+    $("ultra-list").innerHTML = '<div class="row"><div class="text sub">No ultra canon seeded. Run <code>npm run brain:seed</code>.</div></div>';
+    return;
+  }
+  $("ultra-list").innerHTML = rules.slice(0, 50).map((r) => {
+    const prio = r.priority ?? r.ultraPromotion?.priority ?? "";
+    return `
+      <div class="row">
+        <div class="text">
+          <div class="rule-text">
+            ${prio !== "" ? `<span class="rule-prio">${esc(prio)}</span>` : ""}
+            ${esc(r.text).slice(0, 220)}${r.text.length > 220 ? "…" : ""}
+          </div>
+          <div class="sub">${esc(r.id)} · ${esc(r.topic ?? r.type)}</div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+const eventList = $("event-list");
+let eventCount = 0;
+function pushEvent(e) {
+  eventCount += 1;
+  $("event-count").textContent = eventCount;
+  const kindClass = e.kind.startsWith("rule.promote") ? "promote"
+    : e.kind.startsWith("rule.demote") ? "demote"
+    : e.kind.startsWith("knowledge.invalidate") ? "invalidate"
+    : e.kind.startsWith("knowledge.add") ? "add"
+    : e.kind.startsWith("session") ? "session"
+    : e.kind.startsWith("meta") ? "meta"
+    : "";
+  const row = document.createElement("div");
+  row.className = "row";
+  row.innerHTML = `
+    <span class="tag ${kindClass}">${esc(e.kind)}</span>
+    <div class="text">
+      <div class="summary">${esc(e.summary ?? "")}</div>
+      <div class="sub">${esc(e.projectId ?? "global")} · ${esc(new Date(e.ts).toLocaleTimeString())}</div>
+    </div>
+  `;
+  eventList.insertBefore(row, eventList.firstChild);
+  while (eventList.childElementCount > 100) eventList.removeChild(eventList.lastChild);
+}
+
+async function refresh() {
+  try {
+    const [rich, rules] = await Promise.all([
+      fetch("/stats/rich").then((r) => r.json()),
+      fetch("/rules?scope=all").then((r) => r.json())
+    ]);
+    renderStats(rich.result ?? rich);
+    const all = rules.result?.rules ?? rules.rules ?? [];
+    renderUltra(all.filter((r) => r.ultra === true));
+  } catch (err) {
+    $("live-dot").classList.remove("live");
+    console.error(err);
+  }
+}
+
+function connectEvents() {
+  const es = new EventSource("/events");
+  es.onopen = () => $("live-dot").classList.add("live");
+  es.onerror = () => $("live-dot").classList.remove("live");
+  es.onmessage = (m) => {
+    try {
+      const evt = JSON.parse(m.data);
+      pushEvent(evt);
+      // opportunistic refresh on structural mutations
+      if (evt.kind === "rule.promote" || evt.kind === "rule.demote" || evt.kind === "knowledge.add") {
+        refresh();
+      }
+    } catch {}
+  };
+}
+
+refresh();
+setInterval(refresh, 10_000);
+connectEvents();
+</script>
+</body>
+</html>

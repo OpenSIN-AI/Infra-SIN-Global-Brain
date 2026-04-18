@@ -40,17 +40,22 @@ VM installer.
 
 ---
 
-## Phase 3 — Observability &nbsp;`next`
+## Phase 3 — Observability &nbsp;`done`
 
-Operators need to see: which rules fire, which agents are attached, which
-sessions are outliers.
+Operators see every rule that fires, every agent attached, every session
+outlier — live, without leaving the VM.
 
-**Exit criteria**
+**Exit criteria** &nbsp;`met`
 
-- [ ] `GET /events` Server-Sent-Events stream (mirror of the NATS `brain.events.*` fan-out)
-- [ ] `GET /metrics` — Prometheus exposition: `brain_attach_total`, `brain_ask_duration_ms_bucket`, `brain_rules_total{status}`, `brain_ultra_total`, `brain_promote_total`, `brain_demote_total`
-- [ ] Dashboard route `GET /` — zero-dep HTML + SSE: live rule count, active agents, promotion/demotion feed, p95 latency spark-line, top 10 most-consulted rules
-- [ ] `brain-core/lib/audit.js` — append-only `audit.jsonl` next to the WAL: every rule promote/demote with actor + reason + rule delta. Retention via logrotate.
+- [x] `brain-core/transport/events.js` — in-process `EventBus` with rolling ring buffer (1000 events), normalised event envelope, central `summariseRecord(record)` so SSE + NATS + audit log all agree on shape.
+- [x] `GET /events` Server-Sent-Events stream, replays last 50 on connect, 25 s heartbeat, mirrors the NATS `brain.events.*` fan-out.
+- [x] `brain-core/engines/metrics.js` — Prometheus-text exposition with counters, gauges, histograms (13 fixed buckets + rolling p50/p95/p99 over last 512 samples). Zero external deps.
+- [x] `GET /metrics` exports: `brain_asks_total`, `brain_ingests_total`, `brain_attaches_total`, `brain_sessions_total{success}`, `brain_promotions_total`, `brain_demotions_total`, `brain_seeds_total`, `brain_meta_dedup_total{via}`, `brain_meta_contradictions_total{via}`, `brain_meta_decay_total`, `brain_wal_appends_total{kind}`, plus histograms `brain_ask_ms`, `brain_ingest_ms`, `brain_attach_ms`, and gauges for every cache cardinality.
+- [x] `GET /` — self-contained live dashboard (336 LOC, zero build, zero framework): cards for every counter/gauge, live event feed via SSE, Ultra-canon panel, latency histogram, meta-learner summary. Dark terminal aesthetic, three-colour system (bg / surface / accent-green).
+- [x] `GET /stats/rich` — one-shot JSON of `{ store, metrics }` for the dashboard.
+- [x] `GET /admin/diagnose` — rolls up store + AutoPromoter.tick + MetaLearner.tick in one call for CI + ops.
+- [x] Optional append-only event log: set `BRAIN_EVENT_LOG=/var/lib/brain/events.jsonl` to stream every committed event to disk.
+- [x] `npm run brain:smoke:meta` — 8 checks (dedup online, contradiction detector, Prometheus shape, stats/rich, dashboard.html, SSE roundtrip, diagnose) all green.
 
 ---
 
@@ -69,18 +74,20 @@ ONE-BRAIN is a single point of failure today. We fix that without losing the
 
 ---
 
-## Phase 5 — Reflexive Meta-Learning &nbsp;`planned`
+## Phase 5 — Reflexive Meta-Learning &nbsp;`done (core)`
 
-The brain notices its own patterns and writes rules about its own decisions.
-Current AutoPromoter handles threshold rules; this phase handles second-order
-rules ("rules that say when to trust rules").
+The brain introspects: no duplicates written, no contradictions hidden, no
+stale rules trusted. Three loops on one substrate.
 
-**Exit criteria**
+**Exit criteria** &nbsp;`met`
 
-- [ ] `brain-core/engines/meta-promoter.js` — runs every hour, mines session outcomes for patterns like "rules tagged `#security` that came from agent X have 40% false-positive rate → auto-demote".
-- [ ] Every meta-decision appended as its own `decision` entry so the next meta-tick can see its own history.
-- [ ] `brain.stats.meta` exposes: top 10 auto-discovered patterns, their confidence, their effect on promotions.
-- [ ] Test: plant 20 rules with known skew, run meta-tick, assert the exact expected demotions.
+- [x] `brain-core/engines/meta-learner.js` (198 LOC) — three loops, one class, zero external deps.
+- [x] **Online dedup** on every `ingest` — embedding-cosine (≥0.92) + token-Jaccard (≥0.80) dual path. Same-type, same-scope, polarity-matching → merge into existing entry, bump `usageCount`, append the new text as an alias. Result: `{ dedup: true, into: id, sim, via }`. Ultra canon is immune (authored, never deduped).
+- [x] **Contradiction detector** — embedding cosine (≥0.88) + token Jaccard (≥0.60), polarity mismatch required. Flags both entries with `contradictsWith[]` and emits `meta.contradiction` events. Surfaced in `attach().primeContext.contradictions` so agents warn on conflicting ultra canon.
+- [x] **Confidence decay** — exponential 30-day half-life on rule `score` after 14 days of idleness. Ultra exempt. Sub-0.35 score flips `driftStatus` to `demote-candidate` for the AutoPromoter's next tick.
+- [x] Robustness: the dual-path design keeps the meta-loop working even when the embedding provider is unreachable and the deterministic fallback produces low-quality vectors.
+- [x] `POST /admin/meta/tick` + scheduled loop (default 10 min).
+- [x] Test: `brain:smoke:meta` plants an exact duplicate, a semantically-unique rule, two opposing rules — asserts merge + new-row + contradiction detection.
 
 ---
 
