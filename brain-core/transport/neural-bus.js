@@ -68,6 +68,19 @@ export class NeuralBus {
     const subject = `brain.events.${projectId ?? "global"}`;
     this.nc.publish(subject, codec.encode(record));
   }
+
+  /** Fire-and-forget publish on an arbitrary subject (used by Hive broadcast). */
+  publish(subject, payload) {
+    if (!this.nc) return;
+    this.nc.publish(subject, codec.encode(payload));
+  }
+
+  /** Request/reply on an arbitrary subject (used for remote Hive workers). */
+  async request(subject, payload, { timeout = 15_000 } = {}) {
+    if (!this.nc) throw new Error("NATS not connected");
+    const msg = await this.nc.request(subject, codec.encode(payload), { timeout });
+    return codec.decode(msg.data);
+  }
 }
 
 export { codec };

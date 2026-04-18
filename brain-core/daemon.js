@@ -51,6 +51,13 @@ import { createHandlers } from "./handlers.js";
 import { AutoPromoter } from "./engines/auto-promoter.js";
 import { MetaLearner } from "./engines/meta-learner.js";
 import { Metrics } from "./engines/metrics.js";
+import { CapabilityRegistry } from "./hive/registry.js";
+import { Scratchpad } from "./hive/scratchpad.js";
+import { BroadcastCortex } from "./hive/broadcast.js";
+import { ConsensusEngine } from "./hive/consensus.js";
+import { Orchestrator } from "./hive/orchestrator.js";
+import { createHiveHandlers } from "./hive/handlers.js";
+import { generateEmbedding } from "../src/engines/embedding-engine.js";
 
 async function main() {
   const dataDir = process.env.BRAIN_DATA_DIR ?? path.resolve(process.cwd(), "brain-data");
@@ -90,6 +97,22 @@ async function main() {
 
   const handlers = createHandlers({ store, bridge, promoter, metaLearner, metrics, events });
 
+  // ---- Hive layer (phase 6+7) ----
+  const registry = new CapabilityRegistry({ events, metrics });
+  registry.startSweeper();
+  const scratchpad = new Scratchpad({ events });
+  scratchpad.startSweeper();
+  const broadcast = new BroadcastCortex({ events });
+  const consensus = new ConsensusEngine({ store, events, metrics, generateEmbedding });
+  const orchestrator = new Orchestrator({
+    store, registry, scratchpad, broadcast, consensus, events, metrics
+  });
+  const hiveHandlers = createHiveHandlers({
+    registry, scratchpad, broadcast, consensus, orchestrator, metrics
+  });
+
+  metrics.set("brain_hive_agents", 0);
+
   // ---- Store → Event fan-out ----
   let eventLogStream = null;
   if (eventLogPath) {
@@ -119,6 +142,27 @@ async function main() {
     bus.onRequest("brain.admin.diagnose", handlers.diagnose);
     bus.onRequest("brain.admin.seed", handlers.seedUltra);
 
+    // Hive subjects
+    bus.onRequest("brain.hive.register", hiveHandlers.hiveRegister);
+    bus.onRequest("brain.hive.heartbeat", hiveHandlers.hiveHeartbeat);
+    bus.onRequest("brain.hive.unregister", hiveHandlers.hiveUnregister);
+    bus.onRequest("brain.hive.agents", hiveHandlers.hiveAgents);
+    bus.onRequest("brain.hive.find", hiveHandlers.hiveFind);
+    bus.onRequest("brain.hive.broadcast", hiveHandlers.hiveBroadcast);
+    bus.onRequest("brain.hive.history", hiveHandlers.hiveHistory);
+    bus.onRequest("brain.hive.propose", hiveHandlers.hivePropose);
+    bus.onRequest("brain.hive.vote", hiveHandlers.hiveVote);
+    bus.onRequest("brain.hive.proposals", hiveHandlers.hiveProposals);
+    bus.onRequest("brain.hive.proposal.status", hiveHandlers.hiveProposalStatus);
+    bus.onRequest("brain.hive.orchestrate", hiveHandlers.hiveOrchestrate);
+    bus.onRequest("brain.hive.scratchpad.create", hiveHandlers.scratchpadCreate);
+    bus.onRequest("brain.hive.scratchpad.get", hiveHandlers.scratchpadGet);
+    bus.onRequest("brain.hive.scratchpad.set", hiveHandlers.scratchpadSet);
+    bus.onRequest("brain.hive.scratchpad.append", hiveHandlers.scratchpadAppend);
+
+    broadcast.attachNeuralBus(bus);
+    orchestrator.attachNeuralBus(bus);
+
     events.subscribe((e) => {
       bus.publishEvent(e.projectId ?? "global", { seq: e.seq, kind: e.kind, summary: e.summary });
     });
@@ -134,7 +178,9 @@ async function main() {
   }
 
   // ---- HTTP ----
-  const http = await startHttpServer({ port: httpPort, host: httpHost, handlers, events, metrics });
+  const http = await startHttpServer({
+    port: httpPort, host: httpHost, handlers, hiveHandlers, broadcast, events, metrics
+  });
   console.log(`[brain] http listening on ${httpHost}:${httpPort}  (dashboard: http://${httpHost}:${httpPort}/)`);
 
   // ---- Checkpoint loop ----
@@ -164,6 +210,8 @@ async function main() {
     clearInterval(ckptTimer);
     clearInterval(promoteTimer);
     clearInterval(metaTimer);
+    registry.stopSweeper();
+    scratchpad.stopSweeper();
     await http.close().catch(() => {});
     if (bus) await bus.close().catch(() => {});
     if (eventLogStream) eventLogStream.end();
