@@ -101,6 +101,14 @@ export async function startHttpServer({ port, host, handlers, hiveHandlers = nul
   post("/admin/seed", "seedUltra");
   get("/admin/diagnose", "diagnose");
 
+  // ---- governance / drift gate (phase 7) ----
+  if (typeof handlers.reviewList === "function") {
+    get("/review/list", "reviewList");
+    get("/review/stats", "reviewStats");
+    post("/review/approve", "reviewApprove");
+    post("/review/reject", "reviewReject");
+  }
+
   // ---- Hive (phase 6+7) ----
   if (hiveHandlers) {
     const hpost = (route, name) => app.post(route, async (req, reply) => {

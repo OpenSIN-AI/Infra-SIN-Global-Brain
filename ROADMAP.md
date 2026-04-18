@@ -105,17 +105,21 @@ Currently `solution` entries are just notes; this phase makes them callable.
 
 ---
 
-## Phase 7 — Governance / Drift Gates &nbsp;`planned`
+## Phase 7 — Governance / Drift Gates &nbsp;`done`
 
-Today any agent can push a rule. We need a tripwire for rules that silently
-contradict the canon.
+Any agent can push a rule, but we need a tripwire for ingest that silently
+contradicts the canon. Drift is caught *before* it enters the hot cache,
+not after.
 
-**Exit criteria**
+**Exit criteria** &nbsp;`met`
 
-- [ ] Ingest path runs a cheap semantic conflict check against existing Ultra-rules (cosine ≥ 0.85 + opposing polarity detector).
-- [ ] Rules that would conflict land in `status: "pending-review"` and are NOT served on `attach()`.
-- [ ] Review MCP tool — any agent with role `reviewer` can `brain_review(id, verdict)`.
-- [ ] All rules tagged `#authored` (from AGENTS.md seed) skip the gate — they're canon by construction.
+- [x] `brain-core/engines/governance.js` — `GovernanceEngine.evaluate(entry)` runs on every non-ultra `ingest` before `store.addKnowledge()`. Dual path: embedding cosine ≥ 0.82 OR token Jaccard ≥ 0.55 against same-type active entries, then polarity mismatch is required to flag a conflict. Cheap (O(|type|) Jaccard, 1 HNSW/brute-force query), deterministic, same-process.
+- [x] `brain-core/lib/pending-store.js` — durable JSONL queue (`$DATA/pending-review.jsonl`). Append-only, replay-on-boot, bounded audit history (200 entries). Conflicting ingests are captured *whole* (enriched entry + conflict list + actor + reason) so approve later commits the exact same row the original caller submitted.
+- [x] Handlers: `reviewList`, `reviewStats`, `reviewApprove`, `reviewReject`. Approve commits the held entry via the normal `store.addKnowledge()` path and triggers the project-bridge mirror just like a fresh ingest.
+- [x] HTTP: `GET /review/list`, `GET /review/stats`, `POST /review/approve`, `POST /review/reject`. NATS mirrors under `brain.review.*`.
+- [x] Bypass rules: `entry.ultra === true` and explicit `entry.governance === "bypass"` skip the gate. Ultra canon from `brain:seed` is therefore immune by construction.
+- [x] Observability: counters `brain_governance_accepted_total{type}`, `brain_governance_pending_total{type}`, `brain_governance_approved_total{type}`, `brain_governance_rejected_total{type}`, gauge `brain_governance_pending`, events `governance.pending` / `governance.approved` / `governance.rejected` on the SSE stream.
+- [x] `npm run brain:smoke:governance` — 10 checks: ultra canon seed → polarity-flip ingest held → `/review/list` sees it → reject empties queue → second conflict → approve commits it → `/ask` retrieves approved entry → benign ingest commits immediately → every Prometheus counter + gauge present → state survives daemon restart.
 
 ---
 

@@ -50,7 +50,9 @@ import { EventBus } from "./transport/events.js";
 import { createHandlers } from "./handlers.js";
 import { AutoPromoter } from "./engines/auto-promoter.js";
 import { MetaLearner } from "./engines/meta-learner.js";
+import { GovernanceEngine } from "./engines/governance.js";
 import { Metrics } from "./engines/metrics.js";
+import { PendingStore } from "./lib/pending-store.js";
 import { CapabilityRegistry } from "./hive/registry.js";
 import { Scratchpad } from "./hive/scratchpad.js";
 import { BroadcastCortex } from "./hive/broadcast.js";
@@ -83,6 +85,11 @@ async function main() {
   const promoter = new AutoPromoter({ store });
   const metaLearner = new MetaLearner({ store, events, metrics });
 
+  const pendingStore = new PendingStore({ dataDir });
+  await pendingStore.init();
+  const governance = new GovernanceEngine({ store, events, metrics });
+  metrics.set("brain_governance_pending", pendingStore.stats().pending);
+
   // Expose current cardinalities as gauges, refreshed on every commit.
   const refreshGauges = () => {
     const s = store.stats();
@@ -95,7 +102,9 @@ async function main() {
   };
   refreshGauges();
 
-  const handlers = createHandlers({ store, bridge, promoter, metaLearner, metrics, events });
+  const handlers = createHandlers({
+    store, bridge, promoter, metaLearner, governance, pendingStore, metrics, events
+  });
 
   // ---- Hive layer (phase 6+7) ----
   const registry = new CapabilityRegistry({ events, metrics });
@@ -141,6 +150,12 @@ async function main() {
     bus.onRequest("brain.admin.meta.tick", handlers.adminMetaTick);
     bus.onRequest("brain.admin.diagnose", handlers.diagnose);
     bus.onRequest("brain.admin.seed", handlers.seedUltra);
+
+    // Governance / drift gate subjects
+    bus.onRequest("brain.review.list", handlers.reviewList);
+    bus.onRequest("brain.review.stats", handlers.reviewStats);
+    bus.onRequest("brain.review.approve", handlers.reviewApprove);
+    bus.onRequest("brain.review.reject", handlers.reviewReject);
 
     // Hive subjects
     bus.onRequest("brain.hive.register", hiveHandlers.hiveRegister);
@@ -215,6 +230,7 @@ async function main() {
     await http.close().catch(() => {});
     if (bus) await bus.close().catch(() => {});
     if (eventLogStream) eventLogStream.end();
+    await pendingStore.close().catch(() => {});
     await store.checkpoint().catch(() => {});
     await store.close();
     process.exit(0);

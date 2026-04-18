@@ -12,6 +12,7 @@
     "brain:smoke:seed": "node ./scripts/brain-seed-smoke.mjs",
     "brain:smoke:meta": "node ./scripts/brain-meta-smoke.mjs",
     "brain:smoke:hive": "node ./scripts/brain-hive-smoke.mjs",
+    "brain:smoke:governance": "node ./scripts/brain-governance-smoke.mjs",
     "brain:seed": "node ./brain-core/seed/agents-md-seeder.js",
     "brain:pack": "node ./scripts/build-oci-package.mjs",
     "mcp:sin-brain": "node ./src/mcp/sin-brain-server.mjs",

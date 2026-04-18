@@ -13,7 +13,7 @@
 import { createStableId } from "../src/lib/storage.js";
 import { generateEmbedding } from "../src/engines/embedding-engine.js";
 
-export function createHandlers({ store, bridge, promoter, metaLearner, metrics, events }) {
+export function createHandlers({ store, bridge, promoter, metaLearner, governance, pendingStore, metrics, events }) {
   const timed = (name, labels, fn) => async (...args) => {
     const t0 = performance.now();
     try {
@@ -158,6 +158,27 @@ export function createHandlers({ store, bridge, promoter, metaLearner, metrics, 
           }
         }
 
+        // Governance / drift gate — catch polarity-flipping ingest before commit.
+        if (governance && pendingStore) {
+          const verdict = await governance.evaluate(enriched);
+          if (verdict.action === "pending-review") {
+            const pending = pendingStore.add({
+              entry: enriched,
+              conflicts: verdict.conflicts,
+              actor: actor ?? "agent",
+              reason: verdict.reason
+            });
+            metrics?.set("brain_governance_pending", pendingStore.stats().pending);
+            return {
+              id: enriched.id,
+              pendingReview: true,
+              pendingId: pending.id,
+              reason: verdict.reason,
+              conflicts: verdict.conflicts
+            };
+          }
+        }
+
         await store.addKnowledge(enriched, { actor: actor ?? "agent" });
         if (projectId) bridge.scheduleMirror(projectId);
         return { id: enriched.id, scope: enriched.scope, dedup: false };
@@ -219,6 +240,56 @@ export function createHandlers({ store, bridge, promoter, metaLearner, metrics, 
         metaLearner: meta,
         ts: new Date().toISOString()
       };
+    },
+
+    // ---- governance / drift gate review ----
+
+    reviewList({ status = "pending", limit = 50 } = {}) {
+      if (!pendingStore) throw new Error("pending store not configured");
+      return {
+        items: pendingStore.list({ status, limit }),
+        stats: pendingStore.stats()
+      };
+    },
+
+    reviewStats() {
+      if (!pendingStore) throw new Error("pending store not configured");
+      return pendingStore.stats();
+    },
+
+    async reviewApprove({ id, reviewer = "human", note = null }) {
+      if (!pendingStore) throw new Error("pending store not configured");
+      if (!id) throw new Error("id required");
+      const approved = pendingStore.approve({ id, reviewer, note });
+      // Commit the previously-held entry into the brain.
+      await store.addKnowledge(approved.entry, { actor: reviewer ?? "human" });
+      if (approved.entry.source?.projectId) {
+        bridge.scheduleMirror(approved.entry.source.projectId);
+      }
+      metrics?.inc("brain_governance_approved_total", { type: approved.entry.type });
+      metrics?.set("brain_governance_pending", pendingStore.stats().pending);
+      events?.emit({
+        kind: "governance.approved",
+        projectId: approved.entry.source?.projectId ?? "global",
+        summary: `approved ${approved.entry.type} ${approved.entry.id} by ${reviewer}`,
+        payload: { pendingId: id, entryId: approved.entry.id, reviewer }
+      });
+      return { id, committed: approved.entry.id, reviewer };
+    },
+
+    reviewReject({ id, reviewer = "human", reason = null }) {
+      if (!pendingStore) throw new Error("pending store not configured");
+      if (!id) throw new Error("id required");
+      const rejected = pendingStore.reject({ id, reviewer, reason });
+      metrics?.inc("brain_governance_rejected_total", { type: rejected.entry.type });
+      metrics?.set("brain_governance_pending", pendingStore.stats().pending);
+      events?.emit({
+        kind: "governance.rejected",
+        projectId: rejected.entry.source?.projectId ?? "global",
+        summary: `rejected ${rejected.entry.type} by ${reviewer}${reason ? ` (${reason})` : ""}`,
+        payload: { pendingId: id, entryId: rejected.entry.id, reviewer, reason }
+      });
+      return { id, rejected: rejected.entry.id, reviewer, reason };
     },
 
     async seedUltra({ entry, actor = "seeder", reason = "authored" }) {
