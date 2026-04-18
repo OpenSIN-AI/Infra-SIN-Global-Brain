@@ -1,3 +1,5 @@
+import { readJsonFile, writeJsonFile, createStableId } from "../lib/storage.js";
+
 /**
  * MAGMA Graph Dimensions
  * 4 orthogonal views of the knowledge graph for specialized retrieval

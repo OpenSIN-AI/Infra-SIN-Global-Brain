@@ -11,6 +11,7 @@
     "brain:smoke:client": "node ./scripts/brain-client-smoke.mjs",
     "brain:smoke:seed": "node ./scripts/brain-seed-smoke.mjs",
     "brain:smoke:meta": "node ./scripts/brain-meta-smoke.mjs",
+    "brain:smoke:hive": "node ./scripts/brain-hive-smoke.mjs",
     "brain:seed": "node ./brain-core/seed/agents-md-seeder.js",
     "brain:pack": "node ./scripts/build-oci-package.mjs",
     "mcp:sin-brain": "node ./src/mcp/sin-brain-server.mjs",
@@ -21,10 +22,12 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "fastify": "^5.8.5",
-    "hnswlib-node": "^3.0.0",
     "lru-cache": "^11.3.5",
     "nats": "^2.29.3",
     "p-queue": "^9.1.2",
     "zod": "^4.3.6"
+  },
+  "optionalDependencies": {
+    "hnswlib-node": "^3.0.0"
   }
 }

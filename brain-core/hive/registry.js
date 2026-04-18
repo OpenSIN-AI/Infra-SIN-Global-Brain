@@ -83,7 +83,7 @@ export class CapabilityRegistry {
     };
     this.agents.set(agentId, record);
 
-    this.metrics?.setGauge("brain_hive_agents", this.agents.size);
+    this.metrics?.set("brain_hive_agents", this.agents.size);
     this.metrics?.inc("brain_hive_registrations_total");
     this.events?.emit({
       kind: "hive.register",
@@ -107,7 +107,7 @@ export class CapabilityRegistry {
       this.byCap.get(capName)?.delete(agentId);
     }
     this.agents.delete(agentId);
-    this.metrics?.setGauge("brain_hive_agents", this.agents.size);
+    this.metrics?.set("brain_hive_agents", this.agents.size);
     this.events?.emit({
       kind: "hive.unregister",
       summary: `agent ${agentId} left`,

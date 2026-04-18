@@ -14,9 +14,6 @@ importers:
       fastify:
         specifier: ^5.8.5
         version: 5.8.5
-      hnswlib-node:
-        specifier: ^3.0.0
-        version: 3.0.0
       lru-cache:
         specifier: ^11.3.5
         version: 11.3.5
@@ -29,6 +26,10 @@ importers:
       zod:
         specifier: ^4.3.6
         version: 4.3.6
+    optionalDependencies:
+      hnswlib-node:
+        specifier: ^3.0.0
+        version: 3.0.0
 
 packages:
 
@@ -658,6 +659,7 @@ snapshots:
   bindings@1.5.0:
     dependencies:
       file-uri-to-path: 1.0.0
+    optional: true
 
   body-parser@2.2.2:
     dependencies:
@@ -823,7 +825,8 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  file-uri-to-path@1.0.0: {}
+  file-uri-to-path@1.0.0:
+    optional: true
 
   finalhandler@2.1.1:
     dependencies:
@@ -878,6 +881,7 @@ snapshots:
     dependencies:
       bindings: 1.5.0
       node-addon-api: 8.7.0
+    optional: true
 
   hono@4.12.14: {}
 
@@ -947,7 +951,8 @@ snapshots:
     dependencies:
       tweetnacl: 1.0.3
 
-  node-addon-api@8.7.0: {}
+  node-addon-api@8.7.0:
+    optional: true
 
   object-assign@4.1.1: {}
 
