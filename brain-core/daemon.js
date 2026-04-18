@@ -74,6 +74,7 @@ async function main() {
     bus.onRequest("brain.ingest", handlers.ingest);
     bus.onRequest("brain.session.end", handlers.sessionEnd);
     bus.onRequest("brain.admin.tick", handlers.adminTick);
+    bus.onRequest("brain.admin.seed", handlers.seedUltra);
 
     store.subscribe((record) => {
       const projectId = record.payload?.source?.projectId ?? record.payload?.projectId ?? "global";

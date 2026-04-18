@@ -66,6 +66,15 @@ export async function startHttpServer({ port, host, handlers }) {
     }
   });
 
+  app.post("/admin/seed", async (req, reply) => {
+    try {
+      return { ok: true, result: await handlers.seedUltra(req.body ?? {}) };
+    } catch (err) {
+      reply.code(400);
+      return { ok: false, error: err.message };
+    }
+  });
+
   await app.listen({ port, host });
   return app;
 }

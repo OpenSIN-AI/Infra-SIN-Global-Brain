@@ -3,6 +3,82 @@
 Persistent Code Plan Memory (PCPM) v3 for AI coding agents. A cross-project knowledge store, versioned plan tracker, session logger, and context injector that prevents agents from forgetting, repeating mistakes, or working without a plan.
 
 > **v3** adds a full knowledge graph, score/drift tracking, automatic invalidation derivation, timestamp-based conflict resolution, and quality-scored reflections.
+>
+> **v4 (ONE-BRAIN)** ships an always-on daemon that every agent attaches to in one millisecond-round-trip. Ultra-rules, project context, live push — zero CLI spawns. See [ROADMAP.md](./ROADMAP.md) for all phases.
+
+---
+
+## ONE-BRAIN quickstart
+
+The long-running brain-core daemon is the recommended path for all new agents.
+
+```bash
+# Local dev
+npm install
+node brain-core/daemon.js            # http :7070 (+ nats if BRAIN_NATS_URL set)
+npm run brain:smoke                  # end-to-end auto-promotion check
+npm run brain:smoke:seed             # seeds PRIORITY canon from AGENTS.md
+npm run brain:smoke:client           # thin-client attach() round-trip
+
+# Seed authored canon (idempotent)
+BRAIN_URL=http://127.0.0.1:7070 npm run brain:seed
+
+# Build the one-shot VM install package
+npm run brain:pack                   # produces brain-oci.tar.gz
+```
+
+### Deploying to the OCI VM (92.5.60.87)
+
+```bash
+# From this repo:
+npm run brain:pack
+scp brain-oci.tar.gz ubuntu@92.5.60.87:/tmp/
+
+# On the VM (one command):
+ssh ubuntu@92.5.60.87 'mkdir -p /tmp/brain-oci \
+  && tar xzf /tmp/brain-oci.tar.gz -C /tmp/brain-oci \
+  && sudo bash /tmp/brain-oci/install.sh'
+```
+
+The installer:
+
+1. Installs Node 22 if missing.
+2. Installs `nats-server` v2.10.22 + systemd unit (skip with `INSTALL_NATS=0`).
+3. Creates the `brain` service user, writes `/etc/systemd/system/brain-core.service`, starts the daemon.
+4. Opportunistically installs native `hnswlib-node` for HNSW acceleration. Falls back to the JS vector index if it doesn't compile.
+5. Seeds `AGENTS.md` PRIORITY ≤ −4 sections as Ultra canon (skip with `SEED_AGENTS_MD=0`).
+
+After install, point agents at the daemon:
+
+```bash
+export BRAIN_URL=http://92.5.60.87:7070
+export BRAIN_NATS_URL=nats://92.5.60.87:4222    # optional but faster
+```
+
+### Agent usage (one line)
+
+```js
+import { attach } from "@opensin/brain-client";
+
+const brain = await attach({ projectId: "my-app", agentId: "gpt-5-coder" });
+// brain.primeContext.ultraRules  — authored canon (AGENTS.md PRIORITY -10..-4)
+// brain.primeContext.rules       — project-scoped rules
+// brain.primeContext.decisions   — last 20 project decisions
+// brain.primeContext.forbidden   — never-do list
+await brain.ask("how did we ship auth?");       // ~10 ms
+await brain.ingest({ type: "decision", text: "chose jose for JWT" });
+await brain.endSession({ consultedRuleIds, success: true });
+```
+
+### MCP servers
+
+| Server | Purpose | Default URL |
+|---|---|---|
+| `mcp:brain` (`src/mcp/brain-server.mjs`) | Native MCP over brain-client. Recommended for new agents. | stdio |
+| `mcp:sin-brain` (`src/mcp/sin-brain-server.mjs`) | Legacy tool names (`add_rule`, `sync_brain`, `list_global_rules`) — now thin-client over the daemon, with CLI fallback. | stdio |
+| `mcp:preview` | Opens images in macOS Preview. | stdio |
+
+---
 
 ## What It Does
 

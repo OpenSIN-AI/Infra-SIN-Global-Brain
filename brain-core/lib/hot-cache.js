@@ -15,16 +15,19 @@
 
 import { LRUCache } from "lru-cache";
 
+import { VectorIndex } from "../engines/vector-index.js";
+
 export class HotCache {
-  constructor({ maxQueryCache = 10_000 } = {}) {
+  constructor({ maxQueryCache = 10_000, vectorMode = "auto" } = {}) {
     this.rules = new Map();        // id -> entry
     this.entries = new Map();      // id -> entry
     this.byType = new Map();       // type -> Set<id>
     this.byProject = new Map();    // projectId -> Set<id>
-    this.vectors = new Map();      // id -> Float32Array
+    this.vectors = new Map();      // id -> Float32Array (mirrors index for quick dim checks)
     this.ultraRules = [];          // ordered ids
     this.appliedSeq = 0;
     this.queryCache = new LRUCache({ max: maxQueryCache, ttl: 30_000 });
+    this.index = new VectorIndex({ mode: vectorMode });
   }
 
   /**
@@ -49,7 +52,9 @@ export class HotCache {
     }
 
     if (Array.isArray(entry.embedding) && entry.embedding.length) {
-      this.vectors.set(entry.id, Float32Array.from(entry.embedding));
+      const vec = Float32Array.from(entry.embedding);
+      this.vectors.set(entry.id, vec);
+      this.index.upsert(entry.id, vec);
     }
 
     if (entry.ultra === true) {
@@ -65,6 +70,7 @@ export class HotCache {
     if (!entry) return;
     entry.status = "invalidated";
     this.rules.delete(id);
+    this.index.remove(id);
     const ultraIdx = this.ultraRules.indexOf(id);
     if (ultraIdx !== -1) this.ultraRules.splice(ultraIdx, 1);
     this.queryCache.clear();
@@ -110,23 +116,18 @@ export class HotCache {
     return out;
   }
 
-  /** Cosine similarity search against in-memory vectors. */
-  vectorSearch(query, { limit = 8, minScore = 0.15 } = {}) {
+  /** Cosine similarity search — delegates to the pluggable VectorIndex. */
+  async vectorSearch(query, { limit = 8, minScore = 0.15 } = {}) {
     if (!query || !query.length) return [];
-    const q = Float32Array.from(query);
-    const qNorm = l2norm(q);
-    if (qNorm === 0) return [];
-
-    const results = [];
-    for (const [id, vec] of this.vectors) {
+    const hits = await this.index.search(query, { limit: limit * 2, minScore });
+    const out = [];
+    for (const { id, score } of hits) {
       const entry = this.entries.get(id);
       if (!entry || entry.status !== "active") continue;
-      if (vec.length !== q.length) continue;
-      const score = cosine(q, qNorm, vec);
-      if (score >= minScore) results.push({ id, score, entry });
+      out.push({ id, score, entry });
+      if (out.length >= limit) break;
     }
-    results.sort((a, b) => b.score - a.score);
-    return results.slice(0, limit);
+    return out;
   }
 
   stats() {
@@ -136,24 +137,8 @@ export class HotCache {
       rules: this.rules.size,
       ultraRules: this.ultraRules.length,
       vectors: this.vectors.size,
-      projects: this.byProject.size
+      projects: this.byProject.size,
+      vectorIndex: this.index.stats()
     };
   }
-}
-
-function l2norm(vec) {
-  let s = 0;
-  for (let i = 0; i < vec.length; i += 1) s += vec[i] * vec[i];
-  return Math.sqrt(s);
-}
-
-function cosine(q, qNorm, vec) {
-  let dot = 0;
-  let vNorm = 0;
-  for (let i = 0; i < q.length; i += 1) {
-    dot += q[i] * vec[i];
-    vNorm += vec[i] * vec[i];
-  }
-  const denom = qNorm * Math.sqrt(vNorm);
-  return denom === 0 ? 0 : dot / denom;
 }

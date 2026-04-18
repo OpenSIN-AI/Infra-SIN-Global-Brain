@@ -62,7 +62,7 @@ export function createHandlers({ store, bridge, promoter }) {
       }
       let hits = [];
       if (vector) {
-        hits = store.vectorSearch(vector, { limit: limit * 2 });
+        hits = await store.vectorSearch(vector, { limit: limit * 2 });
       } else {
         const q = String(query).toLowerCase();
         for (const entry of store.cache.entries.values()) {
@@ -161,6 +161,53 @@ export function createHandlers({ store, bridge, promoter }) {
      */
     async adminTick() {
       return promoter.tick();
+    },
+
+    /**
+     * seedUltra — privileged path used by AGENTS.md seeder + ops tooling to
+     * plant authored rules DIRECTLY as ultra canon (no 10-sessions-3-projects
+     * auto-promotion dance). This is the ONLY way to hoist a rule to ultra
+     * without usage data. Regular `ingest` always forces ultra=false.
+     *
+     * Idempotent: an existing entry with the same id is updated + re-promoted.
+     */
+    async seedUltra({ entry, actor = "seeder", reason = "authored" }) {
+      if (!entry?.id || !entry?.type || !entry?.text) {
+        throw new Error("seedUltra requires entry.id, entry.type, entry.text");
+      }
+      const enriched = {
+        id: entry.id,
+        type: entry.type,
+        text: entry.text,
+        topic: entry.topic ?? null,
+        status: "active",
+        scope: entry.scope ?? "global",
+        score: entry.score ?? 1,
+        priority: entry.priority ?? null,
+        tags: entry.tags ?? [],
+        source: entry.source ?? { origin: "seed" },
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        usageCount: 0,
+        successCount: 0,
+        ultra: true,
+        ultraPromotion: {
+          reason,
+          heading: entry.heading ?? null,
+          priority: entry.priority ?? null,
+          promotedAt: new Date().toISOString()
+        }
+      };
+      try {
+        enriched.embedding = await generateEmbedding(enriched.text);
+      } catch { /* embeddings optional */ }
+
+      await store.addKnowledge(enriched, { actor });
+      // Second WAL record so replay keeps ultra status even if the cache
+      // layer ever changes how it reads `entry.ultra` on upsert.
+      await store.promoteRule(enriched.id, enriched.ultraPromotion, { actor });
+
+      return { id: enriched.id, ultra: true, priority: enriched.priority };
     }
   };
 }
