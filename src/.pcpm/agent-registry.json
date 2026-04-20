@@ -1272,7 +1272,7 @@
         "business"
       ],
       "triggers": [
-        "sovereign ci/cd a2a agent replacing github actions. features a 100% free a2a infrastructure with opencode cli (openai/gpt-5.4 via opencode auth login). implements infinite scaling rotator on supabase oci for token refresh every 10 minutes. includes opencode and oh-my-opencode updaters for all a2a hf vms.",
+        "sovereign ci/cd a2a agent replacing github actions. features a 100% free a2a infrastructure with opencode cli (openai/gpt-5.4 via opencode auth login). implements infinite scaling token-refresh system on supabase oci for token refresh every 10 minutes. includes opencode and oh-my-opencode updaters for all a2a hf vms.",
         "telegram bot",
         "telegram nachricht",
         "security check",
@@ -5227,7 +5227,7 @@
     "anwaltlicher a2a agent für beweismittel, anlagen, provenienz und widerspruchsprüfung.": [
       "A2A-SIN-Evidence"
     ],
-    "sovereign ci/cd a2a agent replacing github actions. features a 100% free a2a infrastructure with opencode cli (openai/gpt-5.4 via opencode auth login). implements infinite scaling rotator on supabase oci for token refresh every 10 minutes. includes opencode and oh-my-opencode updaters for all a2a hf vms.": [
+    "sovereign ci/cd a2a agent replacing github actions. features a 100% free a2a infrastructure with opencode cli (openai/gpt-5.4 via opencode auth login). implements infinite scaling token-refresh system on supabase oci for token refresh every 10 minutes. includes opencode and oh-my-opencode updaters for all a2a hf vms.": [
       "A2A-SIN-Github-Action"
     ],
     "autonomous onboarding orchestrator with chrome password manager integration, cookie/session extraction, gcp secret manager, browser automation, and full 6-phase opensin onboarding pipeline. zero manual intervention.": [
