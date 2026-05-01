@@ -3,6 +3,7 @@
 ## Überblick
 
 OpenSIN-Agenten können **automatisch** auf Chrome-gespeicherte Passwörter zugreifen. Der User hat bereits ein System gebaut, das:
+
 - Passwörter aus Chrome's SQLite-Datenbank extrahiert
 - Diese mit dem macOS Keychain entschlüsselt (Chrome Safe Storage)
 - Cookies aus Chrome für Session-Wiederverwendung extrahiert
@@ -26,6 +27,7 @@ A2A-SIN-Google-Apps/src/chrome/
 ### Verschlüsselung
 
 Chrome macOS verwendet:
+
 - **Keychain**: "Chrome Safe Storage" Passwort
 - **Algorithmus**: AES-256-CBC mit v10/v11 Prefix
 - **Key-Derivation**: scrypt('saltysalt')
@@ -35,23 +37,25 @@ Chrome macOS verwendet:
 ### password-manager.ts
 
 ```typescript
-import { 
+import {
   listChromeProfiles,
   extractCredentialsFromProfile,
   searchCredentials,
   getCredentialForService,
-  checkPasswordManagerAccess
-} from './chrome/password-manager';
+  checkPasswordManagerAccess,
+} from "./chrome/password-manager";
 
 // Alle Chrome-Profile auflisten
 const profiles = listChromeProfiles();
 // → [{ name: 'Default', path: '/Users/...', email: 'user@gmail.com' }, ...]
 
 // Credentials aus Default-Profil für google.com
-const creds = extractCredentialsFromProfile('Default', { origin: 'google.com' });
+const creds = extractCredentialsFromProfile("Default", {
+  origin: "google.com",
+});
 
 // Passwort für spezifischen Service
-const googleCred = getCredentialForService('google.com');
+const googleCred = getCredentialForService("google.com");
 // → { origin, username, password, ... }
 
 // Verfügbarkeit prüfen
@@ -67,14 +71,14 @@ import {
   getSessionCookiesForDomain,
   getAuthCookies,
   exportCookiesNetscape,
-  exportCookiesJSON
-} from './chrome/cookie-extractor';
+  exportCookiesJSON,
+} from "./chrome/cookie-extractor";
 
 // Cookies für Domain
-const cookies = getSessionCookiesForDomain('google.com', 'Default');
+const cookies = getSessionCookiesForDomain("google.com", "Default");
 
 // Auth-Cookies (sid, session, auth, token, etc.)
-const authCookies = getAuthCookies('Default');
+const authCookies = getAuthCookies("Default");
 
 // Export für curl/httpie
 const netscapeFormat = exportCookiesNetscape(cookies);
@@ -93,20 +97,20 @@ const jsonFormat = exportCookiesJSON(cookies);
 async function autoLogin(service: string) {
   // Erst Chrome-Credentials versuchen
   const chromeCred = getCredentialForService(service);
-  
+
   if (chromeCred?.password) {
     // Chrome-Passwort gefunden → direkt nutzen
     await login(service, chromeCred.username, chromeCred.password);
     return;
   }
-  
+
   // Fallback: sin-passwordmanager
   const storedCred = await sinPasswordmanager.get(service);
   if (storedCred) {
     await login(service, storedCred.username, storedCred.password);
     return;
   }
-  
+
   // Final: sin-google-apps für OAuth
   await sinGoogleApps.oauthLogin(service);
 }
@@ -118,7 +122,7 @@ async function autoLogin(service: string) {
 async function reuseSession(service: string) {
   // Chrome-Cookies für Session holen
   const cookies = getSessionCookiesForDomain(service);
-  
+
   if (cookies.length > 0) {
     // Chrome-Session existiert → wiederverwenden
     await restoreSession(service, cookies);

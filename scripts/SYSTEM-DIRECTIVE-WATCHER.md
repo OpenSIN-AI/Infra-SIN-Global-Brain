@@ -5,6 +5,7 @@
 Der **System Directive Watcher** ist ein Hintergrund-Script, das OpenCode-Session-Nachrichten überwacht und bei erkannten System Directives automatisch Todos erstellt.
 
 **Was er tut:**
+
 - Pollt alle 3 Sekunden OpenCode-Session-Dateien
 - Erkennt `[SYSTEM DIRECTIVE: OH-MY-OPENCODE - ...]` Pattern
 - Erkennt Work-Stop-Phrasen in Assistant-Nachrichten
@@ -14,11 +15,13 @@ Der **System Directive Watcher** ist ein Hintergrund-Script, das OpenCode-Sessio
 ## Installation
 
 Das Script liegt unter:
+
 ```
 ~/.config/opencode/scripts/system-directive-watcher.js
 ```
 
 **Ausführbar machen:**
+
 ```bash
 chmod +x ~/.config/opencode/scripts/system-directive-watcher.js
 ```
@@ -74,19 +77,19 @@ launchctl load ~/Library/LaunchAgents/com.sin.system-directive-watcher.plist
 
 ## Unterstützte Directives
 
-| Directive | Auto-Todos |
-|-----------|-----------|
-| `TODO CONTINUATION` | Global Brain aktualisieren, Local Brain aktualisieren, Todo-Liste prüfen |
-| `BRAIN SYNC ENFORCER` | Brain Sync: Global Brain + Local Brain |
-| `CODE CHECK` | Repositories synced, Issues aktualisiert |
-| `DOCUMENTATION CHECK` | README/ADRs/Changelog reviewen |
-| `ORGANIZATION CHECK` | GitHub-Hygiene, Traceability, Backlog |
-| `RALPH LOOP` | Ralph Loop Status, Global Brain |
-| `BOULDER CONTINUATION` | Global Brain, Local Brain |
-| `DELEGATION REQUIRED` | Delegationsziel, Global Brain |
-| `COMPACTION CONTEXT` | Global Brain nach Compaction |
-| `CONTEXT WINDOW MONITOR` | Wichtigste Infos sichern |
-| `WORK STOP BRAIN CHECK` | Global Brain?, Local Brain?, "Brains updated" |
+| Directive                | Auto-Todos                                                               |
+| ------------------------ | ------------------------------------------------------------------------ |
+| `TODO CONTINUATION`      | Global Brain aktualisieren, Local Brain aktualisieren, Todo-Liste prüfen |
+| `BRAIN SYNC ENFORCER`    | Brain Sync: Global Brain + Local Brain                                   |
+| `CODE CHECK`             | Repositories synced, Issues aktualisiert                                 |
+| `DOCUMENTATION CHECK`    | README/ADRs/Changelog reviewen                                           |
+| `ORGANIZATION CHECK`     | GitHub-Hygiene, Traceability, Backlog                                    |
+| `RALPH LOOP`             | Ralph Loop Status, Global Brain                                          |
+| `BOULDER CONTINUATION`   | Global Brain, Local Brain                                                |
+| `DELEGATION REQUIRED`    | Delegationsziel, Global Brain                                            |
+| `COMPACTION CONTEXT`     | Global Brain nach Compaction                                             |
+| `CONTEXT WINDOW MONITOR` | Wichtigste Infos sichern                                                 |
+| `WORK STOP BRAIN CHECK`  | Global Brain?, Local Brain?, "Brains updated"                            |
 
 ## Work Stop Erkennung
 
@@ -120,18 +123,21 @@ Todos werden nach `~/.pcpm/todo-inbox.jsonl` geschrieben (eine Zeile pro Todo):
 ## Troubleshooting
 
 **Watcher startet nicht:**
+
 ```bash
 bun --version
 node --check ~/.config/opencode/scripts/system-directive-watcher.js
 ```
 
 **Keine Todos erscheinen:**
+
 ```bash
 ls -la ~/.pcpm/
 cat ~/.pcpm/todo-inbox.jsonl
 ```
 
 **State-Datei zu groß:**
+
 ```bash
 rm /tmp/opensin-directive-watcher-state.json
 ```

@@ -30,46 +30,48 @@
 
 ## Fehler die ich gemacht habe
 
-| Fehler | Korrektur |
-|:---|:---|
+| Fehler                                                 | Korrektur                               |
+| :----------------------------------------------------- | :-------------------------------------- |
 | Falsche Zahlen in README gelogen ohne Fakten zu prüfen | Jetzt IMMER erst zählen, dann behaupten |
-| "für schreibt man nicht fuer" | Korrigiert - "für" ist richtig |
-| Grammatikfehler in Dokumentation | Korrigiert |
-| "Manueles Setup" statt "manuelles Setup" | korrigiert |
+| "für schreibt man nicht fuer"                          | Korrigiert - "für" ist richtig          |
+| Grammatikfehler in Dokumentation                       | Korrigiert                              |
+| "Manueles Setup" statt "manuelles Setup"               | korrigiert                              |
 
 ## Repository Updates
 
-| Repo | Datei | Commit |
-|:---|:---|:---|
-| Delqhi/upgraded-opencode-stack | README.md | c231479 |
-| OpenSIN-AI/Infra-SIN-Dev-Setup | README.md | 14ccbb6, 0761612 |
-| OpenSIN-AI/Infra-SIN-Dev-Setup | box-storage.md | b9ecb72 |
-| Delqhi/global-brain | chrome-password-integration.md | 2260856 |
-| Delqhi/global-brain | knowledge.json + session summary | 2260856 |
+| Repo                           | Datei                            | Commit           |
+| :----------------------------- | :------------------------------- | :--------------- |
+| Delqhi/upgraded-opencode-stack | README.md                        | c231479          |
+| OpenSIN-AI/Infra-SIN-Dev-Setup | README.md                        | 14ccbb6, 0761612 |
+| OpenSIN-AI/Infra-SIN-Dev-Setup | box-storage.md                   | b9ecb72          |
+| Delqhi/global-brain            | chrome-password-integration.md   | 2260856          |
+| Delqhi/global-brain            | knowledge.json + session summary | 2260856          |
 
 ## Box.com Storage Status
 
 **FUNKTIONIERT!** ✅
+
 - Developer Token: `f9PURW50E47k9dwoVKkBD64QLJLnC4Nx` (60min gültig)
 - Public Folder ID: `376915767916`
 - Cache Folder ID: `376701205578`
 - API funktioniert via curl einwandfrei
 
 **Noch offen:**
+
 - CORS-Domänen in Box Developer Console eintragen
 - A2A-SIN-Box-Storage Service deployen
 - JWT für Produktion ( statt Developer Token )
 
 ## Echte Zahlen (upgraded-opencode-stack)
 
-| Komponente | Anzahl |
-|:---|:---|
-| Plugins | 4 |
-| Skills | 44 |
-| MCP Servers | 27 |
-| Providers | 5 |
-| Agents | 21 |
-| Commands | 12 |
+| Komponente  | Anzahl |
+| :---------- | :----- |
+| Plugins     | 4      |
+| Skills      | 44     |
+| MCP Servers | 27     |
+| Providers   | 5      |
+| Agents      | 21     |
+| Commands    | 12     |
 
 ## Nächste Schritte
 
@@ -93,6 +95,7 @@
 ## 2026-04-16: Infra-SIN-Docker-Empire README Korrektur
 
 **Fehler gefunden und gefixt:**
+
 - **Titel sagte "26-Container" aber es waren nur 25!**
 - Fehlerhafte Container-Namen: agent-03-agentzero → agent-03-agentzero-orchestrator
 - Fehlerhafte Container-Namen: agent-11-evolution → agent-11-evolution-optimizer
@@ -108,6 +111,7 @@
 **Repo:** OpenSIN-AI/Infra-SIN-Docker-Empire
 **Commit:** beb6601
 **Änderungen:**
+
 - 26-Container → 25-Container (korrekte Anzahl)
 - agent-03-agentzero-orchestrator (korrigiert)
 - agent-11-evolution-optimizer (korrigiert)
@@ -120,9 +124,11 @@
 ## Potentielle weitere Fehler gefunden
 
 **OpenSIN-Code README** (muss noch verifiziert werden):
+
 - "Chrome Extension mit 39 MCP Tools" - Anzahl verifizieren?
 - "13 actions, 7 browsers" - Anzahl verifizieren?
 
 **Weitere geprüfte Repos (keine Fehler gefunden):**
+
 - A2A-SIN-WhatsApp: README sieht korrekt aus
 - OpenSIN-Neural-Bus: README sieht korrekt aus

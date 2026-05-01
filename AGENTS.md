@@ -3,6 +3,7 @@
 **ABSOLUTES VERBOT: KEINE GITHUB ACTIONS FÜR CI/CD, DEPLOYMENT ODER AUTOMATION!**
 
 **1. DAS PRINZIP:**
+
 - OpenSIN-AI nutzt **AUSSCHLIESSLICH A2A-SIN-GitHub-Action + n8n** für alle CI/CD, Deployment, Build, Test und Automation Tasks.
 - GitHub Actions Workflows (`.github/workflows/*.yml`) sind **PERMANENT VERBOTEN**.
 - **NIEMALS** darf ein Agent GitHub Actions erstellen, empfehlen, konfigurieren oder vorschlagen.
@@ -10,16 +11,19 @@
 - A2A-SIN-GitHub-Action ist unser GitHub Event Listener und n8n Bridge.
 
 **2. WARUM KEINE GITHUB ACTIONS:**
+
 - Wir haben eine EIGENE Lösung gebaut (A2A-SIN-GitHub-Action + n8n).
 - Diese Lösung ist tiefer integriert, flexibler und Teil unseres A2A Ökosystems.
 - GitHub Actions wären eine redundante, parallele Infrastruktur die wir NICHT brauchen.
 
 **3. WENN AGENTEN CI/CD BRAUCHEN:**
+
 - Erstelle GitHub Issues → A2A-SIN-GitHub-Action triggert n8n Workflow
 - Nutze `sin-n8n` CLI für lokale Workflow-Verwaltung
 - Alle Automation läuft über n8n, NICHT über GitHub Actions
 
 **4. KONSEQUENZEN:**
+
 - Wer GitHub Actions erstellt oder vorschlägt: **Protokollverstoß**
 - Diese Regel steht HIER und im Global Brain `.pcpm/rules.md` — sie ist UNÜBERSEHBAR
 
@@ -32,23 +36,27 @@
 > **Migration abgeschlossen:** GitLab LogCenter ist deprecated. GitLab-Konto wurde gesperrt (zu viele Dateien). Box.com (10 GB free) ist der neue Standard.
 
 **Architektur:**
+
 - Zentraler Service: `room-09-box-storage` (A2A-SIN-Box-Storage)
 - Box-Ordner: `/Public` für öffentliche Dateien, `/Cache` für Logs/Temp
 - Jeder Upload erhält: `file.id`, `cdnUrl`, `publicUrl`
 - Unbegrenzter Speicher durch automatische neue Volumes bei 9GB
 
 **Pflicht-Nutzung:**
+
 - Verwende `BOX_STORAGE_API_KEY` für Uploads
 - Nutze die Python API aus `~/.config/opencode/AGENTS.md` oder `scripts/box_storage.py`
 - KEINE lokalen Dateien — nur `/tmp/` als Zwischenspeicher (max 1h)
 - SOFORT uploaden nach Erstellung (Screenshots, Logs, Crash-Dumps)
 
 **Migration von GitLab LogCenter:**
+
 - `gitlab_logcenter.py` ist deprecated → entferne alle Importe
 - Bestehende Logs in Box.com `/Cache` migrieren via `scripts/migrate_gitlab_to_box.py`
 - Alle Agents müssen auf `A2A-SIN-Box-Storage` umgestellt sein bis 2026-05-01
 
 **Bekannte Issues:**
+
 - Box.com API Token läuft nach 60 Min ab → JWT App für Production nötig
 - Rate Limit Free Tier: 10k API calls/day → bei Erschöpfung: Premium Upgrade
 - Uploads >2GB blockieren → Fragmentierung in Chunks geplant für v1.1
@@ -60,6 +68,7 @@
 **ABSOLUTES VERBOT: KEINE STATISCHEN AGENT-LISTEN MEHR! Diese Registry veraltet sofort.**
 
 **PFLICHT-WORKFLOW VOR JEDER AUFGABE:**
+
 ```bash
 # 1. Discovery ausfuehren — scannt GitHub Organization in Echtzeit
 node /Users/jeremy/dev/global-brain/src/engines/discover-agents.js
@@ -73,6 +82,7 @@ cat /Users/jeremy/dev/global-brain/.pcpm/agent-registry.json
 ```
 
 **WIE ES FUNKTIONIERT:**
+
 1. Das Discovery Script scannt ALLE Repos der OpenSIN-AI Organization via GitHub API
 2. Erkennt automatisch: Typ (a2a-agent, team, mcp, cli, plugin, skill), Capabilities, Trigger-Keywords
 3. Baut Indexe: `byTrigger` (Task → Agent) und `byCapability` (Kategorie → Agenten)
@@ -80,18 +90,21 @@ cat /Users/jeremy/dev/global-brain/.pcpm/agent-registry.json
 5. Speichert Registry unter `.pcpm/agent-registry.json`
 
 **ROUTING BEISPIELE:**
+
 - "google docs" → Registry zeigt: A2A-SIN-Google-Apps, Team-SIN-Google
 - "passwoerter speichern" → Registry zeigt: A2A-SIN-PasswordManager
 - "shop" → Registry zeigt: Team-SIN-Commerce, A2A-SIN-Stripe, A2A-SIN-Shop-Finance
 - "vorhersage"/"simulation" → Registry zeigt: A2A-SIN-MiroFish (wenn vorhanden)
 
 **DELEGATIONSLOGIK:**
+
 1. Discovery ausfuehren → Registry laden
 2. User-Task keywords in `byTrigger` suchen → zustaendige Agenten finden
 3. PARALLEL delegieren wo unabhaengig, NACHEINANDER bei Abhaengigkeiten
 4. Teams als Orchestrator fuer multi-domain Aufgaben
 
 **BEISPIEL: "Baue mir einen neuen Shop mit Bezahlfunktionen"**
+
 ```bash
 node /Users/jeremy/dev/global-brain/src/engines/discover-agents.js
 # Registry zeigt:
@@ -118,6 +131,7 @@ node /Users/jeremy/dev/global-brain/src/engines/discover-agents.js
 → SOFORT: Discovery → "passwoerter" → A2A-SIN-PasswordManager → delegieren!
 
 **REGELN (ABSOLUT, KEINE AUSNAHMEN):**
+
 1. **DISCOVERY FIRST:** Immer erst Discovery ausfuehren vor Task-Analyse
 2. **SPEZIALISIERT FIRST:** Wenn Agent existiert → SOFORT delegieren
 3. **PARALLEL:** Unabhaengige Tasks parallel an verschiedene Agenten
@@ -197,28 +211,30 @@ User task
 This repository provides two MCP servers that agents can connect to for real-time brain interaction:
 
 ### sin-brain MCP (`src/mcp/sin-brain-server.mjs`)
+
 Provides tools for agents to manage rules and sync knowledge without manual CLI calls.
 
-| Tool | Description |
-|------|-------------|
-| `add_rule` | Add a rule to global AGENTS.md and/or local .pcpm/ |
-| `sync_brain` | Run bidirectional sync between local and global brain |
-| `open_image_in_preview` | Open an image file in macOS Preview.app |
-| `list_global_rules` | List all rules currently in the global brain |
+| Tool                    | Description                                           |
+| ----------------------- | ----------------------------------------------------- |
+| `add_rule`              | Add a rule to global AGENTS.md and/or local .pcpm/    |
+| `sync_brain`            | Run bidirectional sync between local and global brain |
+| `open_image_in_preview` | Open an image file in macOS Preview.app               |
+| `list_global_rules`     | List all rules currently in the global brain          |
 
 ### preview MCP (`src/mcp/preview-server.mjs`)
+
 Dedicated MCP server for opening images in macOS Preview. Agents MUST use this whenever they create screenshots or visual artifacts — never tell users to "look in /tmp".
 
-| Tool | Description |
-|------|-------------|
+| Tool              | Description                                        |
+| ----------------- | -------------------------------------------------- |
 | `open_in_preview` | Opens an image file in Preview.app with validation |
 
 ## CLI Commands (Extended)
 
-| Command | Description |
-|---------|-------------|
-| `add-rule --text <rule> [--priority <n>] [--scope global\|project\|both]` | Add a rule to global brain and/or local .pcpm |
-| `sync-chat-turn` | Auto-sync trigger — runs silently after each chat turn to check for unwritten rules |
+| Command                                                                   | Description                                                                         |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `add-rule --text <rule> [--priority <n>] [--scope global\|project\|both]` | Add a rule to global brain and/or local .pcpm                                       |
+| `sync-chat-turn`                                                          | Auto-sync trigger — runs silently after each chat turn to check for unwritten rules |
 
 ---
 
@@ -228,13 +244,13 @@ Das **OpenSIN-Neural-Bus** System (`https://github.com/OpenSIN-AI/OpenSIN-Neural
 
 ### Neural-Bus im Global Brain Kontext
 
-| Komponente | Zweck | Verbindung zu Global Brain |
-|------------|-------|---------------------------|
-| `OpenCodeJetStreamClient` | NATS/JetStream Client für OpenCode | Sendet Agent-Events an das Brain |
-| `OpenSinAgentRuntime` | Agent Runtime Wrapper | Veröffentlicht Lessons Learned, Observations, Capabilities |
-| `SUBJECTS` | Subject Taxonomy (workflow.request, workflow.reply, etc.) | Definiert die Event-Sprache des Brains |
-| `createEventEnvelope` | Validierte Event-Envelopes | Garantiert strukturierte Brain-Updates |
-| `Ouroboros Bridge` | `rememberLesson()` + `registerCapability()` | Direkter Schreibzugriff auf Brain-Memory |
+| Komponente                | Zweck                                                     | Verbindung zu Global Brain                                 |
+| ------------------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
+| `OpenCodeJetStreamClient` | NATS/JetStream Client für OpenCode                        | Sendet Agent-Events an das Brain                           |
+| `OpenSinAgentRuntime`     | Agent Runtime Wrapper                                     | Veröffentlicht Lessons Learned, Observations, Capabilities |
+| `SUBJECTS`                | Subject Taxonomy (workflow.request, workflow.reply, etc.) | Definiert die Event-Sprache des Brains                     |
+| `createEventEnvelope`     | Validierte Event-Envelopes                                | Garantiert strukturierte Brain-Updates                     |
+| `Ouroboros Bridge`        | `rememberLesson()` + `registerCapability()`               | Direkter Schreibzugriff auf Brain-Memory                   |
 
 ### Core Architecture
 
@@ -255,27 +271,36 @@ Global Brain (.pcpm/ → AGENTS.md → knowledge graph)
 ### Wichtige Patterns
 
 **1. Durable Consumer (Restart Recovery):**
+
 ```ts
-const worker = await runtime.consumeAssignedWork({
-  subject: SUBJECTS.workflowRequest,
-  stream: "OPENSIN_WORKFLOW_EVENTS",
-  durableName: "issue-8-worker",  // Gleicher Name = Resume nach Restart
-  deliverPolicy: "all",
-  ackWaitMs: 500,
-}, async (event) => { /* work */ });
+const worker = await runtime.consumeAssignedWork(
+  {
+    subject: SUBJECTS.workflowRequest,
+    stream: "OPENSIN_WORKFLOW_EVENTS",
+    durableName: "issue-8-worker", // Gleicher Name = Resume nach Restart
+    deliverPolicy: "all",
+    ackWaitMs: 500,
+  },
+  async (event) => {
+    /* work */
+  },
+);
 ```
 
 **2. Lesson Publishing ins Brain:**
+
 ```ts
 await runtime.publishLessonLearned({
   context: "JetStream reconnect handling",
-  lesson: "Reuse the same durable consumer name so restart recovery is automatic.",
+  lesson:
+    "Reuse the same durable consumer name so restart recovery is automatic.",
   successRate: 1.0,
 });
 // → Automatisch via Ouroboros Bridge ins Global Brain geschrieben
 ```
 
 **3. Request/Reply Pattern:**
+
 ```ts
 const server = await bus.serveRequests(SUBJECTS.workflowRequest, async (request) => {
   return createEventEnvelope({ kind: "workflow.reply", ... });
@@ -286,15 +311,16 @@ const server = await bus.serveRequests(SUBJECTS.workflowRequest, async (request)
 
 Alle Subjects sind in `docs/jetstream-subject-taxonomy.md` im Neural-Bus Repo dokumentiert. Die wichtigsten:
 
-| Subject | Richtung | Zweck |
-|---------|----------|-------|
-| `workflow.request` | Client → Server | Arbeitsanfrage an Agent |
-| `workflow.reply` | Server → Client | Antwort/Ergebnis |
-| `agent.observation` | Agent → Brain | Zustandsmeldung (boot, error, done) |
-| `agent.lesson` | Agent → Brain | Gelernte Lektion (wird ins Memory geschrieben) |
-| `agent.capability` | Agent → Brain | Neue Fähigkeit registriert |
+| Subject             | Richtung        | Zweck                                          |
+| ------------------- | --------------- | ---------------------------------------------- |
+| `workflow.request`  | Client → Server | Arbeitsanfrage an Agent                        |
+| `workflow.reply`    | Server → Client | Antwort/Ergebnis                               |
+| `agent.observation` | Agent → Brain   | Zustandsmeldung (boot, error, done)            |
+| `agent.lesson`      | Agent → Brain   | Gelernte Lektion (wird ins Memory geschrieben) |
+| `agent.capability`  | Agent → Brain   | Neue Fähigkeit registriert                     |
 
 ### Docker Local Verification
+
 ```bash
 cd ~/dev/OpenSIN-Neural-Bus
 docker compose up -d nats
@@ -321,14 +347,13 @@ Siehe [Agent Configuration Guide](https://github.com/OpenSIN-AI/OpenSIN-document
 
 Alle Agenten-Modelle werden durch ein mehrstufiges Konfigurationssystem verwaltet:
 
-| Datei | Zweck |
-|:---|:---|
-| `opencode.json` | Haupt-Config (Provider, Modelle, MCPs, Agenten, Commands) |
-| `oh-my-openagent.json` | Subagenten-Modelle (explore, librarian, oracle, etc.) |
-| `oh-my-sin.json` | Zentrales A2A Team Register |
-| `my-sin-team-code.json` | Team Coding Agenten + Modelle |
-| `my-sin-team-worker.json` | Team Worker Agenten + Modelle |
-| `my-sin-team-infrastructure.json` | Team Infra Agenten + Modelle |
+| Datei                             | Zweck                                                     |
+| :-------------------------------- | :-------------------------------------------------------- |
+| `opencode.json`                   | Haupt-Config (Provider, Modelle, MCPs, Agenten, Commands) |
+| `oh-my-openagent.json`            | Subagenten-Modelle (explore, librarian, oracle, etc.)     |
+| `oh-my-sin.json`                  | Zentrales A2A Team Register                               |
+| `my-sin-team-code.json`           | Team Coding Agenten + Modelle                             |
+| `my-sin-team-worker.json`         | Team Worker Agenten + Modelle                             |
+| `my-sin-team-infrastructure.json` | Team Infra Agenten + Modelle                              |
 
 Nach jeder Aenderung MUSS `sin-sync` ausgefuehrt werden.
-

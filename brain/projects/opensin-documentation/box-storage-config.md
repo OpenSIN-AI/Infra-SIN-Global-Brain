@@ -4,20 +4,20 @@
 
 ## API Credentials
 
-| Parameter | Wert |
-|:---|:---|
+| Parameter       | Wert                               |
+| :-------------- | :--------------------------------- |
 | Developer Token | `f9PURW50E47k9dwoVKkBD64QLJLnC4Nx` |
-| Account ID | `50440114812` |
-| Account Name | Jeremy Schulze |
-| Space Total | 10 GB |
-| Space Used | ~1.5 MB |
+| Account ID      | `50440114812`                      |
+| Account Name    | Jeremy Schulze                     |
+| Space Total     | 10 GB                              |
+| Space Used      | ~1.5 MB                            |
 
 ## Ordner IDs (NUMERISCH, NICHT Share-Links!)
 
-| Ordner | Numerische ID | Share-URL |
-|:---|:---|:---|
+| Ordner | Numerische ID  | Share-URL                                              |
+| :----- | :------------- | :----------------------------------------------------- |
 | Public | `376915767916` | https://app.box.com/s/mvurec77pppyqhxb09z1dwcf8bz4o7eu |
-| Cache | `376701205578` | https://app.box.com/s/9s5htoefw1ux9ajaqj656v9a02h7z7x1 |
+| Cache  | `376701205578` | https://app.box.com/s/9s5htoefw1ux9ajaqj656v9a02h7z7x1 |
 
 > [!WARNING]
 > **API nutzt NUR numerische IDs!** Share-Links (z.B. `9s5htoefw1ux9ajaqj656v9a02h7z7x1`) sind für Menschen, NICHT für API-Calls!
@@ -53,11 +53,11 @@ BOX_CACHE_FOLDER_ID=376701205578
 
 ## Was noch fehlt
 
-| Aufgabe | Status |
-|:---|:---|
-| CORS in Developer Console aktivieren | ⏳ MANUELL |
-| A2A-SIN-Box-Storage deployen | ⏳ MANUELL |
-| JWT für Produktion (statt 60min Token) | ⏳ OFFEN |
+| Aufgabe                                | Status     |
+| :------------------------------------- | :--------- |
+| CORS in Developer Console aktivieren   | ⏳ MANUELL |
+| A2A-SIN-Box-Storage deployen           | ⏳ MANUELL |
+| JWT für Produktion (statt 60min Token) | ⏳ OFFEN   |
 
 ## Dokumentation
 

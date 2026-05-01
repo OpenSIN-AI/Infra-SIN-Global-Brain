@@ -32,6 +32,7 @@ Das OH-MY-OPENCODE Compaction-System sollte:
 4. **Guard-Mechanismus** (`compaction-guard`) sorgt dafür, dass die Kompaktion nur unter richtigen Bedingungen ausgelöst wird
 
 Das "TODO CONTINUATION" Feature sollte dem nächsten Agenten zeigen:
+
 - Welche Tasks noch offen sind
 - Den aktuellen Fortschritt
 - Den Kontext der vorherigen Session
@@ -42,14 +43,14 @@ Das "TODO CONTINUATION" Feature sollte dem nächsten Agenten zeigen:
 
 ### 3.1 Beteiligte Komponenten
 
-| Komponente | Datei | Zweck |
-|------------|-------|-------|
-| `session-todo-status` | `dist/hooks/session-todo-status.d.ts` | Prüft ob Session offene Todos hat |
-| `todo` | `dist/hooks/claude-code-hooks/todo.d.ts` | Todo-Datei laden/speichern pro Session |
+| Komponente                  | Datei                                                                   | Zweck                                          |
+| --------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------- |
+| `session-todo-status`       | `dist/hooks/session-todo-status.d.ts`                                   | Prüft ob Session offene Todos hat              |
+| `todo`                      | `dist/hooks/claude-code-hooks/todo.d.ts`                                | Todo-Datei laden/speichern pro Session         |
 | `compaction-context-prompt` | `dist/hooks/compaction-context-injector/compaction-context-prompt.d.ts` | Generiert den COMPACTION_CONTEXT_PROMPT String |
-| `compaction-guard` | `dist/hooks/todo-continuation-enforcer/compaction-guard.d.ts` | Guard für Kompaktions-Timing |
-| `pre-compact-handler` | `dist/hooks/claude-code-hooks/handlers/pre-compact-handler.d.ts` | Pre-Compaction Handler |
-| `hasIncompleteTodos` | `session-todo-status.d.ts` | Prüft ob Todos incomplete sind |
+| `compaction-guard`          | `dist/hooks/todo-continuation-enforcer/compaction-guard.d.ts`           | Guard für Kompaktions-Timing                   |
+| `pre-compact-handler`       | `dist/hooks/claude-code-hooks/handlers/pre-compact-handler.d.ts`        | Pre-Compaction Handler                         |
+| `hasIncompleteTodos`        | `session-todo-status.d.ts`                                              | Prüft ob Todos incomplete sind                 |
 
 ### 3.2 Data Flow
 
@@ -74,26 +75,31 @@ saveTodoFile(sessionId, todoFile) speichert Zustand
 ## 4. Mögliche Ursachen (Root Cause Hypothesis)
 
 ### Hypothese 1: Session-ID Mismatch
+
 - Die `loadTodoFile(sessionId)` verwendet möglicherweise eine falsche oder veraltete Session-ID
 - Die Session-ID könnte sich zwischen den Sessions ändern
 - **Debugging:** Session-ID vergleichen zwischen den Runs
 
 ### Hypothese 2: Todofile wird nicht korrekt gespeichert
+
 - `saveTodoFile()` schreibt möglicherweise nicht den aktuellen Zustand
 - File-I/O Fehler werden verschluckt (`try/catch {}`)
 - **Debugging:** Todofile nach Session-Ende prüfen unter `/tmp` oder `~/.config/opencode/`
 
 ### Hypothese 3: Compaction Guard Timing-Problem
+
 - `armCompactionGuard()` / `acknowledgeCompactionGuard()` funktionieren nicht richtig
 - Guard wird nicht korrekt "geschärft" oder "acknowledged"
 - **Debugging:** Guard-State nach Session prüfen
 
 ### Hypothese 4: COMPACTION_CONTEXT_PROMPT使用的是缓存数据
+
 - Der `COMPACTION_CONTEXT_PROMPT` String wird zur Build-Zeit generiert, nicht zur Runtime
 - Falls die Kompilierung eine alte Version eingefroren hat, würden stale Daten verwendet
 - **Debugging:** String-Inhalt in dist prüfen
 
 ### Hypothese 5: Pre-Compaction Handler触发时机不对
+
 - Der `pre-compact-handler` wird zum falschen Zeitpunkt ausgeführt
 - Die Todo-Daten werden gespeichert NACHdem die Kompaktion bereits erfolgt ist
 - **Debugging:** Log-Ausgabe von pre-compact prüfen
@@ -103,6 +109,7 @@ saveTodoFile(sessionId, todoFile) speichert Zustand
 ## 5. Debugging-Schritte (Sofort)
 
 ### 5.1 Todofile finden und prüfen
+
 ```bash
 # Todofiles suchen
 find /tmp -name "*.json" 2>/dev/null | xargs grep -l "todo" 2>/dev/null | head -5
@@ -114,6 +121,7 @@ find /tmp -name "*session*" 2>/dev/null | grep -i todo | head -5
 ```
 
 ### 5.2 Session-ID herausfinden
+
 ```bash
 # Offene Sessions auflisten
 opencode session list
@@ -123,6 +131,7 @@ cat ~/.opencode/sessions/*/metadata.json 2>/dev/null | head -50
 ```
 
 ### 5.3 Compaction Hook Log prüfen
+
 ```bash
 # oh-my-opencode Logfile finden
 cat /tmp/oh-my-opencode.log 2>/dev/null | tail -50
@@ -136,22 +145,27 @@ grep -i "compaction\|todo\|guard" /tmp/oh-my-opencode.log 2>/dev/null | tail -30
 ## 6. Fix-Vorschläge
 
 ### Fix 1: Session-ID Tracking verbessern
+
 - Session-ID muss explizit durch den gesamten Kompaktions-Flow durchgereicht werden
 - Logging hinzufügen: "Using session ID: X for TODO load"
 
 ### Fix 2: Todofile-Validierung
+
 - Prüfen ob die geladene Todofile zur aktuellen Session gehört (Timestamp/ID-Match)
 - Bei Mismatch: frischen Zustand vom Agenten holen statt cached Version
 
 ### Fix 3: Guard-State Debugging
+
 - `armCompactionGuard()` und `acknowledgeCompactionGuard()` mit console.log versehen
 - Guard-State nach jeder Session speichern und beim Start laden
 
 ### Fix 4: Pre-Save Verification
+
 - Bevor `saveTodoFile()` aufgerufen wird: Verifikation dass Daten korrekt sind
 - Nach dem Speichern: Direkt nochmal laden und vergleichen
 
 ### Fix 5: Runtime Prompt Generation
+
 - `COMPACTION_CONTEXT_PROMPT` sollte zur Runtime generiert werden, nicht zur Build-Zeit
 - Aktuellen TODO-Zustand direkt in den Prompt einbetten
 
@@ -159,13 +173,13 @@ grep -i "compaction\|todo\|guard" /tmp/oh-my-opencode.log 2>/dev/null | tail -30
 
 ## 7. Betroffene Dateien (lokal)
 
-| Pfad | Relevant für |
-|------|-------------|
-| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/index.js` | Kompiliertes Bundle - schwer zu debuggen |
-| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/hooks/session-todo-status.d.ts` | TODO-Status Check |
-| `/Users/jeremy/.config/openplice/oh-my-opencode-sin/dist/hooks/claude-code-hooks/todo.d.ts` | Todo-Datei Load/Save |
-| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/hooks/compaction-context-injector/compaction-context-prompt.d.ts` | Prompt-Generierung |
-| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/hooks/todo-continuation-enforcer/compaction-guard.d.ts` | Guard-Mechanismus |
+| Pfad                                                                                                                                    | Relevant für                             |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/index.js`                                                         | Kompiliertes Bundle - schwer zu debuggen |
+| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/hooks/session-todo-status.d.ts`                                   | TODO-Status Check                        |
+| `/Users/jeremy/.config/openplice/oh-my-opencode-sin/dist/hooks/claude-code-hooks/todo.d.ts`                                             | Todo-Datei Load/Save                     |
+| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/hooks/compaction-context-injector/compaction-context-prompt.d.ts` | Prompt-Generierung                       |
+| `/Users/jeremy/.config/opencode/local-plugins/oh-my-opencode-sin/dist/hooks/todo-continuation-enforcer/compaction-guard.d.ts`           | Guard-Mechanismus                        |
 
 ---
 

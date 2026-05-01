@@ -29,34 +29,35 @@ AI coding agents (via OpenCode CLI) lose all context between sessions. They forg
 
 ## 🤖 Universal Agent Initialization (Copy & Paste)
 
-Whenever you start working with an AI Agent in a **new project**, you must connect the project to the Global-Brain first. Paste the following universal instruction directly into your prompt to force the agent to set up its memory correctly. 
+Whenever you start working with an AI Agent in a **new project**, you must connect the project to the Global-Brain first. Paste the following universal instruction directly into your prompt to force the agent to set up its memory correctly.
 
 **Why it works:** It uses dynamic variables (`$PWD` and `basename`) so you don't even have to change the project name—it works instantly in any folder. The prompt explains the concept of "amnesia" to the LLM, ensuring it treats this task with the highest priority.
 
 ```markdown
 🚨 OBERSTE PRIORITÄT: GLOBAL-BRAIN INITIALISIERUNG 🚨
 
-Bevor du mit der eigentlichen Aufgabe beginnst oder Code schreibst, MUSST du dieses Projekt an unser "Global-Brain" (DPMA v4) ankoppeln. 
+Bevor du mit der eigentlichen Aufgabe beginnst oder Code schreibst, MUSST du dieses Projekt an unser "Global-Brain" (DPMA v4) ankoppeln.
 
 **WARUM DU DAS TUN MUSST:**
-Du bist Teil einer Agenten-Flotte. Ohne diese Ankopplung leidest du an Amnesie: Du wirst nach dieser Session alles vergessen, alte Bugs wiederholen und unsere globalen Architektur-Regeln ignorieren. Durch die Ankopplung erhältst du sofortigen Zugriff auf das "Hive Mind" – das globale Wissen aller anderen Agenten sowie das lokale Langzeitgedächtnis dieses spezifischen Projekts. 
+Du bist Teil einer Agenten-Flotte. Ohne diese Ankopplung leidest du an Amnesie: Du wirst nach dieser Session alles vergessen, alte Bugs wiederholen und unsere globalen Architektur-Regeln ignorieren. Durch die Ankopplung erhältst du sofortigen Zugriff auf das "Hive Mind" – das globale Wissen aller anderen Agenten sowie das lokale Langzeitgedächtnis dieses spezifischen Projekts.
 
 **DEINE AUFGABE (SOFORT AUSFÜHREN):**
 Führe den folgenden Befehl im Terminal (im Root-Verzeichnis dieses Projekts) aus. Der Befehl installiert die notwendigen OpenCode-Hooks und verbindet das Projekt mit dem Global-Brain.
 
 \`\`\`bash
 node /Users/jeremy/dev/global-brain/src/cli.js setup-hooks \
-  --project $(basename "$PWD") \
-  --project-root "$PWD" \
-  --agents-directive
+ --project $(basename "$PWD") \
+ --project-root "$PWD" \
+ --agents-directive
 \`\`\`
 
 **ERWARTETES ERGEBNIS:**
+
 1. Der Befehl erstellt die Hook-Skripte unter `.opencode/hooks/` und die PCPM-Konfiguration in `.opencode/pcpm-config.json`.
 2. Es wird eine initiales `.pcpm/` (Persistent Code Plan Memory) Setup erzeugt.
 3. Ab dem nächsten Run wird dein System-Prompt automatisch mit dem kollektiven Gedächtnis und den Projekt-Plänen angereichert.
 
-**REGEL:** 
+**REGEL:**
 Führe diesen Terminal-Befehl aus. Bestätige mir kurz, dass die Hooks erfolgreich registriert wurden, und beginne ERST DANACH mit der eigentlichen Aufgabe, die ich dir gestellt habe.
 ```
 
@@ -118,13 +119,12 @@ All via environment variables.
 
 ### MAGMA Dimensions
 
-| Dimension | Relations | Use Case |
-|-----------|-----------|----------|
+| Dimension  | Relations                         | Use Case                 |
+| ---------- | --------------------------------- | ------------------------ |
 | `semantic` | `extends`, `relates_to` (default) | Meaning-based similarity |
-| `temporal` | (future: time-based edges) | Chronology, recency |
-| `causal` | `invalidates`, `contradicts` | Cause-effect, security |
-| `entity` | `relates_to` (same topic) | Topic-centric grouping |
-
+| `temporal` | (future: time-based edges)        | Chronology, recency      |
+| `causal`   | `invalidates`, `contradicts`      | Cause-effect, security   |
+| `entity`   | `relates_to` (same topic)         | Topic-centric grouping   |
 
 ```bash
 # Clone the brain repo
@@ -170,33 +170,34 @@ node src/cli.js setup-hooks \
 
 ## CLI Commands
 
-| Command | Description |
-|---------|-------------|
-| `help` | List all available commands |
-| `init --project <id>` | Initialize project directories in the brain |
-| `log-message --project <id> --session <id> --role <role> --text <msg>` | Append a message to a session transcript |
-| `context --project <id> --goal-id <id> --description <desc>` | Build and print the active context |
-| `orchestrate --project <id> --goal-id <id> --description <desc> --task <task>` | Full orchestration cycle |
-| `extract-knowledge --project <id> --session <id>` | Extract structured knowledge from a transcript via LLM |
-| `sync --project <id> --project-root <path>` | Bidirectional sync between brain and project `.pcpm/` |
-| `setup-hooks --project-root <path> --project <id>` | Generate OpenCode beforeRun/afterRun hook scripts |
+| Command                                                                        | Description                                            |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| `help`                                                                         | List all available commands                            |
+| `init --project <id>`                                                          | Initialize project directories in the brain            |
+| `log-message --project <id> --session <id> --role <role> --text <msg>`         | Append a message to a session transcript               |
+| `context --project <id> --goal-id <id> --description <desc>`                   | Build and print the active context                     |
+| `orchestrate --project <id> --goal-id <id> --description <desc> --task <task>` | Full orchestration cycle                               |
+| `extract-knowledge --project <id> --session <id>`                              | Extract structured knowledge from a transcript via LLM |
+| `sync --project <id> --project-root <path>`                                    | Bidirectional sync between brain and project `.pcpm/`  |
+| `setup-hooks --project-root <path> --project <id>`                             | Generate OpenCode beforeRun/afterRun hook scripts      |
 
 ## Knowledge Types
 
-| Type | Scope | Purpose |
-|------|-------|---------|
-| `fact` | project | Concrete technical facts discovered during work |
-| `decision` | project | Architectural or strategic decisions with rationale |
-| `mistake` | project | Errors, wrong approaches, dead ends to avoid |
-| `solution` | global | Working fixes and successful approaches |
-| `rule` | global | Stable cross-project rules |
-| `forbidden` | project | Strategies that must never be reused |
+| Type        | Scope   | Purpose                                             |
+| ----------- | ------- | --------------------------------------------------- |
+| `fact`      | project | Concrete technical facts discovered during work     |
+| `decision`  | project | Architectural or strategic decisions with rationale |
+| `mistake`   | project | Errors, wrong approaches, dead ends to avoid        |
+| `solution`  | global  | Working fixes and successful approaches             |
+| `rule`      | global  | Stable cross-project rules                          |
+| `forbidden` | project | Strategies that must never be reused                |
 
 ## Invalidation Engine (v3)
 
 When new knowledge contradicts old knowledge, the memory engine automatically marks old entries as `invalidated`. This prevents agents from acting on stale information.
 
 Invalidation can happen via:
+
 - **Explicit invalidations** in a memory update (`matchText`, `matchId`, `matchTopic`)
 - **Topic replacement** (a new decision on the same topic supersedes the old one)
 - **Entry-driven invalidation** (an entry's `invalidates` array targets specific old entries by id or text)
@@ -206,15 +207,16 @@ Invalidation can happen via:
 
 Every knowledge entry is a **node** in a JSON graph. When entries are created or invalidated, the engine writes **directed edges** between them:
 
-| Relation | Meaning |
-|----------|---------|
-| `invalidates` | This entry supersedes / voids the target |
-| `supports` | This entry confirms or reinforces the target |
-| `extends` | This entry builds on the target |
-| `contradicts` | This entry disagrees with the target |
+| Relation         | Meaning                                              |
+| ---------------- | ---------------------------------------------------- |
+| `invalidates`    | This entry supersedes / voids the target             |
+| `supports`       | This entry confirms or reinforces the target         |
+| `extends`        | This entry builds on the target                      |
+| `contradicts`    | This entry disagrees with the target                 |
 | `conflicts_with` | Detected during sync; winner selected by `updatedAt` |
 
 Graph files live at:
+
 - `brain/global/knowledge-graph.json` — global graph
 - `brain/projects/<id>/memory/knowledge-graph.json` — project graph
 
@@ -223,19 +225,19 @@ CLI / API summary:
 ```javascript
 import { getRelatedKnowledge, summarizeKnowledgeGraph } from "global-brain";
 
-const related = getRelatedKnowledge(graph, entryId);        // edges for one node
-const summary = summarizeKnowledgeGraph(graph);             // { nodes, edges, relations: {...} }
+const related = getRelatedKnowledge(graph, entryId); // edges for one node
+const summary = summarizeKnowledgeGraph(graph); // { nodes, edges, relations: {...} }
 ```
 
 ## Score & Drift Tracking (v3)
 
 Every knowledge entry carries a numeric **score** (0–1) that decays over time based on age:
 
-| Age | Score range | Drift status |
-|-----|-------------|--------------|
-| < 14 days | ≥ 0.7 | `fresh` |
-| 14–30 days | 0.4–0.69 | `watch` |
-| > 30 days | < 0.4 | `stale` |
+| Age        | Score range | Drift status |
+| ---------- | ----------- | ------------ |
+| < 14 days  | ≥ 0.7       | `fresh`      |
+| 14–30 days | 0.4–0.69    | `watch`      |
+| > 30 days  | < 0.4       | `stale`      |
 
 Entries with status `watch` or `stale` appear in the **drifting** section of the active context so agents are aware of potentially outdated knowledge. Entries that drop below 0.2 are candidates for auto-invalidation on the next `loadMergedKnowledge` call.
 
@@ -265,6 +267,7 @@ Each orchestration cycle ends with a structured reflection:
 ```
 
 `qualityScore` (0–1) is derived from:
+
 - Presence of explicit decisions logged
 - Absence of failure signals (`error`, `failed`, `reverted`) in the result
 - Number of new memory entries produced
@@ -278,10 +281,11 @@ Strategies are scored based on execution success (`qualityScore` > 0.8 yields `s
 
 ## Hybrid GraphRAG Integration (v4)
 
-PCPM supports importing static code insights generated by **Microsoft GraphRAG**. 
+PCPM supports importing static code insights generated by **Microsoft GraphRAG**.
 While GraphRAG indexes a huge codebase into static Parquet/JSON files, the global-brain takes that output and transforms it into live, actionable Agent Memory (invalidations, strategy relations, facts).
 
 To use:
+
 1. Run Microsoft GraphRAG on your target repo: `python -m graphrag.index --root .`
 2. Export the parquet output to JSON
 3. Run `node scripts/import-graphrag.js` to ingest entities and relationships into the PCPM knowledge graph.
@@ -323,7 +327,7 @@ import {
   resolveConflict,
   updateKnowledgeGraph,
   getRelatedKnowledge,
-  summarizeKnowledgeGraph
+  summarizeKnowledgeGraph,
 } from "global-brain";
 ```
 
@@ -346,14 +350,14 @@ The global-brain integrates with the OpenSIN agent configuration system. All age
 
 ### Configuration Files
 
-| Datei | Zweck | Repo |
-|:---|:---|:---|
-| `opencode.json` | Haupt-Config — Provider, Modelle, MCPs, sichtbare Agenten | `upgraded-opencode-stack` |
-| `oh-my-openagent.json` | Subagenten-Modelle — explore, librarian, oracle, etc. | `upgraded-opencode-stack` |
-| `oh-my-sin.json` | Zentrales A2A Team Register — alle Teams klassifiziert | `upgraded-opencode-stack` |
-| `my-sin-team-code.json` | Team Coding Agenten + Modelle | `upgraded-opencode-stack` |
-| `my-sin-team-worker.json` | Team Worker Agenten + Modelle | `upgraded-opencode-stack` |
-| `my-sin-team-infrastructure.json` | Team Infra Agenten + Modelle | `upgraded-opencode-stack` |
+| Datei                             | Zweck                                                     | Repo                      |
+| :-------------------------------- | :-------------------------------------------------------- | :------------------------ |
+| `opencode.json`                   | Haupt-Config — Provider, Modelle, MCPs, sichtbare Agenten | `upgraded-opencode-stack` |
+| `oh-my-openagent.json`            | Subagenten-Modelle — explore, librarian, oracle, etc.     | `upgraded-opencode-stack` |
+| `oh-my-sin.json`                  | Zentrales A2A Team Register — alle Teams klassifiziert    | `upgraded-opencode-stack` |
+| `my-sin-team-code.json`           | Team Coding Agenten + Modelle                             | `upgraded-opencode-stack` |
+| `my-sin-team-worker.json`         | Team Worker Agenten + Modelle                             | `upgraded-opencode-stack` |
+| `my-sin-team-infrastructure.json` | Team Infra Agenten + Modelle                              | `upgraded-opencode-stack` |
 
 ### Parallel Exploration Mandate
 
